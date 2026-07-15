@@ -39,6 +39,7 @@ PYTHONPATH=geo-pipeline python3 -m geo_pipeline.cli build-sample-region
 PYTHONPATH=geo-pipeline python3 -m unittest discover -s tests
 PYTHONPATH=geo-pipeline python3 -m geo_pipeline.cli validate-region region-data/milwaukee/mke_demo_region_pack
 PYTHONPATH=geo-pipeline python3 -m geo_pipeline.cli snap-gpx region-data/milwaukee/mke_demo_region_pack region-data/milwaukee/oak_leaf_demo_loop.gpx
+game-client/godot/test_headless.sh
 ```
 
 ## Current Status
