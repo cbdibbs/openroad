@@ -35,8 +35,11 @@ The initial MVP target follows the open-world plan:
 Python 3.11+ is assumed.
 
 ```bash
+PYTHONPATH=geo-pipeline python3 -m geo_pipeline.cli build-sample-region
 PYTHONPATH=geo-pipeline python3 -m unittest discover -s tests
 PYTHONPATH=geo-pipeline python3 -m geo_pipeline.cli validate-region region-data/milwaukee/mke_demo_region_pack
+PYTHONPATH=geo-pipeline python3 -m geo_pipeline.cli snap-gpx region-data/milwaukee/mke_demo_region_pack region-data/milwaukee/oak_leaf_demo_loop.gpx
+game-client/godot/test_headless.sh
 ```
 
 ## Current Status
@@ -49,6 +52,13 @@ This repository currently provides the Phase 0 foundation:
 - sample Milwaukee manifests and attribution artifacts
 - local validation tooling and tests for reproducibility-oriented metadata
 
-The gameplay client and Milwaukee ingestion pipeline are intentionally scaffolded rather than feature-complete at this stage.
+The repository now includes a deterministic Phase 1 Milwaukee corridor proof:
+
+- a generated `RideGraphPack` and `SceneryPack`
+- a curated Milwaukee GPX fixture for canonical snapping
+- CLI commands to rebuild the sample region pack and emit snapped route definitions
+- a Godot runtime scaffold that loads the pack shape without embedding bake logic
+
+The geospatial ingestion path is still intentionally lightweight and sample-backed in-repo, but the public pack interfaces and validation flow now match the Phase 1 corridor proof target.
 
 The next execution targets are documented in [docs/roadmap.md](docs/roadmap.md).

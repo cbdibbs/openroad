@@ -1,17 +1,33 @@
 [
   {
+    "distance_m": 10288.4,
+    "elevation_profile_m": [
+      188.2,
+      188.7,
+      189.1,
+      190.0,
+      191.0,
+      190.3,
+      189.9,
+      189.0,
+      188.1,
+      187.5
+    ],
+    "region_version": "milwaukee-v1.0.0",
     "route_id": "oak_leaf_demo_loop",
-    "source_type": "gpx_import",
-    "source_hash": "gpxsha256:oakleafdemo0001",
     "snapped_edge_sequence": [
       "osm_edge_1001",
       "osm_edge_1002",
       "osm_edge_1008",
       "osm_edge_1015"
     ],
-    "elevation_profile_m": [188.2, 189.1, 191.0, 189.9, 187.5],
-    "surface_profile": ["asphalt", "asphalt", "packed_gravel", "asphalt"],
-    "distance_m": 12643.8,
-    "region_version": "milwaukee-v0.1.0"
+    "source_hash": "gpxsha256:25d631b1f7d639d018f3309ca0a61a73b26e195ddc86b74512d12ffc135e952a",
+    "source_type": "gpx_import",
+    "surface_profile": [
+      "asphalt",
+      "asphalt",
+      "packed_gravel",
+      "asphalt"
+    ]
   }
 ]

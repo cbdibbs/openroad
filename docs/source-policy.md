@@ -81,6 +81,8 @@ This document defines which sources are allowed in the MVP pipeline, where they 
 ## Packaging Requirements
 
 - every region pack must include `attribution.json`
+- every region pack must include ride graph and scenery assets referenced from the manifest
 - every region pack must include license references for each source actually used
 - source versions, build date, and a region hash must be recorded
+- client compatibility must be explicit in the manifest
 - missing optional sources must degrade gracefully without making the pack invalid

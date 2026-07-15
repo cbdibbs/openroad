@@ -1,16 +1,26 @@
 {
-  "tile_id": "milwaukee_demo_4km_0001",
-  "bbox_wgs84": [-87.9852, 43.0275, -87.9368, 43.0621],
-  "region_version": "milwaukee-v0.1.0",
+  "attribution_asset": "attribution.json",
+  "bbox_wgs84": [
+    -87.9852,
+    43.0275,
+    -87.9368,
+    43.0621
+  ],
+  "compatible_clients": [
+    "godot-phase1"
+  ],
+  "corridor_id": "oak_leaf_demo",
+  "region_id": "milwaukee_demo",
+  "region_version": "milwaukee-v1.0.0",
+  "ride_graph_asset": "ride_graph.json",
+  "route_definitions_asset": "routes.json",
+  "scenery_asset": "scenery.json",
+  "schema_version": "phase1-region-pack-v1",
   "source_versions": {
+    "esa_worldcover": "v200",
     "openstreetmap": "planet extract 2026-07-01",
-    "usgs_3dep": "1m DEM 2025-11-15",
     "usda_naip": "2024 collection",
-    "esa_worldcover": "v200"
+    "usgs_3dep": "1m DEM 2025-11-15"
   },
-  "ride_graph_asset": "ride_graph.parquet",
-  "terrain_asset": "terrain.meshbin",
-  "building_asset": "buildings.parquet",
-  "biome_asset": "biomes.tif",
-  "attribution_asset": "attribution.json"
+  "tile_id": "milwaukee_demo_4km_0001"
 }

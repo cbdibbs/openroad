@@ -1,0 +1,105 @@
+{
+  "biome_patches": [
+    {
+      "biome_id": "parkland_001",
+      "color_hint": "#77a35f",
+      "landcover_class": "urban_parkland",
+      "polygon_m": [
+        [
+          250.0,
+          250.0
+        ],
+        [
+          1700.0,
+          250.0
+        ],
+        [
+          1500.0,
+          1200.0
+        ],
+        [
+          300.0,
+          1000.0
+        ]
+      ]
+    },
+    {
+      "biome_id": "waterside_001",
+      "color_hint": "#7fb8c9",
+      "landcover_class": "shoreline",
+      "polygon_m": [
+        [
+          2400.0,
+          1200.0
+        ],
+        [
+          3900.0,
+          1600.0
+        ],
+        [
+          3600.0,
+          2850.0
+        ],
+        [
+          2200.0,
+          2200.0
+        ]
+      ]
+    }
+  ],
+  "corridor_id": "oak_leaf_demo",
+  "region_id": "milwaukee_demo",
+  "region_version": "milwaukee-v1.0.0",
+  "road_segments": [
+    {
+      "edge_id": "osm_edge_1001",
+      "material": "asphalt",
+      "width_m": 5.0
+    },
+    {
+      "edge_id": "osm_edge_1002",
+      "material": "asphalt",
+      "width_m": 5.0
+    },
+    {
+      "edge_id": "osm_edge_1008",
+      "material": "packed_gravel",
+      "width_m": 4.0
+    },
+    {
+      "edge_id": "osm_edge_1015",
+      "material": "asphalt",
+      "width_m": 5.0
+    }
+  ],
+  "terrain_chunks": [
+    {
+      "chunk_id": "terrain_chunk_0001",
+      "elevation_grid_m": [
+        [
+          187.9,
+          188.8,
+          189.7
+        ],
+        [
+          188.4,
+          189.9,
+          190.6
+        ],
+        [
+          188.1,
+          189.4,
+          189.8
+        ]
+      ],
+      "origin_m": [
+        0.0,
+        0.0
+      ],
+      "size_m": [
+        4200.0,
+        3200.0
+      ]
+    }
+  ]
+}
