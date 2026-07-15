@@ -27,3 +27,14 @@ The checked-in Milwaukee Phase 1 sample corridor pack under `region-data/milwauk
 - ESA WorldCover, CC BY 4.0, v200 2021 tile lineage
 
 See `region-data/milwaukee/mke_demo_region_pack/attribution.json` and `region-data/milwaukee/mke_demo_region_pack/source_manifest.json` for the versioned source list, usage mapping, source receipts, and redistribution notices for that pack.
+
+## Milwaukee Phase 2 Streamed World Pack
+
+The checked-in Milwaukee Phase 2 region pack under `region-data/milwaukee/mke_phase2_region_pack` references the same upstream source families in machine-readable form:
+
+- OpenStreetMap contributors, ODbL 1.0, Geofabrik Wisconsin extract lineage
+- U.S. Geological Survey 3DEP, public use guidance, TNM 1 m DEM lineage
+- USDA NAIP, public use with requested credit, optional preprocessing-only heuristic lineage
+- ESA WorldCover, CC BY 4.0, v200 2021 tile lineage
+
+See `region-data/milwaukee/mke_phase2_region_pack/attribution.json` and `region-data/milwaukee/mke_phase2_region_pack/source_manifest.json` for the versioned source list, optional-source flags, usage mapping, source receipts, and redistribution notices for that pack.

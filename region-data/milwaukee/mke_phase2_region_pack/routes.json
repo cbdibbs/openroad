@@ -1,0 +1,170 @@
+[
+  {
+    "distance_m": 9757.7,
+    "distance_profile_m": [
+      0.0,
+      1600.0,
+      2400.0,
+      3400.0,
+      4400.0,
+      5600.0,
+      6960.1,
+      8416.1,
+      9757.7
+    ],
+    "elevation_profile_m": [
+      188.74,
+      190.83,
+      190.29,
+      188.33,
+      185.79,
+      183.56,
+      182.03,
+      182.25,
+      184.48
+    ],
+    "grade_profile_pct": [
+      0.021,
+      -0.033,
+      -0.077,
+      -0.115,
+      -0.163,
+      -0.147,
+      -0.074,
+      -0.029,
+      0.023
+    ],
+    "region_version": "milwaukee-v2.0.0",
+    "route_id": "starter_cross_city",
+    "snapped_edge_sequence": [
+      "osm_edge_d1f2a819",
+      "osm_edge_838f3edb",
+      "osm_edge_d10a77cd",
+      "osm_edge_2b675b03",
+      "osm_edge_7e9bf801",
+      "osm_edge_ac4f8296",
+      "osm_edge_5bfab02f"
+    ],
+    "source_hash": "starter:f7b919c630c41516282bdf5056239d668a3f506219bda11d29c5d22bea09be5e",
+    "source_type": "starter_route",
+    "surface_profile": [
+      "asphalt",
+      "asphalt",
+      "asphalt",
+      "asphalt",
+      "asphalt",
+      "asphalt",
+      "asphalt"
+    ]
+  },
+  {
+    "distance_m": 7014.0,
+    "distance_profile_m": [
+      0.0,
+      1081.7,
+      2513.5,
+      4216.4,
+      5672.4,
+      7014.0
+    ],
+    "elevation_profile_m": [
+      187.91,
+      186.61,
+      184.29,
+      182.03,
+      182.25,
+      184.48
+    ],
+    "grade_profile_pct": [
+      -0.094,
+      -0.104,
+      -0.08,
+      -0.047,
+      -0.028,
+      0.016
+    ],
+    "region_version": "milwaukee-v2.0.0",
+    "route_id": "starter_lakefront_spin",
+    "snapped_edge_sequence": [
+      "osm_edge_efdcdd13",
+      "osm_edge_deddbb02",
+      "osm_edge_aed0d746",
+      "osm_edge_ac4f8296",
+      "osm_edge_5bfab02f"
+    ],
+    "source_hash": "starter:7d68e591f3ec8d162cca21d6eb109692e70e1aa946de27f32f15a5cb08517067",
+    "source_type": "starter_route",
+    "surface_profile": [
+      "asphalt",
+      "asphalt",
+      "asphalt",
+      "asphalt",
+      "asphalt"
+    ]
+  },
+  {
+    "distance_m": 19939.9,
+    "distance_profile_m": [
+      0.0,
+      1236.9,
+      3259.3,
+      5495.4,
+      7649.5,
+      9737.6,
+      12078.5,
+      14118.1,
+      16338.5,
+      19939.9
+    ],
+    "elevation_profile_m": [
+      193.09,
+      195.0,
+      192.23,
+      186.23,
+      182.43,
+      182.64,
+      188.48,
+      190.35,
+      187.69,
+      193.09
+    ],
+    "grade_profile_pct": [
+      0.006,
+      -0.063,
+      -0.085,
+      -0.083,
+      -0.064,
+      -0.019,
+      0.011,
+      0.076,
+      0.093,
+      0.041
+    ],
+    "region_version": "milwaukee-v2.0.0",
+    "route_id": "starter_river_loop",
+    "snapped_edge_sequence": [
+      "osm_edge_99ff1e82",
+      "osm_edge_e53e54ef",
+      "osm_edge_9aea8922",
+      "osm_edge_7424f34c",
+      "osm_edge_99efc158",
+      "osm_edge_9407e3e4",
+      "osm_edge_7e3c9849",
+      "osm_edge_bc04f2dc",
+      "osm_edge_dadc7d12"
+    ],
+    "source_hash": "starter:22600aa4a6a207ce45bae4756d8b9c65b1fb2730a0f779f6f3d7eb0203184836",
+    "source_type": "starter_route",
+    "surface_profile": [
+      "asphalt",
+      "asphalt",
+      "asphalt",
+      "asphalt",
+      "asphalt",
+      "asphalt",
+      "asphalt",
+      "asphalt",
+      "asphalt"
+    ]
+  }
+]

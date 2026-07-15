@@ -2,10 +2,10 @@ extends Node3D
 
 const RegionPackLoader = preload("res://addons/procedural_trainer/region_pack_loader.gd")
 
-@export var region_pack_dir := "../../region-data/milwaukee/mke_demo_region_pack"
-@export var active_route_id := "oak_leaf_demo_loop"
-@export var world_scale := 0.2
-@export var elevation_scale := 0.25
+@export var region_pack_dir := "../../region-data/milwaukee/mke_phase2_region_pack"
+@export var active_route_id := "starter_cross_city"
+@export var world_scale := 0.18
+@export var elevation_scale := 0.24
 @export var python_executable := "python3"
 @export var snap_output_dir := ""
 @export var rider_mass_kg := 82.0
@@ -18,9 +18,10 @@ const CADENCE_STEP_RPM := 5.0
 const BRAKE_STEP_PCT := 10.0
 
 var _pack: Dictionary = {}
+var _loader := RegionPackLoader.new()
+var _region_dir := ""
 var _route: Dictionary = {}
 var _route_points: Array[Vector3] = []
-var _route_segment_lengths_world: Array[float] = []
 var _route_distances_m: Array[float] = []
 var _route_total_distance_m := 0.0
 var _route_progress_m := 0.0
@@ -31,10 +32,15 @@ var _brake_pct := 0.0
 var _paused := false
 var _overlay_visible := true
 var _import_status := ""
+var _selected_route_index := 0
+var _loaded_tile_nodes := {}
+var _loaded_region_ids: Array[String] = []
 
 @onready var _terrain_root: Node3D = $TerrainRoot
 @onready var _biome_root: Node3D = $BiomeRoot
 @onready var _road_root: Node3D = $RoadRoot
+@onready var _building_root: Node3D = $BuildingRoot
+@onready var _prop_root: Node3D = $PropRoot
 @onready var _rider: MeshInstance3D = $Rider
 @onready var _camera: Camera3D = $Camera3D
 @onready var _status_label: Label3D = $StatusLabel
@@ -43,6 +49,7 @@ var _import_status := ""
 
 
 func _ready() -> void:
+	_region_dir = _loader.resolve_repo_relative_path(region_pack_dir)
 	_reload_pack_and_route()
 
 
@@ -72,6 +79,12 @@ func _unhandled_input(event: InputEvent) -> void:
 			KEY_TAB:
 				_overlay_visible = not _overlay_visible
 				_hud_label.visible = _overlay_visible
+			KEY_BRACKETLEFT:
+				_select_route_delta(-1)
+			KEY_BRACKETRIGHT:
+				_select_route_delta(1)
+			KEY_1, KEY_2, KEY_3:
+				_select_route_by_number(int(event.keycode - KEY_1))
 
 
 func _process(delta: float) -> void:
@@ -86,115 +99,54 @@ func _process(delta: float) -> void:
 		_current_speed_mps = lerp(_current_speed_mps, target_speed, min(1.0, delta * 1.6))
 		_route_progress_m = min(_route_total_distance_m, _route_progress_m + (_current_speed_mps * delta))
 		_rider.position = _point_at_distance_m(_route_progress_m)
-		_camera.position = _rider.position + Vector3(-8.0, 6.0, -8.0)
+		_camera.position = _rider.position + Vector3(-9.0, 6.5, -9.0)
 		_camera.look_at(_rider.position + Vector3(0.0, 1.0, 0.0))
+		_update_streaming()
 		_set_status("%s | %s | resistance %.2f" % [_pack["manifest"]["region_id"], _route["route_id"], resistance_factor])
 
 	_update_overlay()
 
 
 func _reload_pack_and_route(route_override: Dictionary = {}) -> void:
-	var loader := RegionPackLoader.new()
-	var absolute_region_dir := loader.resolve_repo_relative_path(region_pack_dir)
-	var result := loader.load_region_pack(absolute_region_dir)
+	var result := _loader.load_region_pack(_region_dir)
 	if not result.get("ok", false):
 		_set_status("Failed to load region pack: %s" % result.get("error", "unknown error"))
 		push_error(str(result))
 		return
 
 	_pack = result["pack"]
-	_build_terrain()
-	_build_biomes()
-	_build_roads()
-
 	_route = route_override if not route_override.is_empty() else _find_route(active_route_id)
+	if _route.is_empty() and not _pack.get("routes", []).is_empty():
+		_route = _pack["routes"][0]
+		active_route_id = str(_route["route_id"])
 	if _route.is_empty():
-		_set_status("No route points available for %s" % active_route_id)
+		_set_status("No route points available")
 		return
 
+	_sync_selected_route_index()
+	_clear_loaded_tiles()
 	_build_route()
 	_restart_route()
+
+
+func _sync_selected_route_index() -> void:
+	var catalog: Array = _pack.get("route_catalog", [])
+	for index in range(catalog.size()):
+		if str(catalog[index]["route_id"]) == active_route_id:
+			_selected_route_index = index
+			return
+	_selected_route_index = 0
 
 
 func _restart_route() -> void:
 	_route_progress_m = 0.0
 	_current_speed_mps = 0.0
 	_rider.position = _point_at_distance_m(0.0) if not _route_points.is_empty() else Vector3.ZERO
-
-
-func _build_terrain() -> void:
-	for child in _terrain_root.get_children():
-		child.queue_free()
-
-	for chunk in _pack["scenery"]["terrain_chunks"]:
-		var mesh_instance := MeshInstance3D.new()
-		var plane := PlaneMesh.new()
-		plane.size = Vector2(chunk["size_m"][0] * world_scale, chunk["size_m"][1] * world_scale)
-		mesh_instance.mesh = plane
-		mesh_instance.rotation_degrees.x = -90.0
-		mesh_instance.position = Vector3(
-			(chunk["origin_m"][0] + (chunk["size_m"][0] / 2.0)) * world_scale,
-			_average_grid(chunk["elevation_grid_m"]) * elevation_scale - 0.1,
-			(chunk["origin_m"][1] + (chunk["size_m"][1] / 2.0)) * world_scale
-		)
-		mesh_instance.material_override = _make_material(Color(0.43, 0.49, 0.32), 0.0)
-		_terrain_root.add_child(mesh_instance)
-
-
-func _build_biomes() -> void:
-	for child in _biome_root.get_children():
-		child.queue_free()
-
-	for biome in _pack["scenery"]["biome_patches"]:
-		var bounds := _polygon_bounds(biome["polygon_m"])
-		var mesh_instance := MeshInstance3D.new()
-		var plane := PlaneMesh.new()
-		plane.size = Vector2(bounds.size.x * world_scale, bounds.size.y * world_scale)
-		mesh_instance.mesh = plane
-		mesh_instance.rotation_degrees.x = -90.0
-		mesh_instance.position = Vector3(
-			(bounds.position.x + (bounds.size.x / 2.0)) * world_scale,
-			0.05,
-			(bounds.position.y + (bounds.size.y / 2.0)) * world_scale
-		)
-		mesh_instance.material_override = _make_material(Color.from_string(biome["color_hint"], Color(0.5, 0.7, 0.5)), 0.35)
-		_biome_root.add_child(mesh_instance)
-
-
-func _build_roads() -> void:
-	for child in _road_root.get_children():
-		child.queue_free()
-
-	var road_materials := {
-		"asphalt": _make_material(Color(0.12, 0.12, 0.12), 0.0),
-		"packed_gravel": _make_material(Color(0.42, 0.36, 0.24), 0.0)
-	}
-	var ride_graph_edges: Array = _pack["ride_graph"]["edges"]
-	var road_segment_lookup := {}
-	for segment in _pack["scenery"]["road_segments"]:
-		road_segment_lookup[segment["edge_id"]] = segment
-
-	for edge in ride_graph_edges:
-		var road_style: Dictionary = road_segment_lookup.get(edge["edge_id"], {"width_m": 4.0, "material": "asphalt"})
-		var geometry: Array = edge["geometry_m"]
-		var elevations: Array = edge["elevation_profile_m"]
-		for index in range(geometry.size() - 1):
-			var start_point := _to_world(geometry[index], elevations[index])
-			var end_point := _to_world(geometry[index + 1], elevations[index + 1])
-			var direction := end_point - start_point
-			var road_piece := MeshInstance3D.new()
-			var box := BoxMesh.new()
-			box.size = Vector3(road_style["width_m"] * world_scale, 0.15, direction.length())
-			road_piece.mesh = box
-			road_piece.position = (start_point + end_point) / 2.0
-			road_piece.rotation.y = atan2(direction.x, direction.z)
-			road_piece.material_override = road_materials.get(road_style["material"], road_materials["asphalt"])
-			_road_root.add_child(road_piece)
+	_update_streaming()
 
 
 func _build_route() -> void:
 	_route_points.clear()
-	_route_segment_lengths_world.clear()
 	_route_distances_m.clear()
 	_route_total_distance_m = 0.0
 
@@ -214,17 +166,216 @@ func _build_route() -> void:
 			_route_points.append(_to_world(geometry[index], elevations[index]))
 			_route_distances_m.append(distance_offset + distances[index])
 		distance_offset += edge["length_m"]
-
-	for index in range(_route_points.size() - 1):
-		_route_segment_lengths_world.append(_route_points[index].distance_to(_route_points[index + 1]))
 	_route_total_distance_m = float(_route["distance_m"])
 
 
+func _update_streaming() -> void:
+	if _pack.get("pack_version", "phase1") != "phase2":
+		_build_phase1_world()
+		return
+
+	var point_m := _route_point_m_at_distance(_route_progress_m)
+	var current_region_id := _stream_region_id_for_point(point_m)
+	if current_region_id == "":
+		return
+	var target_region_ids: Array[String] = [current_region_id]
+	var region_index: Dictionary = _pack.get("streaming_region_index", {})
+	var current_region: Dictionary = region_index.get(current_region_id, {})
+	for neighbor_id in current_region.get("neighbor_region_ids", []):
+		target_region_ids.append(str(neighbor_id))
+	target_region_ids.sort()
+	if target_region_ids == _loaded_region_ids:
+		return
+
+	var target_tile_ids := {}
+	for region_id in target_region_ids:
+		var stream_region: Dictionary = region_index.get(region_id, {})
+		for tile_id in stream_region.get("tile_ids", []):
+			target_tile_ids[str(tile_id)] = true
+
+	for tile_id in _loaded_tile_nodes.keys():
+		if not target_tile_ids.has(tile_id):
+			_unload_tile(str(tile_id))
+
+	for tile_id in target_tile_ids.keys():
+		if not _loaded_tile_nodes.has(tile_id):
+			_load_tile(str(tile_id))
+
+	_loaded_region_ids = target_region_ids
+
+
+func _build_phase1_world() -> void:
+	if not _loaded_tile_nodes.is_empty():
+		return
+	var tile_id := "phase1"
+	_loaded_tile_nodes[tile_id] = true
+	_build_tile_visuals({"tile_id": tile_id}, {"ride_graph": _pack["ride_graph"], "scenery": _pack["scenery"]})
+
+
+func _load_tile(tile_id: String) -> void:
+	var tile_info: Dictionary = _pack["tile_index"].get(tile_id, {})
+	if tile_info.is_empty():
+		return
+	var result: Dictionary = _loader.load_tile_pack(_region_dir, str(tile_info["manifest_asset"]))
+	if not result.get("ok", false):
+		_import_status = "Tile load failed: %s" % tile_id
+		return
+	_loaded_tile_nodes[tile_id] = true
+	_build_tile_visuals(tile_info, result["tile"])
+
+
+func _unload_tile(tile_id: String) -> void:
+	var roots: Array[Node3D] = [_terrain_root, _biome_root, _road_root, _building_root, _prop_root]
+	for root in roots:
+		for child in root.get_children():
+			if child.has_meta("tile_id") and str(child.get_meta("tile_id")) == tile_id:
+				child.queue_free()
+	_loaded_tile_nodes.erase(tile_id)
+
+
+func _clear_loaded_tiles() -> void:
+	for tile_id in _loaded_tile_nodes.keys():
+		_unload_tile(str(tile_id))
+	_loaded_region_ids.clear()
+
+
+func _build_tile_visuals(tile_info: Dictionary, tile_pack: Dictionary) -> void:
+	_build_terrain(tile_info, tile_pack["scenery"])
+	_build_biomes(tile_info, tile_pack["scenery"])
+	_build_roads(tile_info, tile_pack["ride_graph"], tile_pack["scenery"])
+	_build_buildings(tile_info, tile_pack["scenery"])
+	_build_props(tile_info, tile_pack["scenery"])
+
+
+func _build_terrain(tile_info: Dictionary, scenery: Dictionary) -> void:
+	for chunk in scenery["terrain_chunks"]:
+		var mesh_instance := MeshInstance3D.new()
+		var plane := PlaneMesh.new()
+		plane.size = Vector2(chunk["size_m"][0] * world_scale, chunk["size_m"][1] * world_scale)
+		mesh_instance.mesh = plane
+		mesh_instance.rotation_degrees.x = -90.0
+		mesh_instance.position = Vector3(
+			(chunk["origin_m"][0] + (chunk["size_m"][0] / 2.0)) * world_scale,
+			_average_grid(chunk["elevation_grid_m"]) * elevation_scale - 0.1,
+			(chunk["origin_m"][1] + (chunk["size_m"][1] / 2.0)) * world_scale
+		)
+		mesh_instance.material_override = _make_material(Color(0.42, 0.49, 0.33), 0.0)
+		mesh_instance.set_meta("tile_id", tile_info["tile_id"])
+		_terrain_root.add_child(mesh_instance)
+
+
+func _build_biomes(tile_info: Dictionary, scenery: Dictionary) -> void:
+	for biome in scenery.get("biome_patches", []):
+		var bounds := _polygon_bounds(biome["polygon_m"])
+		var mesh_instance := MeshInstance3D.new()
+		var plane := PlaneMesh.new()
+		plane.size = Vector2(bounds.size.x * world_scale, bounds.size.y * world_scale)
+		mesh_instance.mesh = plane
+		mesh_instance.rotation_degrees.x = -90.0
+		mesh_instance.position = Vector3(
+			(bounds.position.x + (bounds.size.x / 2.0)) * world_scale,
+			0.08,
+			(bounds.position.y + (bounds.size.y / 2.0)) * world_scale
+		)
+		mesh_instance.material_override = _make_material(Color.from_string(biome["color_hint"], Color(0.5, 0.7, 0.5)), 0.32)
+		mesh_instance.set_meta("tile_id", tile_info["tile_id"])
+		_biome_root.add_child(mesh_instance)
+
+
+func _build_roads(tile_info: Dictionary, ride_graph: Dictionary, scenery: Dictionary) -> void:
+	var road_materials := {
+		"asphalt": _make_material(Color(0.12, 0.12, 0.12), 0.0),
+		"packed_gravel": _make_material(Color(0.42, 0.36, 0.24), 0.0)
+	}
+	var road_segment_lookup := {}
+	for segment in scenery["road_segments"]:
+		road_segment_lookup[segment["edge_id"]] = segment
+
+	for edge in ride_graph["edges"]:
+		var road_style: Dictionary = road_segment_lookup.get(edge["edge_id"], {"width_m": 4.0, "material": "asphalt"})
+		var geometry: Array = edge["geometry_m"]
+		var elevations: Array = edge["elevation_profile_m"]
+		for index in range(geometry.size() - 1):
+			var start_point := _to_world(geometry[index], elevations[index])
+			var end_point := _to_world(geometry[index + 1], elevations[index + 1])
+			var direction := end_point - start_point
+			var road_piece := MeshInstance3D.new()
+			var box := BoxMesh.new()
+			box.size = Vector3(float(road_style["width_m"]) * world_scale, 0.12, direction.length())
+			road_piece.mesh = box
+			road_piece.position = (start_point + end_point) / 2.0
+			road_piece.rotation.y = atan2(direction.x, direction.z)
+			road_piece.position.y += 0.04 if str(road_style.get("structure", "surface")) == "surface" else 0.25
+			road_piece.material_override = road_materials.get(str(road_style["material"]), road_materials["asphalt"])
+			road_piece.set_meta("tile_id", tile_info["tile_id"])
+			_road_root.add_child(road_piece)
+
+
+func _build_buildings(tile_info: Dictionary, scenery: Dictionary) -> void:
+	for building in scenery.get("buildings", []):
+		var bounds := _polygon_bounds(building["footprint_m"])
+		var mesh_instance := MeshInstance3D.new()
+		var box := BoxMesh.new()
+		box.size = Vector3(bounds.size.x * world_scale, float(building["height_m"]) * elevation_scale, bounds.size.y * world_scale)
+		mesh_instance.mesh = box
+		mesh_instance.position = Vector3(
+			(bounds.position.x + (bounds.size.x / 2.0)) * world_scale,
+			(float(building["height_m"]) * elevation_scale) / 2.0,
+			(bounds.position.y + (bounds.size.y / 2.0)) * world_scale
+		)
+		mesh_instance.material_override = _make_material(Color(0.77, 0.69, 0.58), 0.0)
+		mesh_instance.set_meta("tile_id", tile_info["tile_id"])
+		_building_root.add_child(mesh_instance)
+
+
+func _build_props(tile_info: Dictionary, scenery: Dictionary) -> void:
+	for mask in scenery.get("prop_masks", []):
+		var bounds := _polygon_bounds(mask["polygon_m"])
+		var mesh_instance := MeshInstance3D.new()
+		var cylinder := CylinderMesh.new()
+		cylinder.top_radius = 0.18
+		cylinder.bottom_radius = 0.3
+		cylinder.height = 1.6 + float(mask.get("density", 0.5))
+		mesh_instance.mesh = cylinder
+		mesh_instance.position = Vector3(
+			(bounds.position.x + (bounds.size.x / 2.0)) * world_scale,
+			cylinder.height / 2.0,
+			(bounds.position.y + (bounds.size.y / 2.0)) * world_scale
+		)
+		mesh_instance.material_override = _make_material(Color(0.22, 0.47, 0.26), 0.0)
+		mesh_instance.set_meta("tile_id", tile_info["tile_id"])
+		_prop_root.add_child(mesh_instance)
+
+
 func _find_route(route_id: String) -> Dictionary:
-	for route in _pack["routes"]:
-		if route["route_id"] == route_id:
+	for route in _pack.get("routes", []):
+		if str(route["route_id"]) == route_id:
 			return route
 	return {}
+
+
+func _select_route_delta(delta: int) -> void:
+	var catalog: Array = _pack.get("route_catalog", [])
+	if catalog.is_empty():
+		return
+	_selected_route_index = posmod(_selected_route_index + delta, catalog.size())
+	_select_route_by_index(_selected_route_index)
+
+
+func _select_route_by_number(index: int) -> void:
+	var catalog: Array = _pack.get("route_catalog", [])
+	if index >= 0 and index < catalog.size():
+		_select_route_by_index(index)
+
+
+func _select_route_by_index(index: int) -> void:
+	var catalog: Array = _pack.get("route_catalog", [])
+	if catalog.is_empty():
+		return
+	_selected_route_index = index
+	active_route_id = str(catalog[index]["route_id"])
+	_import_status = "Selected %s" % catalog[index]["display_name"]
+	_reload_pack_and_route()
 
 
 func _point_at_distance_m(distance_along_route_m: float) -> Vector3:
@@ -238,6 +389,20 @@ func _point_at_distance_m(distance_along_route_m: float) -> Vector3:
 			var ratio: float = clamp((distance_along_route_m - start_distance) / span, 0.0, 1.0)
 			return _route_points[index].lerp(_route_points[index + 1], ratio)
 	return _route_points[-1]
+
+
+func _route_point_m_at_distance(distance_along_route_m: float) -> Vector2:
+	var world_point := _point_at_distance_m(distance_along_route_m)
+	return Vector2(world_point.x / world_scale, world_point.z / world_scale)
+
+
+func _stream_region_id_for_point(point_m: Vector2) -> String:
+	for region in _pack.get("streaming_regions", []):
+		var origin: Array = region["origin_m"]
+		var size: Array = region["size_m"]
+		if point_m.x >= float(origin[0]) and point_m.x < float(origin[0]) + float(size[0]) and point_m.y >= float(origin[1]) and point_m.y < float(origin[1]) + float(size[1]):
+			return str(region["stream_region_id"])
+	return ""
 
 
 func _grade_at_distance(distance_along_route_m: float) -> float:
@@ -261,12 +426,9 @@ func _edge_status_at_distance(distance_along_route_m: float) -> Dictionary:
 		var edge: Dictionary = edge_lookup[edge_id]
 		var next_accumulated: float = accumulated + float(edge["length_m"])
 		if distance_along_route_m <= next_accumulated:
-			return {"edge_id": edge_id, "segment_index": edge_index}
+			return {"edge_id": edge_id, "segment_index": edge_index, "stream_region_id": str(edge.get("stream_region_id", "phase1"))}
 		accumulated = next_accumulated
-	return {
-		"edge_id": str(_route["snapped_edge_sequence"][-1]) if not _route["snapped_edge_sequence"].is_empty() else "n/a",
-		"segment_index": max(0, _route["snapped_edge_sequence"].size() - 1)
-	}
+	return {"edge_id": "n/a", "segment_index": 0, "stream_region_id": "n/a"}
 
 
 func _resistance_factor(grade_pct: float) -> float:
@@ -286,9 +448,7 @@ func _target_speed_mps(grade_pct: float) -> float:
 
 
 func _on_import_dialog_file_selected(path: String) -> void:
-	var loader := RegionPackLoader.new()
-	var absolute_region_dir := loader.resolve_repo_relative_path(region_pack_dir)
-	var repo_root := absolute_region_dir.get_base_dir().get_base_dir().get_base_dir()
+	var repo_root := _region_dir.get_base_dir().get_base_dir().get_base_dir()
 	var cli_path := repo_root.path_join("geo-pipeline/run_geo_pipeline_cli.py")
 	var output_dir := snap_output_dir
 	if output_dir == "":
@@ -298,14 +458,7 @@ func _on_import_dialog_file_selected(path: String) -> void:
 	var output: Array = []
 	var exit_code := OS.execute(
 		python_executable,
-		PackedStringArray([
-			cli_path,
-			"snap-gpx",
-			absolute_region_dir,
-			path,
-			"--output",
-			output_path
-		]),
+		PackedStringArray([cli_path, "snap-gpx", _region_dir, path, "--output", output_path]),
 		output,
 		true
 	)
@@ -324,7 +477,6 @@ func _on_import_dialog_file_selected(path: String) -> void:
 		_import_status = "GPX snap output was not a route definition"
 		_set_status(_import_status)
 		return
-
 	_import_status = "Imported %s" % path.get_file()
 	active_route_id = str(parsed["route_id"])
 	_reload_pack_and_route(parsed)
@@ -373,8 +525,14 @@ func _update_overlay() -> void:
 	var edge_status := _edge_status_at_distance(_route_progress_m)
 	var grade_pct := _grade_at_distance(_route_progress_m)
 	var resistance_factor := _resistance_factor(grade_pct)
+	var route_label: String = str(_route.get("route_id", active_route_id))
+	var available_routes: Array = _pack.get("route_catalog", [])
+	var selected_label := route_label
+	if _selected_route_index < available_routes.size():
+		selected_label = str(available_routes[_selected_route_index]["display_name"])
 	_hud_label.text = "\n".join([
-		"route: %s" % str(_route.get("route_id", active_route_id)),
+		"route: %s" % route_label,
+		"selected: %s" % selected_label,
 		"progress: %.1f / %.1f m" % [_route_progress_m, _route_total_distance_m],
 		"grade: %.2f%%" % grade_pct,
 		"speed: %.2f m/s" % _current_speed_mps,
@@ -382,8 +540,9 @@ func _update_overlay() -> void:
 		"cadence: %.0f rpm" % _simulated_cadence_rpm,
 		"brake: %.0f%%" % _brake_pct,
 		"resistance: %.2f" % resistance_factor,
-		"edge: %s / segment %d" % [str(edge_status["edge_id"]), int(edge_status["segment_index"])],
-		"keys: W/S power  A/D brake  Q/E cadence  Space clear brake",
+		"stream region: %s" % str(edge_status.get("stream_region_id", "n/a")),
+		"loaded regions: %s" % ", ".join(_loaded_region_ids),
+		"keys: [ ] or 1/2/3 routes  W/S power  A/D brake  Q/E cadence",
 		"R restart  P pause  I import GPX  Tab overlay",
 		_import_status
 	]).strip_edges()

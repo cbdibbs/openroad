@@ -1,0 +1,87 @@
+{
+  "bbox_wgs84": [
+    -88.06,
+    42.98,
+    -87.88,
+    43.12
+  ],
+  "corridor_id": "milwaukee_city_core_trails",
+  "edges": [
+    {
+      "bike_access": "designated",
+      "distance_profile_m": [
+        0.0,
+        800.0
+      ],
+      "edge_id": "osm_edge_226af3a4",
+      "elevation_profile_m": [
+        189.15,
+        187.84
+      ],
+      "end_node_id": "milwaukee_phase2_node_8579a5a854",
+      "geometry_m": [
+        [
+          5600.0,
+          800.0
+        ],
+        [
+          6400.0,
+          800.0
+        ]
+      ],
+      "geometry_wgs84": [
+        [
+          -87.934,
+          42.994
+        ],
+        [
+          -87.916,
+          42.994
+        ]
+      ],
+      "layer": "0",
+      "length_m": 800.0,
+      "osm_way_id": "way/2058",
+      "start_node_id": "milwaukee_phase2_node_91cfbe78e2",
+      "stream_region_id": "stream_x01_y00",
+      "structure": "surface",
+      "surface": "asphalt",
+      "tile_id": "tile_x06_y00"
+    }
+  ],
+  "graph_profile": "phase2-city-v1",
+  "nodes": [
+    {
+      "junction_kind": "junction",
+      "layer": "0",
+      "node_id": "milwaukee_phase2_node_8579a5a854",
+      "point_m": [
+        6400.0,
+        800.0
+      ],
+      "point_wgs84": [
+        -87.916,
+        42.994
+      ],
+      "stream_region_id": "stream_x01_y00",
+      "tile_id": "tile_x06_y00"
+    },
+    {
+      "junction_kind": "junction",
+      "layer": "0",
+      "node_id": "milwaukee_phase2_node_91cfbe78e2",
+      "point_m": [
+        5600.0,
+        800.0
+      ],
+      "point_wgs84": [
+        -87.934,
+        42.994
+      ],
+      "stream_region_id": "stream_x01_y00",
+      "tile_id": "tile_x05_y00"
+    }
+  ],
+  "region_id": "milwaukee_phase2",
+  "region_version": "milwaukee-v2.0.0"
+}

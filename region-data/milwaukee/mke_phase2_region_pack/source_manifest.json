@@ -1,0 +1,65 @@
+{
+  "artifacts": [
+    {
+      "attribution": "Copyright OpenStreetMap contributors",
+      "checksum_sha256": "65df10e6977e9fa54befabbdf2541ed7ed942da2a6ee2ece3bd8dd088d136576",
+      "fetch_url": "https://download.geofabrik.de/north-america/us/wisconsin-latest.osm.pbf",
+      "license": "ODbL 1.0",
+      "local_filename": "work/raw/milwaukee_phase2/openstreetmap/wisconsin-latest.osm.pbf.receipt.json",
+      "name": "OpenStreetMap",
+      "optional": false,
+      "product_id": "geofabrik-wisconsin-latest",
+      "retrieved_at": "2026-07-14T00:00:00Z",
+      "role": "ride_graph",
+      "source_id": "openstreetmap",
+      "version": "planet extract 2026-07-01"
+    },
+    {
+      "attribution": "Source: U.S. Geological Survey",
+      "checksum_sha256": "0e69ae38269d1b134130ba5564d60214a8b5edb47b8032237c1ed27dec093401",
+      "fetch_url": "https://tnmaccess.nationalmap.gov/api/v1/products?datasets=Digital%20Elevation%20Model%20(DEM)%201%20meter",
+      "license": "USGS public use guidance",
+      "local_filename": "work/raw/milwaukee_phase2/usgs_3dep/milwaukee-3dep-dem.receipt.json",
+      "name": "USGS 3DEP",
+      "optional": false,
+      "product_id": "3dep-milwaukee-phase2-1m",
+      "retrieved_at": "2026-07-14T00:00:00Z",
+      "role": "terrain_dem",
+      "source_id": "usgs_3dep",
+      "version": "1m DEM 2025-11-15"
+    },
+    {
+      "attribution": "USDA Farm Production and Conservation - Aerial Photography Field Office",
+      "checksum_sha256": "5fb127a8d4e536159e0c7141d1cab5fa3c1ec3439e0dd0acec51c23af174e251",
+      "fetch_url": "https://tnmaccess.nationalmap.gov/api/v1/products?datasets=USDA%20National%20Agriculture%20Imagery%20Program%20(NAIP)",
+      "license": "public use with requested credit",
+      "local_filename": "work/raw/milwaukee_phase2/usda_naip/milwaukee-naip.receipt.json",
+      "name": "USDA NAIP",
+      "optional": true,
+      "product_id": "naip-milwaukee-phase2-2024",
+      "retrieved_at": "2026-07-14T00:00:00Z",
+      "role": "style_hints",
+      "source_id": "usda_naip",
+      "version": "2024 collection"
+    },
+    {
+      "attribution": "Contains modified Copernicus WorldCover data (2021) processed by ESA WorldCover consortium",
+      "checksum_sha256": "53ca46dbe9eef55cd88e0b08e5b182f323a15b5360a4015723f47893424f3e33",
+      "fetch_url": "https://esa-worldcover.s3.eu-central-1.amazonaws.com/v200/2021/map/ESA_WorldCover_10m_2021_v200_N42W090_Map.tif",
+      "license": "CC BY 4.0",
+      "local_filename": "work/raw/milwaukee_phase2/esa_worldcover/milwaukee-worldcover.receipt.json",
+      "name": "ESA WorldCover",
+      "optional": false,
+      "product_id": "ESA_WorldCover_10m_2021_v200_N42W090_Map",
+      "retrieved_at": "2026-07-14T00:00:00Z",
+      "role": "biome_masks",
+      "source_id": "esa_worldcover",
+      "version": "v200"
+    }
+  ],
+  "corridor_id": "milwaukee_city_core_trails",
+  "generated_at": "2026-07-14T00:00:00Z",
+  "region_id": "milwaukee_phase2",
+  "region_version": "milwaukee-v2.0.0",
+  "schema_version": "phase2-source-manifest-v1"
+}

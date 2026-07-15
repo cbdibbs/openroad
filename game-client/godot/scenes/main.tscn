@@ -23,6 +23,10 @@ light_energy = 2.0
 
 [node name="RoadRoot" type="Node3D" parent="."]
 
+[node name="BuildingRoot" type="Node3D" parent="."]
+
+[node name="PropRoot" type="Node3D" parent="."]
+
 [node name="Rider" type="MeshInstance3D" parent="."]
 mesh = SubResource("SphereMesh_rider")
 position = Vector3(0, 1, 0)

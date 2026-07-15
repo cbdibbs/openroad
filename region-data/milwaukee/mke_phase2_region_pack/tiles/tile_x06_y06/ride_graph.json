@@ -1,0 +1,158 @@
+{
+  "bbox_wgs84": [
+    -88.06,
+    42.98,
+    -87.88,
+    43.12
+  ],
+  "corridor_id": "milwaukee_city_core_trails",
+  "edges": [
+    {
+      "bike_access": "designated",
+      "distance_profile_m": [
+        0.0,
+        2088.1
+      ],
+      "edge_id": "osm_edge_99efc158",
+      "elevation_profile_m": [
+        182.43,
+        182.64
+      ],
+      "end_node_id": "milwaukee_phase2_node_c936cf9238",
+      "geometry_m": [
+        [
+          7000.0,
+          4200.0
+        ],
+        [
+          6400.0,
+          6200.0
+        ]
+      ],
+      "geometry_wgs84": [
+        [
+          -87.9025,
+          43.0535
+        ],
+        [
+          -87.916,
+          43.0885
+        ]
+      ],
+      "layer": "0",
+      "length_m": 2088.1,
+      "osm_way_id": "way/river-05",
+      "start_node_id": "milwaukee_phase2_node_9f35ac15f9",
+      "stream_region_id": "stream_x01_y01",
+      "structure": "surface",
+      "surface": "asphalt",
+      "tile_id": "tile_x06_y06"
+    },
+    {
+      "bike_access": "designated",
+      "distance_profile_m": [
+        0.0,
+        1456.0
+      ],
+      "edge_id": "osm_edge_ac4f8296",
+      "elevation_profile_m": [
+        182.03,
+        182.25
+      ],
+      "end_node_id": "milwaukee_phase2_node_cffbc56655",
+      "geometry_m": [
+        [
+          7200.0,
+          4700.0
+        ],
+        [
+          6800.0,
+          6100.0
+        ]
+      ],
+      "geometry_wgs84": [
+        [
+          -87.898,
+          43.06225
+        ],
+        [
+          -87.907,
+          43.08675
+        ]
+      ],
+      "layer": "0",
+      "length_m": 1456.0,
+      "osm_way_id": "way/lake-04",
+      "start_node_id": "milwaukee_phase2_node_8c722f4d1f",
+      "stream_region_id": "stream_x01_y01",
+      "structure": "surface",
+      "surface": "asphalt",
+      "tile_id": "tile_x06_y06"
+    }
+  ],
+  "graph_profile": "phase2-city-v1",
+  "nodes": [
+    {
+      "junction_kind": "junction",
+      "layer": "0",
+      "node_id": "milwaukee_phase2_node_8c722f4d1f",
+      "point_m": [
+        7200.0,
+        4700.0
+      ],
+      "point_wgs84": [
+        -87.898,
+        43.06225
+      ],
+      "stream_region_id": "stream_x01_y01",
+      "tile_id": "tile_x07_y04"
+    },
+    {
+      "junction_kind": "junction",
+      "layer": "0",
+      "node_id": "milwaukee_phase2_node_9f35ac15f9",
+      "point_m": [
+        7000.0,
+        4200.0
+      ],
+      "point_wgs84": [
+        -87.9025,
+        43.0535
+      ],
+      "stream_region_id": "stream_x01_y01",
+      "tile_id": "tile_x07_y04"
+    },
+    {
+      "junction_kind": "junction",
+      "layer": "0",
+      "node_id": "milwaukee_phase2_node_c936cf9238",
+      "point_m": [
+        6400.0,
+        6200.0
+      ],
+      "point_wgs84": [
+        -87.916,
+        43.0885
+      ],
+      "stream_region_id": "stream_x01_y01",
+      "tile_id": "tile_x06_y06"
+    },
+    {
+      "junction_kind": "junction",
+      "layer": "0",
+      "node_id": "milwaukee_phase2_node_cffbc56655",
+      "point_m": [
+        6800.0,
+        6100.0
+      ],
+      "point_wgs84": [
+        -87.907,
+        43.08675
+      ],
+      "stream_region_id": "stream_x01_y01",
+      "tile_id": "tile_x06_y06"
+    }
+  ],
+  "region_id": "milwaukee_phase2",
+  "region_version": "milwaukee-v2.0.0"
+}

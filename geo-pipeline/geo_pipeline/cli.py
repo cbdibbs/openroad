@@ -15,6 +15,11 @@ from geo_pipeline.phase1 import (
     package_region,
     prepare_sources,
 )
+from geo_pipeline.phase2 import (
+    DEFAULT_REGION_CONFIG as DEFAULT_PHASE2_REGION_CONFIG,
+    build_phase2_region,
+    route_from_gpx_phase2,
+)
 from geo_pipeline.sample_data import (
     DEFAULT_GPX_PATH,
     DEFAULT_REGION_DIR,
@@ -49,7 +54,8 @@ def _build_sample_region(path: Path, gpx_path: Path) -> int:
 
 def _snap_gpx(region_path: Path, gpx_path: Path, output_path: Path | None) -> int:
     region = validate_region_pack_directory(region_path)
-    route = route_from_gpx(gpx_path, region["ride_graph"])
+    manifest = region["manifest"]
+    route = route_from_gpx_phase2(gpx_path, region["ride_graph"]) if manifest["schema_version"].startswith("phase2-") else route_from_gpx(gpx_path, region["ride_graph"])
     encoded = json.dumps(route, indent=2, sort_keys=True)
     if output_path is None:
         print(encoded)
@@ -101,6 +107,14 @@ def _build_phase1_region(region_config: str) -> int:
     return 0
 
 
+def _build_phase2_region(region_config: str) -> int:
+    region = build_phase2_region(region_config)
+    print(f"built phase2 region {region_config}")
+    print(f"region_version={region['root_manifest']['region_version']}")
+    print(f"starter_routes={len(region['route_catalog'])}")
+    return 0
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(prog="procedural-trainer")
     subparsers = parser.add_subparsers(dest="command", required=True)
@@ -125,6 +139,9 @@ def build_parser() -> argparse.ArgumentParser:
 
     phase1_parser = subparsers.add_parser("build-phase1-region", help="run the full Phase 1 region build")
     phase1_parser.add_argument("region_config", nargs="?", default=DEFAULT_REGION_CONFIG)
+
+    phase2_parser = subparsers.add_parser("build-phase2-region", help="run the full Phase 2 region build")
+    phase2_parser.add_argument("region_config", nargs="?", default=DEFAULT_PHASE2_REGION_CONFIG)
 
     hash_json = subparsers.add_parser("hash-json", help="hash a JSON file canonically")
     hash_json.add_argument("path", type=Path)
@@ -164,6 +181,8 @@ def main() -> int:
             return _package_region(args.region_config)
         if args.command == "build-phase1-region":
             return _build_phase1_region(args.region_config)
+        if args.command == "build-phase2-region":
+            return _build_phase2_region(args.region_config)
         if args.command == "hash-json":
             return _hash_file(args.path)
         if args.command == "build-sample-region":

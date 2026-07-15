@@ -1,0 +1,53 @@
+{
+  "build_date": "2026-07-14",
+  "notices": [
+    "This Milwaukee Phase 2 pack contains a deterministic, streamed region bake for local open-source gameplay validation.",
+    "ODbL-sensitive ride graph outputs retain attribution and provenance requirements on redistribution.",
+    "Optional preprocessing sources may degrade scenery richness, but route graph and gameplay remain valid."
+  ],
+  "region_hash": "811fdc9e70be51372e689dbb1ca8a972682c5da27e57583972a910f72da86c83",
+  "region_id": "milwaukee_phase2",
+  "region_version": "milwaukee-v2.0.0",
+  "sources": [
+    {
+      "attribution": "Copyright OpenStreetMap contributors",
+      "license": "ODbL 1.0",
+      "name": "OpenStreetMap",
+      "source_id": "openstreetmap",
+      "used_for": [
+        "ride_graph"
+      ],
+      "version": "planet extract 2026-07-01"
+    },
+    {
+      "attribution": "Source: U.S. Geological Survey",
+      "license": "USGS public use guidance",
+      "name": "USGS 3DEP",
+      "source_id": "usgs_3dep",
+      "used_for": [
+        "terrain_dem"
+      ],
+      "version": "1m DEM 2025-11-15"
+    },
+    {
+      "attribution": "USDA Farm Production and Conservation - Aerial Photography Field Office",
+      "license": "public use with requested credit",
+      "name": "USDA NAIP",
+      "source_id": "usda_naip",
+      "used_for": [
+        "style_hints"
+      ],
+      "version": "2024 collection"
+    },
+    {
+      "attribution": "Contains modified Copernicus WorldCover data (2021) processed by ESA WorldCover consortium",
+      "license": "CC BY 4.0",
+      "name": "ESA WorldCover",
+      "source_id": "esa_worldcover",
+      "used_for": [
+        "biome_masks"
+      ],
+      "version": "v200"
+    }
+  ]
+}
