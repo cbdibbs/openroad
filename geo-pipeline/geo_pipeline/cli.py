@@ -89,7 +89,7 @@ def _build_ride_graph(region_config: str) -> int:
 def _build_scenery(region_config: str) -> int:
     scenery = build_scenery(region_config)
     print(f"built scenery for {region_config}")
-    print(f"road_segments={len(scenery['road_segments'])}")
+    print(f"tiles={len(scenery['tiles'])}")
     return 0
 
 

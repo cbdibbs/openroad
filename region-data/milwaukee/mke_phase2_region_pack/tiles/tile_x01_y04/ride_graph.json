@@ -1,87 +1,16 @@
 {
+  "aoi_hash": "3b2c7db0deb114c79323c57f873ac8394bff7dedb0e7fc4b56cdc595527716bd",
+  "aoi_id": "milwaukee_city_core_trails_v1",
   "bbox_wgs84": [
-    -88.06,
-    42.98,
-    -87.88,
-    43.12
+    -88.011,
+    43.024,
+    -87.888,
+    43.063
   ],
   "corridor_id": "milwaukee_city_core_trails",
-  "edges": [
-    {
-      "bike_access": "designated",
-      "distance_profile_m": [
-        0.0,
-        800.0
-      ],
-      "edge_id": "osm_edge_c1cb5231",
-      "elevation_profile_m": [
-        188.18,
-        189.71
-      ],
-      "end_node_id": "milwaukee_phase2_node_ab2eb45ef0",
-      "geometry_m": [
-        [
-          800.0,
-          4000.0
-        ],
-        [
-          1600.0,
-          4000.0
-        ]
-      ],
-      "geometry_wgs84": [
-        [
-          -88.048,
-          43.05
-        ],
-        [
-          -88.036,
-          43.05
-        ]
-      ],
-      "layer": "0",
-      "length_m": 800.0,
-      "osm_way_id": "way/2102",
-      "start_node_id": "milwaukee_phase2_node_e46e19d76d",
-      "stream_region_id": "stream_x00_y01",
-      "structure": "surface",
-      "surface": "packed_gravel",
-      "tile_id": "tile_x01_y04"
-    }
-  ],
+  "edges": [],
   "graph_profile": "phase2-city-v1",
-  "nodes": [
-    {
-      "junction_kind": "junction",
-      "layer": "0",
-      "node_id": "milwaukee_phase2_node_ab2eb45ef0",
-      "point_m": [
-        1600.0,
-        4000.0
-      ],
-      "point_wgs84": [
-        -88.036,
-        43.05
-      ],
-      "stream_region_id": "stream_x00_y01",
-      "tile_id": "tile_x01_y04"
-    },
-    {
-      "junction_kind": "junction",
-      "layer": "0",
-      "node_id": "milwaukee_phase2_node_e46e19d76d",
-      "point_m": [
-        800.0,
-        4000.0
-      ],
-      "point_wgs84": [
-        -88.048,
-        43.05
-      ],
-      "stream_region_id": "stream_x00_y01",
-      "tile_id": "tile_x00_y04"
-    }
-  ],
+  "nodes": [],
   "region_id": "milwaukee_phase2",
   "region_version": "milwaukee-v2.0.0"
 }

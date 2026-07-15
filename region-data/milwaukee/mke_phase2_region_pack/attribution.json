@@ -1,14 +1,24 @@
 {
   "build_date": "2026-07-14",
   "notices": [
-    "This Milwaukee Phase 2 pack contains a deterministic, streamed region bake for local open-source gameplay validation.",
-    "ODbL-sensitive ride graph outputs retain attribution and provenance requirements on redistribution.",
-    "Optional preprocessing sources may degrade scenery richness, but route graph and gameplay remain valid."
+    "This Milwaukee Phase 2 pack is baked from documented staged source fixtures and retains explicit rebuild provenance.",
+    "ODbL-sensitive ride graph outputs must retain attribution and provenance on redistribution.",
+    "NAIP remains an optional scenery enrichment source and does not affect the canonical ride graph."
   ],
-  "region_hash": "b89d5f79d083114177bba06c6de630db582b192ade017a84fadf6853b874d132",
+  "region_hash": "421c23c94e5a49304136b9ba5961ec38e4b968322760cdb8c719ca3a58896783",
   "region_id": "milwaukee_phase2",
   "region_version": "milwaukee-v2.0.0",
   "sources": [
+    {
+      "attribution": "Contains modified Copernicus WorldCover data (2021) processed by ESA WorldCover consortium",
+      "license": "CC BY 4.0",
+      "name": "ESA WorldCover",
+      "source_id": "esa_worldcover",
+      "used_for": [
+        "biome_masks"
+      ],
+      "version": "v200"
+    },
     {
       "attribution": "Copyright OpenStreetMap contributors",
       "license": "ODbL 1.0",
@@ -18,16 +28,6 @@
         "ride_graph"
       ],
       "version": "planet extract 2026-07-01"
-    },
-    {
-      "attribution": "Source: U.S. Geological Survey",
-      "license": "USGS public use guidance",
-      "name": "USGS 3DEP",
-      "source_id": "usgs_3dep",
-      "used_for": [
-        "terrain_dem"
-      ],
-      "version": "1m DEM 2025-11-15"
     },
     {
       "attribution": "USDA Farm Production and Conservation - Aerial Photography Field Office",
@@ -40,14 +40,14 @@
       "version": "2024 collection"
     },
     {
-      "attribution": "Contains modified Copernicus WorldCover data (2021) processed by ESA WorldCover consortium",
-      "license": "CC BY 4.0",
-      "name": "ESA WorldCover",
-      "source_id": "esa_worldcover",
+      "attribution": "Source: U.S. Geological Survey",
+      "license": "USGS public use guidance",
+      "name": "USGS 3DEP",
+      "source_id": "usgs_3dep",
       "used_for": [
-        "biome_masks"
+        "terrain_dem"
       ],
-      "version": "v200"
+      "version": "1m DEM 2025-11-15"
     }
   ]
 }

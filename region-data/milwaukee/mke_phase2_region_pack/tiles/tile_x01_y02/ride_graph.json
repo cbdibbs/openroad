@@ -1,9 +1,11 @@
 {
+  "aoi_hash": "3b2c7db0deb114c79323c57f873ac8394bff7dedb0e7fc4b56cdc595527716bd",
+  "aoi_id": "milwaukee_city_core_trails_v1",
   "bbox_wgs84": [
-    -88.06,
-    42.98,
-    -87.88,
-    43.12
+    -88.011,
+    43.024,
+    -87.888,
+    43.063
   ],
   "corridor_id": "milwaukee_city_core_trails",
   "edges": [
@@ -11,72 +13,746 @@
       "bike_access": "designated",
       "distance_profile_m": [
         0.0,
-        800.0
+        187.6
       ],
-      "edge_id": "osm_edge_62d6e234",
+      "edge_id": "osm_edge_18c4df59",
       "elevation_profile_m": [
-        190.81,
-        192.34
+        202.89,
+        202.49
       ],
-      "end_node_id": "milwaukee_phase2_node_c839bd23cc",
+      "end_node_id": "milwaukee_phase2_node_052f55141f",
       "geometry_m": [
         [
-          800.0,
-          2400.0
+          1000.0,
+          2227.605
         ],
         [
-          1600.0,
-          2400.0
+          1177.882,
+          2167.91
         ]
       ],
       "geometry_wgs84": [
         [
-          -88.048,
-          43.022
+          -87.998708,
+          43.044152
         ],
         [
-          -88.036,
-          43.022
+          -87.996522,
+          43.043612
         ]
       ],
       "layer": "0",
-      "length_m": 800.0,
-      "osm_way_id": "way/2087",
-      "start_node_id": "milwaukee_phase2_node_984716ea3c",
+      "length_m": 187.6,
+      "osm_way_id": "way/5101",
+      "source_lineage": {
+        "source_dataset_path": "work/raw/milwaukee_phase2/openstreetmap/openstreetmap.json",
+        "source_feature_id": "way/5101",
+        "source_id": "openstreetmap",
+        "source_segment_id": "way/5101#seg007",
+        "upstream_way_id": "way/5101"
+      },
+      "source_segment_index": 7,
+      "source_way_id": "way/5101",
+      "start_node_id": "milwaukee_phase2_node_4ecaf3e459",
       "stream_region_id": "stream_x00_y00",
       "structure": "surface",
-      "surface": "asphalt",
+      "surface": "packed_gravel",
+      "tile_id": "tile_x01_y02"
+    },
+    {
+      "bike_access": "designated",
+      "distance_profile_m": [
+        0.0,
+        196.3
+      ],
+      "edge_id": "osm_edge_27498ff1",
+      "elevation_profile_m": [
+        202.51,
+        202.96
+      ],
+      "end_node_id": "milwaukee_phase2_node_7c55649689",
+      "geometry_m": [
+        [
+          1182.112,
+          2183.165
+        ],
+        [
+          1007.806,
+          2273.532
+        ]
+      ],
+      "geometry_wgs84": [
+        [
+          -87.99647,
+          43.04375
+        ],
+        [
+          -87.998613,
+          43.044567
+        ]
+      ],
+      "layer": "0",
+      "length_m": 196.3,
+      "osm_way_id": "way/5108",
+      "source_lineage": {
+        "source_dataset_path": "work/raw/milwaukee_phase2/openstreetmap/openstreetmap.json",
+        "source_feature_id": "way/5108",
+        "source_id": "openstreetmap",
+        "source_segment_id": "way/5108#seg012",
+        "upstream_way_id": "way/5108"
+      },
+      "source_segment_index": 12,
+      "source_way_id": "way/5108",
+      "start_node_id": "milwaukee_phase2_node_09a4830ad7",
+      "stream_region_id": "stream_x00_y00",
+      "structure": "surface",
+      "surface": "packed_gravel",
+      "tile_id": "tile_x01_y02"
+    },
+    {
+      "bike_access": "designated",
+      "distance_profile_m": [
+        0.0,
+        227.9
+      ],
+      "edge_id": "osm_edge_41166353",
+      "elevation_profile_m": [
+        202.49,
+        202.01
+      ],
+      "end_node_id": "milwaukee_phase2_node_d485ba5830",
+      "geometry_m": [
+        [
+          1177.882,
+          2167.91
+        ],
+        [
+          1393.965,
+          2095.396
+        ]
+      ],
+      "geometry_wgs84": [
+        [
+          -87.996522,
+          43.043612
+        ],
+        [
+          -87.993866,
+          43.042956
+        ]
+      ],
+      "layer": "0",
+      "length_m": 227.9,
+      "osm_way_id": "way/5101",
+      "source_lineage": {
+        "source_dataset_path": "work/raw/milwaukee_phase2/openstreetmap/openstreetmap.json",
+        "source_feature_id": "way/5101",
+        "source_id": "openstreetmap",
+        "source_segment_id": "way/5101#seg008",
+        "upstream_way_id": "way/5101"
+      },
+      "source_segment_index": 8,
+      "source_way_id": "way/5101",
+      "start_node_id": "milwaukee_phase2_node_052f55141f",
+      "stream_region_id": "stream_x00_y00",
+      "structure": "surface",
+      "surface": "packed_gravel",
+      "tile_id": "tile_x01_y02"
+    },
+    {
+      "bike_access": "designated",
+      "distance_profile_m": [
+        0.0,
+        163.2
+      ],
+      "edge_id": "osm_edge_5c5df79d",
+      "elevation_profile_m": [
+        201.53,
+        201.22
+      ],
+      "end_node_id": "milwaukee_phase2_node_ec23e2a600",
+      "geometry_m": [
+        [
+          1610.048,
+          2022.882
+        ],
+        [
+          1771.626,
+          2000.0
+        ]
+      ],
+      "geometry_wgs84": [
+        [
+          -87.99121,
+          43.0423
+        ],
+        [
+          -87.989224,
+          43.042093
+        ]
+      ],
+      "layer": "0",
+      "length_m": 163.2,
+      "osm_way_id": "way/5101",
+      "source_lineage": {
+        "source_dataset_path": "work/raw/milwaukee_phase2/openstreetmap/openstreetmap.json",
+        "source_feature_id": "way/5101",
+        "source_id": "openstreetmap",
+        "source_segment_id": "way/5101#seg010",
+        "upstream_way_id": "way/5101"
+      },
+      "source_segment_index": 10,
+      "source_way_id": "way/5101",
+      "start_node_id": "milwaukee_phase2_node_25befad146",
+      "stream_region_id": "stream_x00_y00",
+      "structure": "surface",
+      "surface": "packed_gravel",
+      "tile_id": "tile_x01_y02"
+    },
+    {
+      "bike_access": "designated",
+      "distance_profile_m": [
+        0.0,
+        204.9
+      ],
+      "edge_id": "osm_edge_5ec18427",
+      "elevation_profile_m": [
+        201.74,
+        202.12
+      ],
+      "end_node_id": "milwaukee_phase2_node_93dccf98a7",
+      "geometry_m": [
+        [
+          1588.895,
+          2134.159
+        ],
+        [
+          1385.504,
+          2158.662
+        ]
+      ],
+      "geometry_wgs84": [
+        [
+          -87.99147,
+          43.043307
+        ],
+        [
+          -87.99397,
+          43.043528
+        ]
+      ],
+      "layer": "0",
+      "length_m": 204.9,
+      "osm_way_id": "way/5108",
+      "source_lineage": {
+        "source_dataset_path": "work/raw/milwaukee_phase2/openstreetmap/openstreetmap.json",
+        "source_feature_id": "way/5108",
+        "source_id": "openstreetmap",
+        "source_segment_id": "way/5108#seg010",
+        "upstream_way_id": "way/5108"
+      },
+      "source_segment_index": 10,
+      "source_way_id": "way/5108",
+      "start_node_id": "milwaukee_phase2_node_ccfa9b5712",
+      "stream_region_id": "stream_x00_y00",
+      "structure": "surface",
+      "surface": "packed_gravel",
+      "tile_id": "tile_x01_y02"
+    },
+    {
+      "bike_access": "designated",
+      "distance_profile_m": [
+        0.0,
+        204.9
+      ],
+      "edge_id": "osm_edge_7840fb3b",
+      "elevation_profile_m": [
+        201.36,
+        201.74
+      ],
+      "end_node_id": "milwaukee_phase2_node_ccfa9b5712",
+      "geometry_m": [
+        [
+          1792.286,
+          2109.656
+        ],
+        [
+          1588.895,
+          2134.159
+        ]
+      ],
+      "geometry_wgs84": [
+        [
+          -87.98897,
+          43.043085
+        ],
+        [
+          -87.99147,
+          43.043307
+        ]
+      ],
+      "layer": "0",
+      "length_m": 204.9,
+      "osm_way_id": "way/5108",
+      "source_lineage": {
+        "source_dataset_path": "work/raw/milwaukee_phase2/openstreetmap/openstreetmap.json",
+        "source_feature_id": "way/5108",
+        "source_id": "openstreetmap",
+        "source_segment_id": "way/5108#seg009",
+        "upstream_way_id": "way/5108"
+      },
+      "source_segment_index": 9,
+      "source_way_id": "way/5108",
+      "start_node_id": "milwaukee_phase2_node_0b3a63ab1c",
+      "stream_region_id": "stream_x00_y00",
+      "structure": "surface",
+      "surface": "packed_gravel",
+      "tile_id": "tile_x01_y02"
+    },
+    {
+      "bike_access": "designated",
+      "distance_profile_m": [
+        0.0,
+        204.9
+      ],
+      "edge_id": "osm_edge_83496ff5",
+      "elevation_profile_m": [
+        200.98,
+        201.36
+      ],
+      "end_node_id": "milwaukee_phase2_node_0b3a63ab1c",
+      "geometry_m": [
+        [
+          1995.678,
+          2085.153
+        ],
+        [
+          1792.286,
+          2109.656
+        ]
+      ],
+      "geometry_wgs84": [
+        [
+          -87.98647,
+          43.042863
+        ],
+        [
+          -87.98897,
+          43.043085
+        ]
+      ],
+      "layer": "0",
+      "length_m": 204.9,
+      "osm_way_id": "way/5108",
+      "source_lineage": {
+        "source_dataset_path": "work/raw/milwaukee_phase2/openstreetmap/openstreetmap.json",
+        "source_feature_id": "way/5108",
+        "source_id": "openstreetmap",
+        "source_segment_id": "way/5108#seg008",
+        "upstream_way_id": "way/5108"
+      },
+      "source_segment_index": 8,
+      "source_way_id": "way/5108",
+      "start_node_id": "milwaukee_phase2_node_b875aa13c9",
+      "stream_region_id": "stream_x00_y00",
+      "structure": "surface",
+      "surface": "packed_gravel",
+      "tile_id": "tile_x01_y02"
+    },
+    {
+      "bike_access": "designated",
+      "distance_profile_m": [
+        0.0,
+        8.8
+      ],
+      "edge_id": "osm_edge_9c0fa8c8",
+      "elevation_profile_m": [
+        202.96,
+        202.98
+      ],
+      "end_node_id": "milwaukee_phase2_node_c264bebe30",
+      "geometry_m": [
+        [
+          1007.806,
+          2273.532
+        ],
+        [
+          1000.0,
+          2277.579
+        ]
+      ],
+      "geometry_wgs84": [
+        [
+          -87.998613,
+          43.044567
+        ],
+        [
+          -87.998709,
+          43.044604
+        ]
+      ],
+      "layer": "0",
+      "length_m": 8.8,
+      "osm_way_id": "way/5108",
+      "source_lineage": {
+        "source_dataset_path": "work/raw/milwaukee_phase2/openstreetmap/openstreetmap.json",
+        "source_feature_id": "way/5108",
+        "source_id": "openstreetmap",
+        "source_segment_id": "way/5108#seg013",
+        "upstream_way_id": "way/5108"
+      },
+      "source_segment_index": 13,
+      "source_way_id": "way/5108",
+      "start_node_id": "milwaukee_phase2_node_7c55649689",
+      "stream_region_id": "stream_x00_y00",
+      "structure": "surface",
+      "surface": "packed_gravel",
+      "tile_id": "tile_x01_y02"
+    },
+    {
+      "bike_access": "designated",
+      "distance_profile_m": [
+        0.0,
+        204.9
+      ],
+      "edge_id": "osm_edge_9ea5cb98",
+      "elevation_profile_m": [
+        202.12,
+        202.51
+      ],
+      "end_node_id": "milwaukee_phase2_node_09a4830ad7",
+      "geometry_m": [
+        [
+          1385.504,
+          2158.662
+        ],
+        [
+          1182.112,
+          2183.165
+        ]
+      ],
+      "geometry_wgs84": [
+        [
+          -87.99397,
+          43.043528
+        ],
+        [
+          -87.99647,
+          43.04375
+        ]
+      ],
+      "layer": "0",
+      "length_m": 204.9,
+      "osm_way_id": "way/5108",
+      "source_lineage": {
+        "source_dataset_path": "work/raw/milwaukee_phase2/openstreetmap/openstreetmap.json",
+        "source_feature_id": "way/5108",
+        "source_id": "openstreetmap",
+        "source_segment_id": "way/5108#seg011",
+        "upstream_way_id": "way/5108"
+      },
+      "source_segment_index": 11,
+      "source_way_id": "way/5108",
+      "start_node_id": "milwaukee_phase2_node_93dccf98a7",
+      "stream_region_id": "stream_x00_y00",
+      "structure": "surface",
+      "surface": "packed_gravel",
+      "tile_id": "tile_x01_y02"
+    },
+    {
+      "bike_access": "designated",
+      "distance_profile_m": [
+        0.0,
+        4.4
+      ],
+      "edge_id": "osm_edge_a83acf84",
+      "elevation_profile_m": [
+        200.97,
+        200.98
+      ],
+      "end_node_id": "milwaukee_phase2_node_b875aa13c9",
+      "geometry_m": [
+        [
+          2000.0,
+          2084.632
+        ],
+        [
+          1995.678,
+          2085.153
+        ]
+      ],
+      "geometry_wgs84": [
+        [
+          -87.986417,
+          43.042858
+        ],
+        [
+          -87.98647,
+          43.042863
+        ]
+      ],
+      "layer": "0",
+      "length_m": 4.4,
+      "osm_way_id": "way/5108",
+      "source_lineage": {
+        "source_dataset_path": "work/raw/milwaukee_phase2/openstreetmap/openstreetmap.json",
+        "source_feature_id": "way/5108",
+        "source_id": "openstreetmap",
+        "source_segment_id": "way/5108#seg007",
+        "upstream_way_id": "way/5108"
+      },
+      "source_segment_index": 7,
+      "source_way_id": "way/5108",
+      "start_node_id": "milwaukee_phase2_node_64ed5e6668",
+      "stream_region_id": "stream_x00_y00",
+      "structure": "surface",
+      "surface": "packed_gravel",
+      "tile_id": "tile_x01_y02"
+    },
+    {
+      "bike_access": "designated",
+      "distance_profile_m": [
+        0.0,
+        227.9
+      ],
+      "edge_id": "osm_edge_d56bffcd",
+      "elevation_profile_m": [
+        202.01,
+        201.53
+      ],
+      "end_node_id": "milwaukee_phase2_node_25befad146",
+      "geometry_m": [
+        [
+          1393.965,
+          2095.396
+        ],
+        [
+          1610.048,
+          2022.882
+        ]
+      ],
+      "geometry_wgs84": [
+        [
+          -87.993866,
+          43.042956
+        ],
+        [
+          -87.99121,
+          43.0423
+        ]
+      ],
+      "layer": "0",
+      "length_m": 227.9,
+      "osm_way_id": "way/5101",
+      "source_lineage": {
+        "source_dataset_path": "work/raw/milwaukee_phase2/openstreetmap/openstreetmap.json",
+        "source_feature_id": "way/5101",
+        "source_id": "openstreetmap",
+        "source_segment_id": "way/5101#seg009",
+        "upstream_way_id": "way/5101"
+      },
+      "source_segment_index": 9,
+      "source_way_id": "way/5101",
+      "start_node_id": "milwaukee_phase2_node_d485ba5830",
+      "stream_region_id": "stream_x00_y00",
+      "structure": "surface",
+      "surface": "packed_gravel",
       "tile_id": "tile_x01_y02"
     }
   ],
   "graph_profile": "phase2-city-v1",
   "nodes": [
     {
-      "junction_kind": "junction",
+      "junction_kind": "transition",
       "layer": "0",
-      "node_id": "milwaukee_phase2_node_984716ea3c",
+      "node_id": "milwaukee_phase2_node_052f55141f",
       "point_m": [
-        800.0,
-        2400.0
+        1177.882,
+        2167.91
       ],
       "point_wgs84": [
-        -88.048,
-        43.022
+        -87.996522,
+        43.043612
       ],
       "stream_region_id": "stream_x00_y00",
-      "tile_id": "tile_x00_y02"
+      "tile_id": "tile_x01_y02"
     },
     {
-      "junction_kind": "junction",
+      "junction_kind": "transition",
       "layer": "0",
-      "node_id": "milwaukee_phase2_node_c839bd23cc",
+      "node_id": "milwaukee_phase2_node_09a4830ad7",
       "point_m": [
-        1600.0,
-        2400.0
+        1182.112,
+        2183.165
       ],
       "point_wgs84": [
-        -88.036,
-        43.022
+        -87.99647,
+        43.04375
+      ],
+      "stream_region_id": "stream_x00_y00",
+      "tile_id": "tile_x01_y02"
+    },
+    {
+      "junction_kind": "transition",
+      "layer": "0",
+      "node_id": "milwaukee_phase2_node_0b3a63ab1c",
+      "point_m": [
+        1792.286,
+        2109.656
+      ],
+      "point_wgs84": [
+        -87.98897,
+        43.043085
+      ],
+      "stream_region_id": "stream_x00_y00",
+      "tile_id": "tile_x01_y02"
+    },
+    {
+      "junction_kind": "transition",
+      "layer": "0",
+      "node_id": "milwaukee_phase2_node_25befad146",
+      "point_m": [
+        1610.048,
+        2022.882
+      ],
+      "point_wgs84": [
+        -87.99121,
+        43.0423
+      ],
+      "stream_region_id": "stream_x00_y00",
+      "tile_id": "tile_x01_y02"
+    },
+    {
+      "junction_kind": "transition",
+      "layer": "0",
+      "node_id": "milwaukee_phase2_node_4ecaf3e459",
+      "point_m": [
+        1000.0,
+        2227.605
+      ],
+      "point_wgs84": [
+        -87.998708,
+        43.044152
+      ],
+      "stream_region_id": "stream_x00_y00",
+      "tile_id": "tile_x01_y02"
+    },
+    {
+      "junction_kind": "transition",
+      "layer": "0",
+      "node_id": "milwaukee_phase2_node_64ed5e6668",
+      "point_m": [
+        2000.0,
+        2084.632
+      ],
+      "point_wgs84": [
+        -87.986417,
+        43.042858
+      ],
+      "stream_region_id": "stream_x00_y00",
+      "tile_id": "tile_x02_y02"
+    },
+    {
+      "junction_kind": "transition",
+      "layer": "0",
+      "node_id": "milwaukee_phase2_node_7c55649689",
+      "point_m": [
+        1007.806,
+        2273.532
+      ],
+      "point_wgs84": [
+        -87.998613,
+        43.044567
+      ],
+      "stream_region_id": "stream_x00_y00",
+      "tile_id": "tile_x01_y02"
+    },
+    {
+      "junction_kind": "transition",
+      "layer": "0",
+      "node_id": "milwaukee_phase2_node_93dccf98a7",
+      "point_m": [
+        1385.504,
+        2158.662
+      ],
+      "point_wgs84": [
+        -87.99397,
+        43.043528
+      ],
+      "stream_region_id": "stream_x00_y00",
+      "tile_id": "tile_x01_y02"
+    },
+    {
+      "junction_kind": "transition",
+      "layer": "0",
+      "node_id": "milwaukee_phase2_node_b875aa13c9",
+      "point_m": [
+        1995.678,
+        2085.153
+      ],
+      "point_wgs84": [
+        -87.98647,
+        43.042863
+      ],
+      "stream_region_id": "stream_x00_y00",
+      "tile_id": "tile_x01_y02"
+    },
+    {
+      "junction_kind": "transition",
+      "layer": "0",
+      "node_id": "milwaukee_phase2_node_c264bebe30",
+      "point_m": [
+        1000.0,
+        2277.579
+      ],
+      "point_wgs84": [
+        -87.998709,
+        43.044604
+      ],
+      "stream_region_id": "stream_x00_y00",
+      "tile_id": "tile_x01_y02"
+    },
+    {
+      "junction_kind": "transition",
+      "layer": "0",
+      "node_id": "milwaukee_phase2_node_ccfa9b5712",
+      "point_m": [
+        1588.895,
+        2134.159
+      ],
+      "point_wgs84": [
+        -87.99147,
+        43.043307
+      ],
+      "stream_region_id": "stream_x00_y00",
+      "tile_id": "tile_x01_y02"
+    },
+    {
+      "junction_kind": "transition",
+      "layer": "0",
+      "node_id": "milwaukee_phase2_node_d485ba5830",
+      "point_m": [
+        1393.965,
+        2095.396
+      ],
+      "point_wgs84": [
+        -87.993866,
+        43.042956
+      ],
+      "stream_region_id": "stream_x00_y00",
+      "tile_id": "tile_x01_y02"
+    },
+    {
+      "junction_kind": "transition",
+      "layer": "0",
+      "node_id": "milwaukee_phase2_node_ec23e2a600",
+      "point_m": [
+        1771.626,
+        2000.0
+      ],
+      "point_wgs84": [
+        -87.989224,
+        43.042093
       ],
       "stream_region_id": "stream_x00_y00",
       "tile_id": "tile_x01_y02"

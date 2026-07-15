@@ -1,0 +1,72 @@
+{
+  "biome_patches": [
+    {
+      "biome_id": "milwaukee_river_greenbelt",
+      "color_hint": "#6b8d57",
+      "landcover_class": "urban_parkland",
+      "polygon_wgs84": [
+        [-88.0060, 43.0470],
+        [-87.9920, 43.0400],
+        [-87.9740, 43.0390],
+        [-87.9860, 43.0500]
+      ]
+    },
+    {
+      "biome_id": "third_ward_urban_core",
+      "color_hint": "#8f8a74",
+      "landcover_class": "urban_core",
+      "polygon_wgs84": [
+        [-87.9550, 43.0280],
+        [-87.9300, 43.0280],
+        [-87.9300, 43.0350],
+        [-87.9550, 43.0350]
+      ]
+    },
+    {
+      "biome_id": "lakefront_parks",
+      "color_hint": "#78a96d",
+      "landcover_class": "shoreline_park",
+      "polygon_wgs84": [
+        [-87.9020, 43.0245],
+        [-87.8885, 43.0245],
+        [-87.8885, 43.0518],
+        [-87.9015, 43.0518]
+      ]
+    }
+  ],
+  "prop_masks": [
+    {
+      "density": 0.75,
+      "mask_id": "mask_river_trees",
+      "polygon_wgs84": [
+        [-88.0040, 43.0455],
+        [-87.9890, 43.0398],
+        [-87.9805, 43.0465],
+        [-87.9945, 43.0515]
+      ],
+      "prop_class": "trees"
+    },
+    {
+      "density": 0.52,
+      "mask_id": "mask_lakefront_grass",
+      "polygon_wgs84": [
+        [-87.8995, 43.0260],
+        [-87.8925, 43.0260],
+        [-87.8925, 43.0458],
+        [-87.8995, 43.0458]
+      ],
+      "prop_class": "shoreline_grass"
+    },
+    {
+      "density": 0.48,
+      "mask_id": "mask_urban_street_trees",
+      "polygon_wgs84": [
+        [-87.9510, 43.0290],
+        [-87.9365, 43.0290],
+        [-87.9365, 43.0335],
+        [-87.9510, 43.0335]
+      ],
+      "prop_class": "street_trees"
+    }
+  ]
+}
