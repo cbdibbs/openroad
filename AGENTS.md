@@ -41,6 +41,7 @@ Milwaukee is the first target region. The MVP prioritizes solo riding, GPX impor
 - If you add a new client or runtime target later, do it without moving bake logic into engine-specific code.
 - Before expanding gameplay scope, keep Milwaukee and the sample-region workflow passing locally.
 - Stage and commit coherent checkpoints rather than leaving large undocumented deltas.
+- Use `docs/roadmap.md` as the default execution guide for Phases 1 through 4 unless a newer plan supersedes it.
 
 ## Verification Defaults
 

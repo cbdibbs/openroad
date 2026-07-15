@@ -16,6 +16,7 @@ Procedural Trainer is an open-source desktop cycling game built around an engine
 - `geo-pipeline/`: Python tooling, schemas, and validation helpers for region-pack production.
 - `region-data/`: Sample and future published region artifacts, kept separate from code.
 - `docs/`: Architecture, licensing posture, and source policy.
+- `docs/roadmap.md`: Phase-by-phase implementation plan from Milwaukee proof through open distribution.
 - `tests/`: Validation and deterministic build tests for manifests and sample data.
 
 ## MVP Target
@@ -49,3 +50,5 @@ This repository currently provides the Phase 0 foundation:
 - local validation tooling and tests for reproducibility-oriented metadata
 
 The gameplay client and Milwaukee ingestion pipeline are intentionally scaffolded rather than feature-complete at this stage.
+
+The next execution targets are documented in [docs/roadmap.md](docs/roadmap.md).

@@ -14,6 +14,7 @@ class DocsAndLayoutTests(unittest.TestCase):
             ROOT / "geo-pipeline" / "geo_pipeline",
             ROOT / "region-data" / "milwaukee" / "mke_demo_region_pack",
             ROOT / "docs" / "source-policy.md",
+            ROOT / "docs" / "roadmap.md",
         ]
         for path in expected:
             self.assertTrue(path.exists(), f"missing expected path: {path}")
@@ -22,6 +23,16 @@ class DocsAndLayoutTests(unittest.TestCase):
         readme = (ROOT / "README.md").read_text(encoding="utf-8")
         self.assertIn("open-source", readme)
         self.assertIn("Godot-first", readme)
+
+    def test_roadmap_covers_remaining_phases(self) -> None:
+        roadmap = (ROOT / "docs" / "roadmap.md").read_text(encoding="utf-8")
+        for phase in [
+            "Phase 1: Milwaukee Technical Proof",
+            "Phase 2: Canonical Route And World Packs",
+            "Phase 3: Trainer Loop And Ghosts",
+            "Phase 4: Open Distribution Workflow",
+        ]:
+            self.assertIn(phase, roadmap)
 
 
 if __name__ == "__main__":
