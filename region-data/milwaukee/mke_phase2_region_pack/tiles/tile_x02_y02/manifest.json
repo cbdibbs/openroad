@@ -1,10 +1,10 @@
 {
   "attribution_asset": "attribution.json",
   "bbox_wgs84": [
-    -88.06,
-    42.98,
-    -87.88,
-    43.12
+    -88.011,
+    43.024,
+    -87.888,
+    43.063
   ],
   "compatible_clients": [
     "godot-phase2"
@@ -15,7 +15,13 @@
   "ride_graph_asset": "tiles/tile_x02_y02/ride_graph.json",
   "route_definitions_asset": "routes.json",
   "scenery_asset": "tiles/tile_x02_y02/scenery.json",
-  "schema_version": "phase2-region-tile-v1",
+  "schema_version": "phase2-region-tile-v2",
+  "seam_hashes": {
+    "east": "aa366ba7d8ec40538dd4825b8d96cdce97842ca94932a4ca5603bf956a3fe4ac",
+    "north": "cd1ed65f33ff421c6f861899f8cd6d7b44004b0671858d8cf7fef4bc26a7f172",
+    "south": "9cd24e81d1e9cdd4c821bb31ba8d1c255ec4dc5bf19e8e6581dc5296b5bb12c5",
+    "west": "06c8cbcad27a9c3602121506fab07ba3da9bead9d2aa399842eb80348ee643ef"
+  },
   "source_manifest_asset": "source_manifest.json",
   "source_versions": {
     "esa_worldcover": "v200",

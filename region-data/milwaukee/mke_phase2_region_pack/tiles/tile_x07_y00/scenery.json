@@ -1,201 +1,258 @@
 {
-  "biome_patches": [
-    {
-      "biome_id": "tile_x07_y00_biome",
-      "color_hint": "#6aa7b8",
-      "landcover_class": "shoreline",
-      "polygon_m": [
-        [
-          7080.0,
-          80.0
-        ],
-        [
-          7920.0,
-          110.0
-        ],
-        [
-          7840.0,
-          900.0
-        ],
-        [
-          7120.0,
-          860.0
-        ]
-      ]
-    }
-  ],
-  "buildings": [
-    {
-      "building_id": "tile_x07_y00_bldg_01",
-      "footprint_m": [
-        [
-          7180.0,
-          180.0
-        ],
-        [
-          7300.0,
-          180.0
-        ],
-        [
-          7300.0,
-          320.0
-        ],
-        [
-          7180.0,
-          320.0
-        ]
-      ],
-      "height_m": 28.0,
-      "kind": "midrise"
-    },
-    {
-      "building_id": "tile_x07_y00_bldg_02",
-      "footprint_m": [
-        [
-          7620.0,
-          560.0
-        ],
-        [
-          7780.0,
-          560.0
-        ],
-        [
-          7780.0,
-          760.0
-        ],
-        [
-          7620.0,
-          760.0
-        ]
-      ],
-      "height_m": 28.0,
-      "kind": "mixed_use"
-    }
-  ],
+  "biome_patches": [],
+  "buildings": [],
   "corridor_id": "milwaukee_city_core_trails",
-  "prop_masks": [
-    {
-      "density": 0.7,
-      "mask_id": "tile_x07_y00_trees",
-      "polygon_m": [
-        [
-          7080.0,
-          640.0
-        ],
-        [
-          7400.0,
-          600.0
-        ],
-        [
-          7440.0,
-          920.0
-        ],
-        [
-          7120.0,
-          940.0
-        ]
-      ],
-      "prop_class": "trees"
-    },
-    {
-      "density": 0.45,
-      "mask_id": "tile_x07_y00_shore",
-      "polygon_m": [
-        [
-          7520.0,
-          60.0
-        ],
-        [
-          7940.0,
-          100.0
-        ],
-        [
-          7900.0,
-          360.0
-        ],
-        [
-          7540.0,
-          300.0
-        ]
-      ],
-      "prop_class": "shoreline_grass"
-    }
-  ],
+  "prop_masks": [],
   "region_id": "milwaukee_phase2",
   "region_version": "milwaukee-v2.0.0",
   "road_segments": [
     {
-      "edge_id": "osm_edge_7750d7b2",
+      "edge_id": "osm_edge_08ec8acf",
       "material": "asphalt",
       "structure": "surface",
-      "width_m": 5.5
+      "width_m": 5.0
     },
     {
-      "edge_id": "osm_edge_d4df93d2",
-      "material": "packed_gravel",
+      "edge_id": "osm_edge_14a9c6ae",
+      "material": "asphalt",
       "structure": "surface",
-      "width_m": 4.0
+      "width_m": 5.0
+    },
+    {
+      "edge_id": "osm_edge_16716443",
+      "material": "asphalt",
+      "structure": "surface",
+      "width_m": 5.0
+    },
+    {
+      "edge_id": "osm_edge_2202f914",
+      "material": "asphalt",
+      "structure": "surface",
+      "width_m": 5.0
+    },
+    {
+      "edge_id": "osm_edge_53bfd004",
+      "material": "asphalt",
+      "structure": "surface",
+      "width_m": 5.0
+    },
+    {
+      "edge_id": "osm_edge_6b42b3f6",
+      "material": "asphalt",
+      "structure": "surface",
+      "width_m": 5.0
+    },
+    {
+      "edge_id": "osm_edge_7457f575",
+      "material": "asphalt",
+      "structure": "surface",
+      "width_m": 5.0
+    },
+    {
+      "edge_id": "osm_edge_794fa56b",
+      "material": "asphalt",
+      "structure": "surface",
+      "width_m": 5.0
+    },
+    {
+      "edge_id": "osm_edge_82c7e3ba",
+      "material": "asphalt",
+      "structure": "surface",
+      "width_m": 5.0
+    },
+    {
+      "edge_id": "osm_edge_9705aa31",
+      "material": "asphalt",
+      "structure": "surface",
+      "width_m": 5.0
+    },
+    {
+      "edge_id": "osm_edge_9bec4b0d",
+      "material": "asphalt",
+      "structure": "surface",
+      "width_m": 5.0
+    },
+    {
+      "edge_id": "osm_edge_fb03bb8d",
+      "material": "asphalt",
+      "structure": "surface",
+      "width_m": 5.0
     }
   ],
   "style_hints": {
-    "building_color_variation": 0.35,
-    "shoreline_emphasis": 0.58,
-    "vegetation_density": 0.64
+    "building_color_variation": 0.22,
+    "shoreline_emphasis": 0.71,
+    "tile_visual_seed": "58e08e635f",
+    "vegetation_density": 0.66
   },
   "terrain_chunks": [
     {
       "chunk_id": "tile_x07_y00_terrain",
       "elevation_grid_m": [
         [
-          187.79,
-          187.83,
-          187.99,
-          188.25,
-          188.61
-        ],
-        [
-          187.77,
+          188.5,
+          188.28,
+          188.05,
           187.82,
-          187.98,
-          188.24,
-          188.6
-        ],
-        [
-          187.69,
-          187.74,
-          187.89,
-          188.16,
-          188.52
-        ],
-        [
-          187.54,
-          187.59,
-          187.75,
-          188.01,
-          188.37
-        ],
-        [
-          187.33,
+          187.6,
           187.38,
-          187.53,
-          187.8,
-          188.16
+          187.15,
+          186.92,
+          186.7
+        ],
+        [
+          188.62,
+          188.39,
+          188.17,
+          187.94,
+          187.72,
+          187.49,
+          187.27,
+          187.04,
+          186.82
+        ],
+        [
+          188.73,
+          188.51,
+          188.28,
+          188.06,
+          187.84,
+          187.61,
+          187.39,
+          187.16,
+          186.94
+        ],
+        [
+          188.84,
+          188.62,
+          188.4,
+          188.18,
+          187.95,
+          187.73,
+          187.51,
+          187.28,
+          187.06
+        ],
+        [
+          188.96,
+          188.74,
+          188.52,
+          188.29,
+          188.07,
+          187.85,
+          187.62,
+          187.4,
+          187.18
+        ],
+        [
+          189.07,
+          188.85,
+          188.63,
+          188.41,
+          188.19,
+          187.97,
+          187.74,
+          187.52,
+          187.3
+        ],
+        [
+          189.19,
+          188.97,
+          188.75,
+          188.53,
+          188.31,
+          188.08,
+          187.86,
+          187.64,
+          187.42
+        ],
+        [
+          189.31,
+          189.08,
+          188.86,
+          188.64,
+          188.42,
+          188.2,
+          187.98,
+          187.76,
+          187.54
+        ],
+        [
+          189.42,
+          189.2,
+          188.98,
+          188.76,
+          188.54,
+          188.32,
+          188.1,
+          187.88,
+          187.66
         ]
       ],
+      "grid_resolution": 9,
+      "normal_policy": "derive_from_shared_heightfield",
       "origin_m": [
         7000.0,
         0.0
       ],
-      "seam_keys": {
-        "east": "east_7_0",
-        "north": "north_7_0",
-        "south": "south_7_0",
-        "west": "west_7_0"
+      "sample_spacing_m": 125.0,
+      "seam_hashes": {
+        "east": "30d42e8f0e8a7169dac2915cb11feaac1e21b3026d0734406b127b1669d13fa2",
+        "north": "76cdf55111a0caf9e3ca5a9eeb9a7170c9aee5f669efdd00cee8a8810a666a86",
+        "south": "154c1d234bf48395820185a7d359a8ce034e486be53c09155bd13f82cb1792c5",
+        "west": "17516d3601dff5106befdccaf144555c41f0708a8be31f1b588c73835e2e4d90"
+      },
+      "seam_samples_m": {
+        "east": [
+          186.7,
+          186.82,
+          186.94,
+          187.06,
+          187.18,
+          187.3,
+          187.42,
+          187.54,
+          187.66
+        ],
+        "north": [
+          189.42,
+          189.2,
+          188.98,
+          188.76,
+          188.54,
+          188.32,
+          188.1,
+          187.88,
+          187.66
+        ],
+        "south": [
+          188.5,
+          188.28,
+          188.05,
+          187.82,
+          187.6,
+          187.38,
+          187.15,
+          186.92,
+          186.7
+        ],
+        "west": [
+          188.5,
+          188.62,
+          188.73,
+          188.84,
+          188.96,
+          189.07,
+          189.19,
+          189.31,
+          189.42
+        ]
       },
       "size_m": [
         1000.0,
         1000.0
-      ]
+      ],
+      "skirt_policy": "disabled"
     }
   ]
 }

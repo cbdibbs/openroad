@@ -4,12 +4,24 @@ This document defines which sources are allowed in the MVP pipeline, where they 
 
 ## Allowed Sources
 
+## Phase 2 Contributor Toolchain
+
+The canonical open Phase 2 toolchain is:
+
+```bash
+brew install osmium-tool gdal duckdb
+python3 -m pip install rasterio
+```
+
+Checked-in Milwaukee Phase 2 fixtures under `geo-pipeline/geo_pipeline/fixtures/milwaukee_phase2/` represent clipped, version-pinned source excerpts derived from that toolchain so contributors can run deterministic local rebuilds without re-fetching large upstreams on every test run.
+
 ### OpenStreetMap
 
 - Use: canonical road, trail, access, and route graph data
 - License: ODbL 1.0
 - Rules:
   - fetch the Wisconsin `.osm.pbf` extract from Geofabrik into `work/raw/`
+  - for the checked-in Milwaukee Phase 2 acceptance pack, preserve the clipped source-derived fixture excerpt as a documented cache artifact rather than regenerating synthetic graph geometry
   - record fetch URL, product id, version, checksum, and retrieval time in `source_manifest.json`
   - attribution is required in every shipped region pack
   - derived or built-upon database outputs must keep ODbL handling explicit
@@ -22,6 +34,7 @@ This document defines which sources are allowed in the MVP pipeline, where they 
 - Rules:
   - query The National Map Access API for corridor-intersecting 1 m DEM products
   - stage clipped or warped DEM derivatives under `work/staged/`
+  - for Phase 2 acceptance fixtures, preserve the clipped DEM control grid that drives seam-safe terrain rebuilds
   - preserve source version and acquisition metadata
   - use as the preferred DEM source for US regions
 
@@ -97,3 +110,4 @@ This document defines which sources are allowed in the MVP pipeline, where they 
 - client compatibility must be explicit in the manifest
 - missing optional sources must degrade gracefully without making the pack invalid
 - raw NAIP imagery must not be redistributed in the checked-in sample pack
+- Phase 2 packs must record AOI identity/hash, toolchain versions, deterministic build knobs, and seam-border metadata for every generation tile

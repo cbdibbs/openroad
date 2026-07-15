@@ -1,207 +1,240 @@
 {
-  "biome_patches": [
-    {
-      "biome_id": "tile_x02_y00_biome",
-      "color_hint": "#6f9151",
-      "landcover_class": "urban_parkland",
-      "polygon_m": [
-        [
-          2080.0,
-          80.0
-        ],
-        [
-          2920.0,
-          110.0
-        ],
-        [
-          2840.0,
-          900.0
-        ],
-        [
-          2120.0,
-          860.0
-        ]
-      ]
-    }
-  ],
-  "buildings": [
-    {
-      "building_id": "tile_x02_y00_bldg_01",
-      "footprint_m": [
-        [
-          2180.0,
-          180.0
-        ],
-        [
-          2300.0,
-          180.0
-        ],
-        [
-          2300.0,
-          320.0
-        ],
-        [
-          2180.0,
-          320.0
-        ]
-      ],
-      "height_m": 22.0,
-      "kind": "midrise"
-    },
-    {
-      "building_id": "tile_x02_y00_bldg_02",
-      "footprint_m": [
-        [
-          2620.0,
-          560.0
-        ],
-        [
-          2780.0,
-          560.0
-        ],
-        [
-          2780.0,
-          760.0
-        ],
-        [
-          2620.0,
-          760.0
-        ]
-      ],
-      "height_m": 28.0,
-      "kind": "mixed_use"
-    }
-  ],
+  "biome_patches": [],
+  "buildings": [],
   "corridor_id": "milwaukee_city_core_trails",
-  "prop_masks": [
-    {
-      "density": 0.7,
-      "mask_id": "tile_x02_y00_trees",
-      "polygon_m": [
-        [
-          2080.0,
-          640.0
-        ],
-        [
-          2400.0,
-          600.0
-        ],
-        [
-          2440.0,
-          920.0
-        ],
-        [
-          2120.0,
-          940.0
-        ]
-      ],
-      "prop_class": "trees"
-    },
-    {
-      "density": 0.45,
-      "mask_id": "tile_x02_y00_shore",
-      "polygon_m": [
-        [
-          2520.0,
-          60.0
-        ],
-        [
-          2940.0,
-          100.0
-        ],
-        [
-          2900.0,
-          360.0
-        ],
-        [
-          2540.0,
-          300.0
-        ]
-      ],
-      "prop_class": "shoreline_grass"
-    }
-  ],
+  "prop_masks": [],
   "region_id": "milwaukee_phase2",
   "region_version": "milwaukee-v2.0.0",
   "road_segments": [
     {
-      "edge_id": "osm_edge_0d35caeb",
+      "edge_id": "osm_edge_059346b3",
       "material": "asphalt",
       "structure": "surface",
-      "width_m": 5.5
+      "width_m": 5.0
     },
     {
-      "edge_id": "osm_edge_99ff1e82",
+      "edge_id": "osm_edge_3faba8ee",
       "material": "asphalt",
       "structure": "surface",
-      "width_m": 5.5
+      "width_m": 5.0
     },
     {
-      "edge_id": "osm_edge_9c5984aa",
-      "material": "packed_gravel",
+      "edge_id": "osm_edge_47c8b392",
+      "material": "asphalt",
       "structure": "surface",
-      "width_m": 4.0
+      "width_m": 5.0
+    },
+    {
+      "edge_id": "osm_edge_54939752",
+      "material": "asphalt",
+      "structure": "surface",
+      "width_m": 5.0
+    },
+    {
+      "edge_id": "osm_edge_780d9a81",
+      "material": "asphalt",
+      "structure": "surface",
+      "width_m": 5.0
+    },
+    {
+      "edge_id": "osm_edge_dc285ec8",
+      "material": "asphalt",
+      "structure": "surface",
+      "width_m": 5.0
+    },
+    {
+      "edge_id": "osm_edge_e2d79c91",
+      "material": "asphalt",
+      "structure": "surface",
+      "width_m": 5.0
+    },
+    {
+      "edge_id": "osm_edge_ecf8f7ca",
+      "material": "asphalt",
+      "structure": "surface",
+      "width_m": 5.0
+    },
+    {
+      "edge_id": "osm_edge_f1af6942",
+      "material": "asphalt",
+      "structure": "surface",
+      "width_m": 5.0
     }
   ],
   "style_hints": {
-    "building_color_variation": 0.35,
-    "shoreline_emphasis": 0.58,
-    "vegetation_density": 0.64
+    "building_color_variation": 0.22,
+    "shoreline_emphasis": 0.71,
+    "tile_visual_seed": "b340883fe0",
+    "vegetation_density": 0.66
   },
   "terrain_chunks": [
     {
       "chunk_id": "tile_x02_y00_terrain",
       "elevation_grid_m": [
         [
-          195.25,
-          195.38,
-          195.39,
-          195.29,
-          195.09
+          198.4,
+          198.18,
+          197.95,
+          197.72,
+          197.5,
+          197.28,
+          197.05,
+          196.83,
+          196.6
         ],
         [
-          195.24,
-          195.36,
-          195.38,
-          195.28,
-          195.07
+          198.53,
+          198.3,
+          198.07,
+          197.85,
+          197.62,
+          197.39,
+          197.16,
+          196.93,
+          196.71
         ],
         [
-          195.16,
-          195.28,
-          195.29,
-          195.2,
-          194.99
+          198.66,
+          198.43,
+          198.2,
+          197.97,
+          197.73,
+          197.5,
+          197.27,
+          197.04,
+          196.81
         ],
         [
-          195.01,
-          195.13,
-          195.15,
-          195.05,
-          194.84
+          198.79,
+          198.56,
+          198.32,
+          198.09,
+          197.85,
+          197.62,
+          197.38,
+          197.15,
+          196.92
         ],
         [
-          194.8,
-          194.92,
-          194.94,
-          194.84,
-          194.63
+          198.92,
+          198.68,
+          198.45,
+          198.21,
+          197.97,
+          197.73,
+          197.5,
+          197.26,
+          197.02
+        ],
+        [
+          199.05,
+          198.81,
+          198.57,
+          198.33,
+          198.09,
+          197.85,
+          197.61,
+          197.37,
+          197.12
+        ],
+        [
+          199.18,
+          198.94,
+          198.69,
+          198.45,
+          198.2,
+          197.96,
+          197.72,
+          197.47,
+          197.23
+        ],
+        [
+          199.31,
+          199.06,
+          198.82,
+          198.57,
+          198.32,
+          198.08,
+          197.83,
+          197.58,
+          197.33
+        ],
+        [
+          199.44,
+          199.19,
+          198.94,
+          198.69,
+          198.44,
+          198.19,
+          197.94,
+          197.69,
+          197.44
         ]
       ],
+      "grid_resolution": 9,
+      "normal_policy": "derive_from_shared_heightfield",
       "origin_m": [
         2000.0,
         0.0
       ],
-      "seam_keys": {
-        "east": "east_2_0",
-        "north": "north_2_0",
-        "south": "south_2_0",
-        "west": "west_2_0"
+      "sample_spacing_m": 125.0,
+      "seam_hashes": {
+        "east": "216b0eafd888de225a94e4e07c30de666315d3b1e3d45aebab686e98b900c00d",
+        "north": "4e1a0f12dea7a0fa4da297ce6f3f1b24c592b47a3b2dc28023de4ce9adb4eb55",
+        "south": "a7caf3954874cd69dfc402be1bdccd0f46b7ea2a7436d3d2778185793bc0eb4b",
+        "west": "45363d3fca6099e6d0099748fc7f230f0539fcde44fd9c45d47e848b0dc9cf73"
+      },
+      "seam_samples_m": {
+        "east": [
+          196.6,
+          196.71,
+          196.81,
+          196.92,
+          197.02,
+          197.12,
+          197.23,
+          197.33,
+          197.44
+        ],
+        "north": [
+          199.44,
+          199.19,
+          198.94,
+          198.69,
+          198.44,
+          198.19,
+          197.94,
+          197.69,
+          197.44
+        ],
+        "south": [
+          198.4,
+          198.18,
+          197.95,
+          197.72,
+          197.5,
+          197.28,
+          197.05,
+          196.83,
+          196.6
+        ],
+        "west": [
+          198.4,
+          198.53,
+          198.66,
+          198.79,
+          198.92,
+          199.05,
+          199.18,
+          199.31,
+          199.44
+        ]
       },
       "size_m": [
         1000.0,
         1000.0
-      ]
+      ],
+      "skirt_policy": "disabled"
     }
   ]
 }

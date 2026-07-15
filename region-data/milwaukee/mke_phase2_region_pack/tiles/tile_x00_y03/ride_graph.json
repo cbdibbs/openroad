@@ -1,87 +1,16 @@
 {
+  "aoi_hash": "3b2c7db0deb114c79323c57f873ac8394bff7dedb0e7fc4b56cdc595527716bd",
+  "aoi_id": "milwaukee_city_core_trails_v1",
   "bbox_wgs84": [
-    -88.06,
-    42.98,
-    -87.88,
-    43.12
+    -88.011,
+    43.024,
+    -87.888,
+    43.063
   ],
   "corridor_id": "milwaukee_city_core_trails",
-  "edges": [
-    {
-      "bike_access": "designated",
-      "distance_profile_m": [
-        0.0,
-        800.0
-      ],
-      "edge_id": "osm_edge_b5384d92",
-      "elevation_profile_m": [
-        190.81,
-        189.39
-      ],
-      "end_node_id": "milwaukee_phase2_node_3b75796f76",
-      "geometry_m": [
-        [
-          800.0,
-          2400.0
-        ],
-        [
-          800.0,
-          3200.0
-        ]
-      ],
-      "geometry_wgs84": [
-        [
-          -88.048,
-          43.022
-        ],
-        [
-          -88.048,
-          43.036
-        ]
-      ],
-      "layer": "0",
-      "length_m": 800.0,
-      "osm_way_id": "way/2004",
-      "start_node_id": "milwaukee_phase2_node_984716ea3c",
-      "stream_region_id": "stream_x00_y00",
-      "structure": "surface",
-      "surface": "asphalt",
-      "tile_id": "tile_x00_y03"
-    }
-  ],
+  "edges": [],
   "graph_profile": "phase2-city-v1",
-  "nodes": [
-    {
-      "junction_kind": "junction",
-      "layer": "0",
-      "node_id": "milwaukee_phase2_node_3b75796f76",
-      "point_m": [
-        800.0,
-        3200.0
-      ],
-      "point_wgs84": [
-        -88.048,
-        43.036
-      ],
-      "stream_region_id": "stream_x00_y00",
-      "tile_id": "tile_x00_y03"
-    },
-    {
-      "junction_kind": "junction",
-      "layer": "0",
-      "node_id": "milwaukee_phase2_node_984716ea3c",
-      "point_m": [
-        800.0,
-        2400.0
-      ],
-      "point_wgs84": [
-        -88.048,
-        43.022
-      ],
-      "stream_region_id": "stream_x00_y00",
-      "tile_id": "tile_x00_y02"
-    }
-  ],
+  "nodes": [],
   "region_id": "milwaukee_phase2",
   "region_version": "milwaukee-v2.0.0"
 }

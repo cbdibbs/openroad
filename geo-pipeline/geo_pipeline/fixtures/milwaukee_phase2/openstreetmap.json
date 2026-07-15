@@ -1,0 +1,301 @@
+{
+  "buildings": [
+    {
+      "building_id": "bldg_wauwatosa_station",
+      "footprint_wgs84": [
+        [-88.0048, 43.0447],
+        [-88.0037, 43.0447],
+        [-88.0037, 43.0454],
+        [-88.0048, 43.0454]
+      ],
+      "height_m": 12.0,
+      "kind": "commercial"
+    },
+    {
+      "building_id": "bldg_menomonee_midrise",
+      "footprint_wgs84": [
+        [-87.9708, 43.0400],
+        [-87.9692, 43.0400],
+        [-87.9692, 43.0410],
+        [-87.9708, 43.0410]
+      ],
+      "height_m": 22.0,
+      "kind": "mixed_use"
+    },
+    {
+      "building_id": "bldg_third_ward_loft",
+      "footprint_wgs84": [
+        [-87.9106, 43.0310],
+        [-87.9092, 43.0310],
+        [-87.9092, 43.0322],
+        [-87.9106, 43.0322]
+      ],
+      "height_m": 18.0,
+      "kind": "mixed_use"
+    },
+    {
+      "building_id": "bldg_lakefront_pavilion",
+      "footprint_wgs84": [
+        [-87.8964, 43.0444],
+        [-87.8955, 43.0444],
+        [-87.8955, 43.0450],
+        [-87.8964, 43.0450]
+      ],
+      "height_m": 9.0,
+      "kind": "civic"
+    }
+  ],
+  "ways": [
+    {
+      "geometry_wgs84": [
+        [-88.00838, 43.04958],
+        [-88.00449, 43.04558],
+        [-87.99121, 43.04230],
+        [-87.98104, 43.04124],
+        [-87.97360, 43.04032]
+      ],
+      "osm_way_id": "way/5101",
+      "tags": {
+        "bicycle": "designated",
+        "highway": "path",
+        "surface": "compacted"
+      }
+    },
+    {
+      "geometry_wgs84": [
+        [-87.97360, 43.04032],
+        [-87.96852, 43.03590],
+        [-87.96607, 43.02845],
+        [-87.95990, 43.02490],
+        [-87.95639, 43.02981]
+      ],
+      "osm_way_id": "way/5102",
+      "tags": {
+        "bicycle": "designated",
+        "highway": "cycleway",
+        "surface": "asphalt"
+      }
+    },
+    {
+      "geometry_wgs84": [
+        [-87.95639, 43.02981],
+        [-87.94301, 43.03126],
+        [-87.92149, 43.03152],
+        [-87.91260, 43.02939],
+        [-87.89907, 43.02578]
+      ],
+      "osm_way_id": "way/5103",
+      "tags": {
+        "bicycle": "designated",
+        "highway": "cycleway",
+        "surface": "asphalt"
+      }
+    },
+    {
+      "geometry_wgs84": [
+        [-87.89907, 43.02578],
+        [-87.89540, 43.03405],
+        [-87.89644, 43.03907],
+        [-87.88995, 43.05103],
+        [-87.89543, 43.04576]
+      ],
+      "osm_way_id": "way/5104",
+      "tags": {
+        "bicycle": "designated",
+        "highway": "cycleway",
+        "surface": "asphalt"
+      }
+    },
+    {
+      "geometry_wgs84": [
+        [-87.89543, 43.04576],
+        [-87.89710, 43.03502],
+        [-87.89540, 43.02957],
+        [-87.90740, 43.03021],
+        [-87.91833, 43.02975]
+      ],
+      "osm_way_id": "way/5105",
+      "tags": {
+        "bicycle": "designated",
+        "highway": "cycleway",
+        "surface": "asphalt"
+      }
+    },
+    {
+      "geometry_wgs84": [
+        [-87.91833, 43.02975],
+        [-87.93110, 43.03146],
+        [-87.94346, 43.03127],
+        [-87.95584, 43.03101],
+        [-87.95842, 43.02693]
+      ],
+      "osm_way_id": "way/5106",
+      "tags": {
+        "bicycle": "designated",
+        "highway": "cycleway",
+        "surface": "asphalt"
+      }
+    },
+    {
+      "geometry_wgs84": [
+        [-87.95842, 43.02693],
+        [-87.96580, 43.02581],
+        [-87.96693, 43.03002],
+        [-87.96792, 43.03884],
+        [-87.97559, 43.04157]
+      ],
+      "osm_way_id": "way/5107",
+      "tags": {
+        "bicycle": "designated",
+        "highway": "path",
+        "surface": "compacted"
+      }
+    },
+    {
+      "geometry_wgs84": [
+        [-87.97559, 43.04157],
+        [-87.98147, 43.04242],
+        [-87.99647, 43.04375],
+        [-88.00504, 43.04702],
+        [-88.00838, 43.04958]
+      ],
+      "osm_way_id": "way/5108",
+      "tags": {
+        "bicycle": "designated",
+        "highway": "path",
+        "surface": "compacted"
+      }
+    },
+    {
+      "geometry_wgs84": [
+        [-87.98520, 43.02750],
+        [-87.97980, 43.02860],
+        [-87.96800, 43.03160]
+      ],
+      "osm_way_id": "way/4001",
+      "tags": {
+        "bicycle": "designated",
+        "highway": "cycleway",
+        "surface": "asphalt"
+      }
+    },
+    {
+      "geometry_wgs84": [
+        [-87.96800, 43.03160],
+        [-87.96010, 43.03830],
+        [-87.95080, 43.04580]
+      ],
+      "osm_way_id": "way/4002",
+      "tags": {
+        "bicycle": "designated",
+        "highway": "cycleway",
+        "surface": "asphalt"
+      }
+    },
+    {
+      "geometry_wgs84": [
+        [-87.95080, 43.04580],
+        [-87.94480, 43.05320],
+        [-87.93680, 43.06210]
+      ],
+      "osm_way_id": "way/4003",
+      "tags": {
+        "bicycle": "designated",
+        "highway": "path",
+        "surface": "fine_gravel"
+      }
+    },
+    {
+      "geometry_wgs84": [
+        [-87.93680, 43.06210],
+        [-87.95650, 43.05500],
+        [-87.97180, 43.04400],
+        [-87.98520, 43.02750]
+      ],
+      "osm_way_id": "way/4004",
+      "tags": {
+        "bicycle": "designated",
+        "highway": "cycleway",
+        "surface": "asphalt"
+      }
+    },
+    {
+      "geometry_wgs84": [
+        [-87.95850, 43.02900],
+        [-87.95050, 43.02900],
+        [-87.94350, 43.02900]
+      ],
+      "osm_way_id": "way/6101",
+      "tags": {
+        "bicycle": "designated",
+        "bridge": "yes",
+        "highway": "cycleway",
+        "layer": "1",
+        "surface": "asphalt"
+      }
+    },
+    {
+      "geometry_wgs84": [
+        [-87.95050, 43.02480],
+        [-87.95050, 43.02900],
+        [-87.95050, 43.03450]
+      ],
+      "osm_way_id": "way/6102",
+      "tags": {
+        "bicycle": "designated",
+        "highway": "cycleway",
+        "layer": "-1",
+        "surface": "asphalt",
+        "tunnel": "yes"
+      }
+    },
+    {
+      "geometry_wgs84": [
+        [-87.95639, 43.02981],
+        [-87.95850, 43.02900]
+      ],
+      "osm_way_id": "way/6103",
+      "tags": {
+        "bicycle": "designated",
+        "highway": "cycleway",
+        "surface": "asphalt"
+      }
+    },
+    {
+      "geometry_wgs84": [
+        [-87.94350, 43.02900],
+        [-87.94346, 43.03127]
+      ],
+      "osm_way_id": "way/6104",
+      "tags": {
+        "bicycle": "designated",
+        "highway": "cycleway",
+        "surface": "asphalt"
+      }
+    },
+    {
+      "geometry_wgs84": [
+        [-87.96693, 43.03002],
+        [-87.96800, 43.03160]
+      ],
+      "osm_way_id": "way/6301",
+      "tags": {
+        "bicycle": "designated",
+        "highway": "cycleway",
+        "surface": "asphalt"
+      }
+    },
+    {
+      "geometry_wgs84": [
+        [-87.97200, 43.04050],
+        [-87.97000, 43.04120]
+      ],
+      "osm_way_id": "way/9001",
+      "tags": {
+        "bicycle": "no",
+        "highway": "footway",
+        "surface": "paved"
+      }
+    }
+  ]
+}

@@ -16,6 +16,7 @@ const RegionPackLoader = preload("res://addons/procedural_trainer/region_pack_lo
 const POWER_STEP_W := 25.0
 const CADENCE_STEP_RPM := 5.0
 const BRAKE_STEP_PCT := 10.0
+const ROAD_SURFACE_CLEARANCE_M := 0.02
 
 var _pack: Dictionary = {}
 var _loader := RegionPackLoader.new()
@@ -250,15 +251,7 @@ func _build_tile_visuals(tile_info: Dictionary, tile_pack: Dictionary) -> void:
 func _build_terrain(tile_info: Dictionary, scenery: Dictionary) -> void:
 	for chunk in scenery["terrain_chunks"]:
 		var mesh_instance := MeshInstance3D.new()
-		var plane := PlaneMesh.new()
-		plane.size = Vector2(chunk["size_m"][0] * world_scale, chunk["size_m"][1] * world_scale)
-		mesh_instance.mesh = plane
-		mesh_instance.rotation_degrees.x = -90.0
-		mesh_instance.position = Vector3(
-			(chunk["origin_m"][0] + (chunk["size_m"][0] / 2.0)) * world_scale,
-			_average_grid(chunk["elevation_grid_m"]) * elevation_scale - 0.1,
-			(chunk["origin_m"][1] + (chunk["size_m"][1] / 2.0)) * world_scale
-		)
+		mesh_instance.mesh = _build_terrain_mesh(chunk)
 		mesh_instance.material_override = _make_material(Color(0.42, 0.49, 0.33), 0.0)
 		mesh_instance.set_meta("tile_id", tile_info["tile_id"])
 		_terrain_root.add_child(mesh_instance)
@@ -296,16 +289,14 @@ func _build_roads(tile_info: Dictionary, ride_graph: Dictionary, scenery: Dictio
 		var geometry: Array = edge["geometry_m"]
 		var elevations: Array = edge["elevation_profile_m"]
 		for index in range(geometry.size() - 1):
-			var start_point := _to_world(geometry[index], elevations[index])
-			var end_point := _to_world(geometry[index + 1], elevations[index + 1])
-			var direction := end_point - start_point
 			var road_piece := MeshInstance3D.new()
-			var box := BoxMesh.new()
-			box.size = Vector3(float(road_style["width_m"]) * world_scale, 0.12, direction.length())
-			road_piece.mesh = box
-			road_piece.position = (start_point + end_point) / 2.0
-			road_piece.rotation.y = atan2(direction.x, direction.z)
-			road_piece.position.y += 0.04 if str(road_style.get("structure", "surface")) == "surface" else 0.25
+			road_piece.mesh = _build_road_mesh(
+				geometry[index],
+				elevations[index],
+				geometry[index + 1],
+				elevations[index + 1],
+				float(road_style["width_m"])
+			)
 			road_piece.material_override = road_materials.get(str(road_style["material"]), road_materials["asphalt"])
 			road_piece.set_meta("tile_id", tile_info["tile_id"])
 			_road_root.add_child(road_piece)
@@ -318,10 +309,12 @@ func _build_buildings(tile_info: Dictionary, scenery: Dictionary) -> void:
 		var box := BoxMesh.new()
 		box.size = Vector3(bounds.size.x * world_scale, float(building["height_m"]) * elevation_scale, bounds.size.y * world_scale)
 		mesh_instance.mesh = box
+		var center_m := [bounds.position.x + (bounds.size.x / 2.0), bounds.position.y + (bounds.size.y / 2.0)]
+		var base_elevation := _scenery_height_at_point_m(scenery, center_m)
 		mesh_instance.position = Vector3(
-			(bounds.position.x + (bounds.size.x / 2.0)) * world_scale,
-			(float(building["height_m"]) * elevation_scale) / 2.0,
-			(bounds.position.y + (bounds.size.y / 2.0)) * world_scale
+			center_m[0] * world_scale,
+			base_elevation * elevation_scale + (float(building["height_m"]) * elevation_scale) / 2.0,
+			center_m[1] * world_scale
 		)
 		mesh_instance.material_override = _make_material(Color(0.77, 0.69, 0.58), 0.0)
 		mesh_instance.set_meta("tile_id", tile_info["tile_id"])
@@ -337,10 +330,12 @@ func _build_props(tile_info: Dictionary, scenery: Dictionary) -> void:
 		cylinder.bottom_radius = 0.3
 		cylinder.height = 1.6 + float(mask.get("density", 0.5))
 		mesh_instance.mesh = cylinder
+		var center_m := [bounds.position.x + (bounds.size.x / 2.0), bounds.position.y + (bounds.size.y / 2.0)]
+		var base_elevation := _scenery_height_at_point_m(scenery, center_m)
 		mesh_instance.position = Vector3(
-			(bounds.position.x + (bounds.size.x / 2.0)) * world_scale,
-			cylinder.height / 2.0,
-			(bounds.position.y + (bounds.size.y / 2.0)) * world_scale
+			center_m[0] * world_scale,
+			base_elevation * elevation_scale + cylinder.height / 2.0,
+			center_m[1] * world_scale
 		)
 		mesh_instance.material_override = _make_material(Color(0.22, 0.47, 0.26), 0.0)
 		mesh_instance.set_meta("tile_id", tile_info["tile_id"])
@@ -486,6 +481,54 @@ func _to_world(point_m: Array, elevation_m: float) -> Vector3:
 	return Vector3(point_m[0] * world_scale, elevation_m * elevation_scale, point_m[1] * world_scale)
 
 
+func _build_terrain_mesh(chunk: Dictionary) -> ArrayMesh:
+	var grid: Array = chunk["elevation_grid_m"]
+	var rows: int = grid.size()
+	var first_row: Array = grid[0]
+	var columns: int = first_row.size()
+	var step_m: float = float(chunk["sample_spacing_m"])
+	var origin: Array = chunk["origin_m"]
+	var surface := SurfaceTool.new()
+	surface.begin(Mesh.PRIMITIVE_TRIANGLES)
+	for row in range(rows - 1):
+		for column in range(columns - 1):
+			var a := _to_world([origin[0] + column * step_m, origin[1] + row * step_m], float(grid[row][column]))
+			var b := _to_world([origin[0] + (column + 1) * step_m, origin[1] + row * step_m], float(grid[row][column + 1]))
+			var c := _to_world([origin[0] + column * step_m, origin[1] + (row + 1) * step_m], float(grid[row + 1][column]))
+			var d := _to_world([origin[0] + (column + 1) * step_m, origin[1] + (row + 1) * step_m], float(grid[row + 1][column + 1]))
+			surface.add_vertex(a)
+			surface.add_vertex(c)
+			surface.add_vertex(b)
+			surface.add_vertex(b)
+			surface.add_vertex(c)
+			surface.add_vertex(d)
+	surface.generate_normals()
+	return surface.commit()
+
+
+func _build_road_mesh(start_point_m: Array, start_elevation_m: float, end_point_m: Array, end_elevation_m: float, width_m: float) -> ArrayMesh:
+	var start_point := _to_world(start_point_m, start_elevation_m + ROAD_SURFACE_CLEARANCE_M)
+	var end_point := _to_world(end_point_m, end_elevation_m + ROAD_SURFACE_CLEARANCE_M)
+	var forward := end_point - start_point
+	if forward.length() < 0.001:
+		return ArrayMesh.new()
+	var lateral := Vector3(-forward.z, 0.0, forward.x).normalized() * (width_m * world_scale * 0.5)
+	var a := start_point - lateral
+	var b := start_point + lateral
+	var c := end_point - lateral
+	var d := end_point + lateral
+	var surface := SurfaceTool.new()
+	surface.begin(Mesh.PRIMITIVE_TRIANGLES)
+	surface.add_vertex(a)
+	surface.add_vertex(c)
+	surface.add_vertex(b)
+	surface.add_vertex(b)
+	surface.add_vertex(c)
+	surface.add_vertex(d)
+	surface.generate_normals()
+	return surface.commit()
+
+
 func _average_grid(grid: Array) -> float:
 	var total := 0.0
 	var count := 0.0
@@ -507,6 +550,31 @@ func _polygon_bounds(points: Array) -> Rect2:
 		max_x = max(max_x, point[0])
 		max_y = max(max_y, point[1])
 	return Rect2(Vector2(min_x, min_y), Vector2(max_x - min_x, max_y - min_y))
+
+
+func _scenery_height_at_point_m(scenery: Dictionary, point_m: Array) -> float:
+	var chunk: Dictionary = scenery["terrain_chunks"][0]
+	var origin: Array = chunk["origin_m"]
+	var grid: Array = chunk["elevation_grid_m"]
+	var rows: int = grid.size()
+	var first_row: Array = grid[0]
+	var columns: int = first_row.size()
+	var step_m: float = float(chunk["sample_spacing_m"])
+	var local_x: float = clamp((float(point_m[0]) - float(origin[0])) / step_m, 0.0, float(columns - 1))
+	var local_y: float = clamp((float(point_m[1]) - float(origin[1])) / step_m, 0.0, float(rows - 1))
+	var x0: int = int(floor(local_x))
+	var y0: int = int(floor(local_y))
+	var x1: int = min(columns - 1, x0 + 1)
+	var y1: int = min(rows - 1, y0 + 1)
+	var tx: float = local_x - float(x0)
+	var ty: float = local_y - float(y0)
+	var z00: float = float(grid[y0][x0])
+	var z10: float = float(grid[y0][x1])
+	var z01: float = float(grid[y1][x0])
+	var z11: float = float(grid[y1][x1])
+	var top: float = lerp(z00, z10, tx)
+	var bottom: float = lerp(z01, z11, tx)
+	return lerp(top, bottom, ty)
 
 
 func _make_material(albedo: Color, alpha: float) -> StandardMaterial3D:

@@ -1,15 +1,15 @@
 {
   "build_warnings": [
-    "optional source usda_naip not required for Phase 2 bake; using deterministic fallback synthesis"
+    "optional source usda_naip only affects style hints; graph, terrain, and route snapping remain source-complete without it"
   ],
   "corridor_id": "milwaukee_city_core_trails",
   "region_id": "milwaukee_phase2",
   "region_version": "milwaukee-v2.0.0",
   "streaming_region_size_m": 4000.0,
   "style_hints": {
-    "building_color_variation": 0.35,
-    "shoreline_emphasis": 0.58,
-    "vegetation_density": 0.64
+    "building_color_variation": 0.22,
+    "shoreline_emphasis": 0.71,
+    "vegetation_density": 0.66
   },
   "tile_size_m": 1000.0,
   "tiles": [
@@ -19,6 +19,12 @@
         0.0,
         0.0
       ],
+      "seam_hashes": {
+        "east": "2fec7c7bdfa497dfaf18054fa6f4535be343554153a765ad6b7882216d70dc4a",
+        "north": "a826919f347317244a0159f46d1bca351dab2ab808498003ac390767c722f72c",
+        "south": "12f0feb8f245bd0a2ffa6dcc493c52945063790e83a6767f5886bbe1eb35453b",
+        "west": "b390c50d2ab27611b95758739cbd2d5ec8c2be9eb5f1219da398d7d57611c29c"
+      },
       "size_m": [
         1000.0,
         1000.0
@@ -27,154 +33,17 @@
       "tile_id": "tile_x00_y00"
     },
     {
-      "manifest_asset": "tiles/tile_x01_y00/manifest.json",
-      "origin_m": [
-        1000.0,
-        0.0
-      ],
-      "size_m": [
-        1000.0,
-        1000.0
-      ],
-      "stream_region_id": "stream_x00_y00",
-      "tile_id": "tile_x01_y00"
-    },
-    {
-      "manifest_asset": "tiles/tile_x02_y00/manifest.json",
-      "origin_m": [
-        2000.0,
-        0.0
-      ],
-      "size_m": [
-        1000.0,
-        1000.0
-      ],
-      "stream_region_id": "stream_x00_y00",
-      "tile_id": "tile_x02_y00"
-    },
-    {
-      "manifest_asset": "tiles/tile_x03_y00/manifest.json",
-      "origin_m": [
-        3000.0,
-        0.0
-      ],
-      "size_m": [
-        1000.0,
-        1000.0
-      ],
-      "stream_region_id": "stream_x00_y00",
-      "tile_id": "tile_x03_y00"
-    },
-    {
-      "manifest_asset": "tiles/tile_x04_y00/manifest.json",
-      "origin_m": [
-        4000.0,
-        0.0
-      ],
-      "size_m": [
-        1000.0,
-        1000.0
-      ],
-      "stream_region_id": "stream_x01_y00",
-      "tile_id": "tile_x04_y00"
-    },
-    {
-      "manifest_asset": "tiles/tile_x05_y00/manifest.json",
-      "origin_m": [
-        5000.0,
-        0.0
-      ],
-      "size_m": [
-        1000.0,
-        1000.0
-      ],
-      "stream_region_id": "stream_x01_y00",
-      "tile_id": "tile_x05_y00"
-    },
-    {
-      "manifest_asset": "tiles/tile_x06_y00/manifest.json",
-      "origin_m": [
-        6000.0,
-        0.0
-      ],
-      "size_m": [
-        1000.0,
-        1000.0
-      ],
-      "stream_region_id": "stream_x01_y00",
-      "tile_id": "tile_x06_y00"
-    },
-    {
-      "manifest_asset": "tiles/tile_x07_y00/manifest.json",
-      "origin_m": [
-        7000.0,
-        0.0
-      ],
-      "size_m": [
-        1000.0,
-        1000.0
-      ],
-      "stream_region_id": "stream_x01_y00",
-      "tile_id": "tile_x07_y00"
-    },
-    {
-      "manifest_asset": "tiles/tile_x08_y00/manifest.json",
-      "origin_m": [
-        8000.0,
-        0.0
-      ],
-      "size_m": [
-        1000.0,
-        1000.0
-      ],
-      "stream_region_id": "stream_x02_y00",
-      "tile_id": "tile_x08_y00"
-    },
-    {
-      "manifest_asset": "tiles/tile_x09_y00/manifest.json",
-      "origin_m": [
-        9000.0,
-        0.0
-      ],
-      "size_m": [
-        1000.0,
-        1000.0
-      ],
-      "stream_region_id": "stream_x02_y00",
-      "tile_id": "tile_x09_y00"
-    },
-    {
-      "manifest_asset": "tiles/tile_x10_y00/manifest.json",
-      "origin_m": [
-        10000.0,
-        0.0
-      ],
-      "size_m": [
-        1000.0,
-        1000.0
-      ],
-      "stream_region_id": "stream_x02_y00",
-      "tile_id": "tile_x10_y00"
-    },
-    {
-      "manifest_asset": "tiles/tile_x11_y00/manifest.json",
-      "origin_m": [
-        11000.0,
-        0.0
-      ],
-      "size_m": [
-        1000.0,
-        1000.0
-      ],
-      "stream_region_id": "stream_x02_y00",
-      "tile_id": "tile_x11_y00"
-    },
-    {
       "manifest_asset": "tiles/tile_x00_y01/manifest.json",
       "origin_m": [
         0.0,
         1000.0
       ],
+      "seam_hashes": {
+        "east": "1d5a462e03ea7540042b73fe9f66dd404fe96ae627b7473b1d5191a5d75b6ff0",
+        "north": "200c2aa7101703748328ffe84ab796eb614c9bcb8b4f0ccbd7690256f806c7be",
+        "south": "a826919f347317244a0159f46d1bca351dab2ab808498003ac390767c722f72c",
+        "west": "49405559081613750c2522afa10e9f9438f2d2f579d9abfb5433908ef1bcd710"
+      },
       "size_m": [
         1000.0,
         1000.0
@@ -183,154 +52,17 @@
       "tile_id": "tile_x00_y01"
     },
     {
-      "manifest_asset": "tiles/tile_x01_y01/manifest.json",
-      "origin_m": [
-        1000.0,
-        1000.0
-      ],
-      "size_m": [
-        1000.0,
-        1000.0
-      ],
-      "stream_region_id": "stream_x00_y00",
-      "tile_id": "tile_x01_y01"
-    },
-    {
-      "manifest_asset": "tiles/tile_x02_y01/manifest.json",
-      "origin_m": [
-        2000.0,
-        1000.0
-      ],
-      "size_m": [
-        1000.0,
-        1000.0
-      ],
-      "stream_region_id": "stream_x00_y00",
-      "tile_id": "tile_x02_y01"
-    },
-    {
-      "manifest_asset": "tiles/tile_x03_y01/manifest.json",
-      "origin_m": [
-        3000.0,
-        1000.0
-      ],
-      "size_m": [
-        1000.0,
-        1000.0
-      ],
-      "stream_region_id": "stream_x00_y00",
-      "tile_id": "tile_x03_y01"
-    },
-    {
-      "manifest_asset": "tiles/tile_x04_y01/manifest.json",
-      "origin_m": [
-        4000.0,
-        1000.0
-      ],
-      "size_m": [
-        1000.0,
-        1000.0
-      ],
-      "stream_region_id": "stream_x01_y00",
-      "tile_id": "tile_x04_y01"
-    },
-    {
-      "manifest_asset": "tiles/tile_x05_y01/manifest.json",
-      "origin_m": [
-        5000.0,
-        1000.0
-      ],
-      "size_m": [
-        1000.0,
-        1000.0
-      ],
-      "stream_region_id": "stream_x01_y00",
-      "tile_id": "tile_x05_y01"
-    },
-    {
-      "manifest_asset": "tiles/tile_x06_y01/manifest.json",
-      "origin_m": [
-        6000.0,
-        1000.0
-      ],
-      "size_m": [
-        1000.0,
-        1000.0
-      ],
-      "stream_region_id": "stream_x01_y00",
-      "tile_id": "tile_x06_y01"
-    },
-    {
-      "manifest_asset": "tiles/tile_x07_y01/manifest.json",
-      "origin_m": [
-        7000.0,
-        1000.0
-      ],
-      "size_m": [
-        1000.0,
-        1000.0
-      ],
-      "stream_region_id": "stream_x01_y00",
-      "tile_id": "tile_x07_y01"
-    },
-    {
-      "manifest_asset": "tiles/tile_x08_y01/manifest.json",
-      "origin_m": [
-        8000.0,
-        1000.0
-      ],
-      "size_m": [
-        1000.0,
-        1000.0
-      ],
-      "stream_region_id": "stream_x02_y00",
-      "tile_id": "tile_x08_y01"
-    },
-    {
-      "manifest_asset": "tiles/tile_x09_y01/manifest.json",
-      "origin_m": [
-        9000.0,
-        1000.0
-      ],
-      "size_m": [
-        1000.0,
-        1000.0
-      ],
-      "stream_region_id": "stream_x02_y00",
-      "tile_id": "tile_x09_y01"
-    },
-    {
-      "manifest_asset": "tiles/tile_x10_y01/manifest.json",
-      "origin_m": [
-        10000.0,
-        1000.0
-      ],
-      "size_m": [
-        1000.0,
-        1000.0
-      ],
-      "stream_region_id": "stream_x02_y00",
-      "tile_id": "tile_x10_y01"
-    },
-    {
-      "manifest_asset": "tiles/tile_x11_y01/manifest.json",
-      "origin_m": [
-        11000.0,
-        1000.0
-      ],
-      "size_m": [
-        1000.0,
-        1000.0
-      ],
-      "stream_region_id": "stream_x02_y00",
-      "tile_id": "tile_x11_y01"
-    },
-    {
       "manifest_asset": "tiles/tile_x00_y02/manifest.json",
       "origin_m": [
         0.0,
         2000.0
       ],
+      "seam_hashes": {
+        "east": "90aee6add4f69cef323fb76d96ac29d5fde75cbdcb72ad355d0a1fcb5e0b7990",
+        "north": "5b3ecfd31bd3115fa0744aaef0575d3b7682a50deeacfede69a1cb19552b394a",
+        "south": "200c2aa7101703748328ffe84ab796eb614c9bcb8b4f0ccbd7690256f806c7be",
+        "west": "4331ba8ee63d746e80ef6de131f60034b16840ff1aac0f598cb76f2e80c164dc"
+      },
       "size_m": [
         1000.0,
         1000.0
@@ -339,154 +71,17 @@
       "tile_id": "tile_x00_y02"
     },
     {
-      "manifest_asset": "tiles/tile_x01_y02/manifest.json",
-      "origin_m": [
-        1000.0,
-        2000.0
-      ],
-      "size_m": [
-        1000.0,
-        1000.0
-      ],
-      "stream_region_id": "stream_x00_y00",
-      "tile_id": "tile_x01_y02"
-    },
-    {
-      "manifest_asset": "tiles/tile_x02_y02/manifest.json",
-      "origin_m": [
-        2000.0,
-        2000.0
-      ],
-      "size_m": [
-        1000.0,
-        1000.0
-      ],
-      "stream_region_id": "stream_x00_y00",
-      "tile_id": "tile_x02_y02"
-    },
-    {
-      "manifest_asset": "tiles/tile_x03_y02/manifest.json",
-      "origin_m": [
-        3000.0,
-        2000.0
-      ],
-      "size_m": [
-        1000.0,
-        1000.0
-      ],
-      "stream_region_id": "stream_x00_y00",
-      "tile_id": "tile_x03_y02"
-    },
-    {
-      "manifest_asset": "tiles/tile_x04_y02/manifest.json",
-      "origin_m": [
-        4000.0,
-        2000.0
-      ],
-      "size_m": [
-        1000.0,
-        1000.0
-      ],
-      "stream_region_id": "stream_x01_y00",
-      "tile_id": "tile_x04_y02"
-    },
-    {
-      "manifest_asset": "tiles/tile_x05_y02/manifest.json",
-      "origin_m": [
-        5000.0,
-        2000.0
-      ],
-      "size_m": [
-        1000.0,
-        1000.0
-      ],
-      "stream_region_id": "stream_x01_y00",
-      "tile_id": "tile_x05_y02"
-    },
-    {
-      "manifest_asset": "tiles/tile_x06_y02/manifest.json",
-      "origin_m": [
-        6000.0,
-        2000.0
-      ],
-      "size_m": [
-        1000.0,
-        1000.0
-      ],
-      "stream_region_id": "stream_x01_y00",
-      "tile_id": "tile_x06_y02"
-    },
-    {
-      "manifest_asset": "tiles/tile_x07_y02/manifest.json",
-      "origin_m": [
-        7000.0,
-        2000.0
-      ],
-      "size_m": [
-        1000.0,
-        1000.0
-      ],
-      "stream_region_id": "stream_x01_y00",
-      "tile_id": "tile_x07_y02"
-    },
-    {
-      "manifest_asset": "tiles/tile_x08_y02/manifest.json",
-      "origin_m": [
-        8000.0,
-        2000.0
-      ],
-      "size_m": [
-        1000.0,
-        1000.0
-      ],
-      "stream_region_id": "stream_x02_y00",
-      "tile_id": "tile_x08_y02"
-    },
-    {
-      "manifest_asset": "tiles/tile_x09_y02/manifest.json",
-      "origin_m": [
-        9000.0,
-        2000.0
-      ],
-      "size_m": [
-        1000.0,
-        1000.0
-      ],
-      "stream_region_id": "stream_x02_y00",
-      "tile_id": "tile_x09_y02"
-    },
-    {
-      "manifest_asset": "tiles/tile_x10_y02/manifest.json",
-      "origin_m": [
-        10000.0,
-        2000.0
-      ],
-      "size_m": [
-        1000.0,
-        1000.0
-      ],
-      "stream_region_id": "stream_x02_y00",
-      "tile_id": "tile_x10_y02"
-    },
-    {
-      "manifest_asset": "tiles/tile_x11_y02/manifest.json",
-      "origin_m": [
-        11000.0,
-        2000.0
-      ],
-      "size_m": [
-        1000.0,
-        1000.0
-      ],
-      "stream_region_id": "stream_x02_y00",
-      "tile_id": "tile_x11_y02"
-    },
-    {
       "manifest_asset": "tiles/tile_x00_y03/manifest.json",
       "origin_m": [
         0.0,
         3000.0
       ],
+      "seam_hashes": {
+        "east": "ffbde9f139b74c014c2422b8f591d77fcc68012f3236da83aa2c5876ca35bfbf",
+        "north": "f5ce11091a1740ea86e08e4cc7458e64fe72142531ee160f5e2f002bcec1f3bd",
+        "south": "5b3ecfd31bd3115fa0744aaef0575d3b7682a50deeacfede69a1cb19552b394a",
+        "west": "6b868625bc48b3db49ced871dbbdf6a648a2b3e99df1a970344e3ce5d63036d3"
+      },
       "size_m": [
         1000.0,
         1000.0
@@ -495,154 +90,17 @@
       "tile_id": "tile_x00_y03"
     },
     {
-      "manifest_asset": "tiles/tile_x01_y03/manifest.json",
-      "origin_m": [
-        1000.0,
-        3000.0
-      ],
-      "size_m": [
-        1000.0,
-        1000.0
-      ],
-      "stream_region_id": "stream_x00_y00",
-      "tile_id": "tile_x01_y03"
-    },
-    {
-      "manifest_asset": "tiles/tile_x02_y03/manifest.json",
-      "origin_m": [
-        2000.0,
-        3000.0
-      ],
-      "size_m": [
-        1000.0,
-        1000.0
-      ],
-      "stream_region_id": "stream_x00_y00",
-      "tile_id": "tile_x02_y03"
-    },
-    {
-      "manifest_asset": "tiles/tile_x03_y03/manifest.json",
-      "origin_m": [
-        3000.0,
-        3000.0
-      ],
-      "size_m": [
-        1000.0,
-        1000.0
-      ],
-      "stream_region_id": "stream_x00_y00",
-      "tile_id": "tile_x03_y03"
-    },
-    {
-      "manifest_asset": "tiles/tile_x04_y03/manifest.json",
-      "origin_m": [
-        4000.0,
-        3000.0
-      ],
-      "size_m": [
-        1000.0,
-        1000.0
-      ],
-      "stream_region_id": "stream_x01_y00",
-      "tile_id": "tile_x04_y03"
-    },
-    {
-      "manifest_asset": "tiles/tile_x05_y03/manifest.json",
-      "origin_m": [
-        5000.0,
-        3000.0
-      ],
-      "size_m": [
-        1000.0,
-        1000.0
-      ],
-      "stream_region_id": "stream_x01_y00",
-      "tile_id": "tile_x05_y03"
-    },
-    {
-      "manifest_asset": "tiles/tile_x06_y03/manifest.json",
-      "origin_m": [
-        6000.0,
-        3000.0
-      ],
-      "size_m": [
-        1000.0,
-        1000.0
-      ],
-      "stream_region_id": "stream_x01_y00",
-      "tile_id": "tile_x06_y03"
-    },
-    {
-      "manifest_asset": "tiles/tile_x07_y03/manifest.json",
-      "origin_m": [
-        7000.0,
-        3000.0
-      ],
-      "size_m": [
-        1000.0,
-        1000.0
-      ],
-      "stream_region_id": "stream_x01_y00",
-      "tile_id": "tile_x07_y03"
-    },
-    {
-      "manifest_asset": "tiles/tile_x08_y03/manifest.json",
-      "origin_m": [
-        8000.0,
-        3000.0
-      ],
-      "size_m": [
-        1000.0,
-        1000.0
-      ],
-      "stream_region_id": "stream_x02_y00",
-      "tile_id": "tile_x08_y03"
-    },
-    {
-      "manifest_asset": "tiles/tile_x09_y03/manifest.json",
-      "origin_m": [
-        9000.0,
-        3000.0
-      ],
-      "size_m": [
-        1000.0,
-        1000.0
-      ],
-      "stream_region_id": "stream_x02_y00",
-      "tile_id": "tile_x09_y03"
-    },
-    {
-      "manifest_asset": "tiles/tile_x10_y03/manifest.json",
-      "origin_m": [
-        10000.0,
-        3000.0
-      ],
-      "size_m": [
-        1000.0,
-        1000.0
-      ],
-      "stream_region_id": "stream_x02_y00",
-      "tile_id": "tile_x10_y03"
-    },
-    {
-      "manifest_asset": "tiles/tile_x11_y03/manifest.json",
-      "origin_m": [
-        11000.0,
-        3000.0
-      ],
-      "size_m": [
-        1000.0,
-        1000.0
-      ],
-      "stream_region_id": "stream_x02_y00",
-      "tile_id": "tile_x11_y03"
-    },
-    {
       "manifest_asset": "tiles/tile_x00_y04/manifest.json",
       "origin_m": [
         0.0,
         4000.0
       ],
+      "seam_hashes": {
+        "east": "f958dffeff1cf238b8157fb3c746b089d18f0b4776b478885c088e5eebb5fac9",
+        "north": "5969c4fb56ecdbe4d5019045dcd3ca168593f3207f23cba22a910e9faefaf9cf",
+        "south": "f5ce11091a1740ea86e08e4cc7458e64fe72142531ee160f5e2f002bcec1f3bd",
+        "west": "11f4d6ef9186096a40b1ec465e446335c64075a0ff1499daea2a33a5a3e2c328"
+      },
       "size_m": [
         1000.0,
         1000.0
@@ -651,11 +109,93 @@
       "tile_id": "tile_x00_y04"
     },
     {
+      "manifest_asset": "tiles/tile_x01_y00/manifest.json",
+      "origin_m": [
+        1000.0,
+        0.0
+      ],
+      "seam_hashes": {
+        "east": "45363d3fca6099e6d0099748fc7f230f0539fcde44fd9c45d47e848b0dc9cf73",
+        "north": "4a9cce109dfb9081fabf90b736e5e8e57a45fb9749728f3446385ec233dbed33",
+        "south": "a8669053ae01f7c1c86bf9f1b40edfd3d23f25d71c84067bcc7857a7ba0808f3",
+        "west": "2fec7c7bdfa497dfaf18054fa6f4535be343554153a765ad6b7882216d70dc4a"
+      },
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x00_y00",
+      "tile_id": "tile_x01_y00"
+    },
+    {
+      "manifest_asset": "tiles/tile_x01_y01/manifest.json",
+      "origin_m": [
+        1000.0,
+        1000.0
+      ],
+      "seam_hashes": {
+        "east": "28ed10e6f9a8d594612aba62a3c6f0d97891bece410a04bb68e3913f4225e84d",
+        "north": "dbf972a8b843c50cad99facecee6c4d4292d113dadb14c21f1970aa6d6c8d157",
+        "south": "4a9cce109dfb9081fabf90b736e5e8e57a45fb9749728f3446385ec233dbed33",
+        "west": "1d5a462e03ea7540042b73fe9f66dd404fe96ae627b7473b1d5191a5d75b6ff0"
+      },
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x00_y00",
+      "tile_id": "tile_x01_y01"
+    },
+    {
+      "manifest_asset": "tiles/tile_x01_y02/manifest.json",
+      "origin_m": [
+        1000.0,
+        2000.0
+      ],
+      "seam_hashes": {
+        "east": "06c8cbcad27a9c3602121506fab07ba3da9bead9d2aa399842eb80348ee643ef",
+        "north": "58e58708385f6fee5285037dfa0418a658fcd3415d4a3385d42c254de23fb025",
+        "south": "dbf972a8b843c50cad99facecee6c4d4292d113dadb14c21f1970aa6d6c8d157",
+        "west": "90aee6add4f69cef323fb76d96ac29d5fde75cbdcb72ad355d0a1fcb5e0b7990"
+      },
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x00_y00",
+      "tile_id": "tile_x01_y02"
+    },
+    {
+      "manifest_asset": "tiles/tile_x01_y03/manifest.json",
+      "origin_m": [
+        1000.0,
+        3000.0
+      ],
+      "seam_hashes": {
+        "east": "a19bd2ae7f101b7066fa0bd811cff64448e8997d0002b02d108979e62e3044eb",
+        "north": "a94dbaf85dd83a4e257c827ab4b775d02fd09b5f710e1c4af7e98809288aa969",
+        "south": "58e58708385f6fee5285037dfa0418a658fcd3415d4a3385d42c254de23fb025",
+        "west": "ffbde9f139b74c014c2422b8f591d77fcc68012f3236da83aa2c5876ca35bfbf"
+      },
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x00_y00",
+      "tile_id": "tile_x01_y03"
+    },
+    {
       "manifest_asset": "tiles/tile_x01_y04/manifest.json",
       "origin_m": [
         1000.0,
         4000.0
       ],
+      "seam_hashes": {
+        "east": "d24e5f59a7bf3f40efd6a756a9ebb4fb4800b7f1bf9a73b26f7b75a8a04dfd82",
+        "north": "048dfb25af5d4b13279e7392387a00b824133e35d2d3132b5cf9478672298e97",
+        "south": "a94dbaf85dd83a4e257c827ab4b775d02fd09b5f710e1c4af7e98809288aa969",
+        "west": "f958dffeff1cf238b8157fb3c746b089d18f0b4776b478885c088e5eebb5fac9"
+      },
       "size_m": [
         1000.0,
         1000.0
@@ -664,11 +204,93 @@
       "tile_id": "tile_x01_y04"
     },
     {
+      "manifest_asset": "tiles/tile_x02_y00/manifest.json",
+      "origin_m": [
+        2000.0,
+        0.0
+      ],
+      "seam_hashes": {
+        "east": "216b0eafd888de225a94e4e07c30de666315d3b1e3d45aebab686e98b900c00d",
+        "north": "4e1a0f12dea7a0fa4da297ce6f3f1b24c592b47a3b2dc28023de4ce9adb4eb55",
+        "south": "a7caf3954874cd69dfc402be1bdccd0f46b7ea2a7436d3d2778185793bc0eb4b",
+        "west": "45363d3fca6099e6d0099748fc7f230f0539fcde44fd9c45d47e848b0dc9cf73"
+      },
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x00_y00",
+      "tile_id": "tile_x02_y00"
+    },
+    {
+      "manifest_asset": "tiles/tile_x02_y01/manifest.json",
+      "origin_m": [
+        2000.0,
+        1000.0
+      ],
+      "seam_hashes": {
+        "east": "4c7c550ce83bbb8d947cdd44554807a12341fa36ffc2bfb743c60f929fb5ca93",
+        "north": "9cd24e81d1e9cdd4c821bb31ba8d1c255ec4dc5bf19e8e6581dc5296b5bb12c5",
+        "south": "4e1a0f12dea7a0fa4da297ce6f3f1b24c592b47a3b2dc28023de4ce9adb4eb55",
+        "west": "28ed10e6f9a8d594612aba62a3c6f0d97891bece410a04bb68e3913f4225e84d"
+      },
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x00_y00",
+      "tile_id": "tile_x02_y01"
+    },
+    {
+      "manifest_asset": "tiles/tile_x02_y02/manifest.json",
+      "origin_m": [
+        2000.0,
+        2000.0
+      ],
+      "seam_hashes": {
+        "east": "aa366ba7d8ec40538dd4825b8d96cdce97842ca94932a4ca5603bf956a3fe4ac",
+        "north": "cd1ed65f33ff421c6f861899f8cd6d7b44004b0671858d8cf7fef4bc26a7f172",
+        "south": "9cd24e81d1e9cdd4c821bb31ba8d1c255ec4dc5bf19e8e6581dc5296b5bb12c5",
+        "west": "06c8cbcad27a9c3602121506fab07ba3da9bead9d2aa399842eb80348ee643ef"
+      },
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x00_y00",
+      "tile_id": "tile_x02_y02"
+    },
+    {
+      "manifest_asset": "tiles/tile_x02_y03/manifest.json",
+      "origin_m": [
+        2000.0,
+        3000.0
+      ],
+      "seam_hashes": {
+        "east": "a2ccc02b9de8518a2a6e6c9d187b2aae8e21b7b2cbd6bddb870a43045310d4a4",
+        "north": "cad9fc8de86208749f087e3261110aa850d48a21888497df7db17705b686ca7d",
+        "south": "cd1ed65f33ff421c6f861899f8cd6d7b44004b0671858d8cf7fef4bc26a7f172",
+        "west": "a19bd2ae7f101b7066fa0bd811cff64448e8997d0002b02d108979e62e3044eb"
+      },
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x00_y00",
+      "tile_id": "tile_x02_y03"
+    },
+    {
       "manifest_asset": "tiles/tile_x02_y04/manifest.json",
       "origin_m": [
         2000.0,
         4000.0
       ],
+      "seam_hashes": {
+        "east": "fb834dfc72e02df0d4a01087fed08e1752222ee0c59bde43477ecd1b8862ff4f",
+        "north": "3c79ebce5c1f5ff791e0f9eb180d9190b4beb43d35bd0cca54e1d8f84d9b5f13",
+        "south": "cad9fc8de86208749f087e3261110aa850d48a21888497df7db17705b686ca7d",
+        "west": "d24e5f59a7bf3f40efd6a756a9ebb4fb4800b7f1bf9a73b26f7b75a8a04dfd82"
+      },
       "size_m": [
         1000.0,
         1000.0
@@ -677,11 +299,93 @@
       "tile_id": "tile_x02_y04"
     },
     {
+      "manifest_asset": "tiles/tile_x03_y00/manifest.json",
+      "origin_m": [
+        3000.0,
+        0.0
+      ],
+      "seam_hashes": {
+        "east": "fb1fdcd6b1624d83da7deafe00c7eeb89594bf7aa2fd45e8ab4f6f3ccb06c938",
+        "north": "ae1e22084b56c887015c8c6833abfd8e7ad29111ff6275d2494402d6e7732d2c",
+        "south": "119320ec92082ace1c43bd1dadaa11c99c5872e2e512fb9d55bc9f4d6ef76b61",
+        "west": "216b0eafd888de225a94e4e07c30de666315d3b1e3d45aebab686e98b900c00d"
+      },
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x00_y00",
+      "tile_id": "tile_x03_y00"
+    },
+    {
+      "manifest_asset": "tiles/tile_x03_y01/manifest.json",
+      "origin_m": [
+        3000.0,
+        1000.0
+      ],
+      "seam_hashes": {
+        "east": "dab987b5743fbf5de32f05390905be16bfcfda23021d1d0308161bd34a17d142",
+        "north": "33de4e0e45dba4d046651c5770b4cadd3b4b41794ee7dfff4ffce977f54a662e",
+        "south": "ae1e22084b56c887015c8c6833abfd8e7ad29111ff6275d2494402d6e7732d2c",
+        "west": "4c7c550ce83bbb8d947cdd44554807a12341fa36ffc2bfb743c60f929fb5ca93"
+      },
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x00_y00",
+      "tile_id": "tile_x03_y01"
+    },
+    {
+      "manifest_asset": "tiles/tile_x03_y02/manifest.json",
+      "origin_m": [
+        3000.0,
+        2000.0
+      ],
+      "seam_hashes": {
+        "east": "0256954afa256bb07470d74616812c49aabd6a3dd426f32ebaa71a54065c1fe3",
+        "north": "dd563cea13bbd3999ec4da6c92ae64b7bfbf8820badb72f471973017371e2a53",
+        "south": "33de4e0e45dba4d046651c5770b4cadd3b4b41794ee7dfff4ffce977f54a662e",
+        "west": "aa366ba7d8ec40538dd4825b8d96cdce97842ca94932a4ca5603bf956a3fe4ac"
+      },
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x00_y00",
+      "tile_id": "tile_x03_y02"
+    },
+    {
+      "manifest_asset": "tiles/tile_x03_y03/manifest.json",
+      "origin_m": [
+        3000.0,
+        3000.0
+      ],
+      "seam_hashes": {
+        "east": "64808f6779be905ca041ca4d80ebf84cbf861622486eeba55e1e9d946ba4de39",
+        "north": "4971ffe2876ce57317c2852d193e1877e74dcb7b56bf8305309f7cff50170754",
+        "south": "dd563cea13bbd3999ec4da6c92ae64b7bfbf8820badb72f471973017371e2a53",
+        "west": "a2ccc02b9de8518a2a6e6c9d187b2aae8e21b7b2cbd6bddb870a43045310d4a4"
+      },
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x00_y00",
+      "tile_id": "tile_x03_y03"
+    },
+    {
       "manifest_asset": "tiles/tile_x03_y04/manifest.json",
       "origin_m": [
         3000.0,
         4000.0
       ],
+      "seam_hashes": {
+        "east": "6b6d906960a5b430a94c4ba2347a17e192238df40b8b58f81e76efc8240b251f",
+        "north": "9ce705730ff0c960bd7f9f7d4a8462d015fff2b82b82750d3a73d9fd739b4394",
+        "south": "4971ffe2876ce57317c2852d193e1877e74dcb7b56bf8305309f7cff50170754",
+        "west": "fb834dfc72e02df0d4a01087fed08e1752222ee0c59bde43477ecd1b8862ff4f"
+      },
       "size_m": [
         1000.0,
         1000.0
@@ -690,11 +394,93 @@
       "tile_id": "tile_x03_y04"
     },
     {
+      "manifest_asset": "tiles/tile_x04_y00/manifest.json",
+      "origin_m": [
+        4000.0,
+        0.0
+      ],
+      "seam_hashes": {
+        "east": "9ce46c32e39bcfaae054431a52a5415188e97664f7a7a0e87d70bc0ffdf722fc",
+        "north": "7b2a43ab53caec34aa469c31b2fcad34599cbe6c9c0e0070639955c89fb32824",
+        "south": "9421724f710c69117701f0dbc6bfeedc4ed12fd3388911eeba7c29d13f8ecdcd",
+        "west": "fb1fdcd6b1624d83da7deafe00c7eeb89594bf7aa2fd45e8ab4f6f3ccb06c938"
+      },
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x01_y00",
+      "tile_id": "tile_x04_y00"
+    },
+    {
+      "manifest_asset": "tiles/tile_x04_y01/manifest.json",
+      "origin_m": [
+        4000.0,
+        1000.0
+      ],
+      "seam_hashes": {
+        "east": "14c55966c1aa979b9b14a65939ece403313c7787c7bb774e828112c0d32181d4",
+        "north": "609505ec1ae51550a5841e72da2903e1da4f7d7b4418894d0d6e74abfe056df8",
+        "south": "7b2a43ab53caec34aa469c31b2fcad34599cbe6c9c0e0070639955c89fb32824",
+        "west": "dab987b5743fbf5de32f05390905be16bfcfda23021d1d0308161bd34a17d142"
+      },
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x01_y00",
+      "tile_id": "tile_x04_y01"
+    },
+    {
+      "manifest_asset": "tiles/tile_x04_y02/manifest.json",
+      "origin_m": [
+        4000.0,
+        2000.0
+      ],
+      "seam_hashes": {
+        "east": "dba5363f946c547e81284c10022da5cf7bbab42971a73c9c5c776e5388676a1b",
+        "north": "1e56a489022949d49e488a9c27e41f4d7aaab5907de2b5acc20859ad99191ff5",
+        "south": "609505ec1ae51550a5841e72da2903e1da4f7d7b4418894d0d6e74abfe056df8",
+        "west": "0256954afa256bb07470d74616812c49aabd6a3dd426f32ebaa71a54065c1fe3"
+      },
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x01_y00",
+      "tile_id": "tile_x04_y02"
+    },
+    {
+      "manifest_asset": "tiles/tile_x04_y03/manifest.json",
+      "origin_m": [
+        4000.0,
+        3000.0
+      ],
+      "seam_hashes": {
+        "east": "e4012f5b0676af6055417553edac9b0b3ce464c5b14f71e85f2fb2303460d853",
+        "north": "98c079cf408a453013a7952b810565df0135668eb2d2a3c0ba13fddb9503deac",
+        "south": "1e56a489022949d49e488a9c27e41f4d7aaab5907de2b5acc20859ad99191ff5",
+        "west": "64808f6779be905ca041ca4d80ebf84cbf861622486eeba55e1e9d946ba4de39"
+      },
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x01_y00",
+      "tile_id": "tile_x04_y03"
+    },
+    {
       "manifest_asset": "tiles/tile_x04_y04/manifest.json",
       "origin_m": [
         4000.0,
         4000.0
       ],
+      "seam_hashes": {
+        "east": "0bd84973d301e821ae93e96d98db8da34f5a7a05b4bb9159c5c84d276cc26893",
+        "north": "3500da68389a0e02c3d858e13e9861753763f28623c25a4404ff815836b39d59",
+        "south": "98c079cf408a453013a7952b810565df0135668eb2d2a3c0ba13fddb9503deac",
+        "west": "6b6d906960a5b430a94c4ba2347a17e192238df40b8b58f81e76efc8240b251f"
+      },
       "size_m": [
         1000.0,
         1000.0
@@ -703,11 +489,93 @@
       "tile_id": "tile_x04_y04"
     },
     {
+      "manifest_asset": "tiles/tile_x05_y00/manifest.json",
+      "origin_m": [
+        5000.0,
+        0.0
+      ],
+      "seam_hashes": {
+        "east": "635eb964d026809ff899c03a706f7a59dc6a2a5a1268c194a3b3d0fe23671a8e",
+        "north": "80eed781792e9edf63075ebf35df08528dc8fd16d734925ac1a1f5a1c03119d9",
+        "south": "b6687a2e9ae079b7d59015ef02a74d944916dc1b6f7d24e07ab57d29db408f93",
+        "west": "9ce46c32e39bcfaae054431a52a5415188e97664f7a7a0e87d70bc0ffdf722fc"
+      },
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x01_y00",
+      "tile_id": "tile_x05_y00"
+    },
+    {
+      "manifest_asset": "tiles/tile_x05_y01/manifest.json",
+      "origin_m": [
+        5000.0,
+        1000.0
+      ],
+      "seam_hashes": {
+        "east": "95cd20f4e81362ee81cd60538c697cb0cd51179a85515edb4682571896f0b85b",
+        "north": "3bd9657ab7f4945a3b3423e06633f7e188f968dc365f7121be5dce84666f59d8",
+        "south": "80eed781792e9edf63075ebf35df08528dc8fd16d734925ac1a1f5a1c03119d9",
+        "west": "14c55966c1aa979b9b14a65939ece403313c7787c7bb774e828112c0d32181d4"
+      },
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x01_y00",
+      "tile_id": "tile_x05_y01"
+    },
+    {
+      "manifest_asset": "tiles/tile_x05_y02/manifest.json",
+      "origin_m": [
+        5000.0,
+        2000.0
+      ],
+      "seam_hashes": {
+        "east": "97670b7ba05c267c7bd85666615774f083a62f7475a1ed0e43acd201f2e87895",
+        "north": "eb7ebf2693a0a49970fd01377172bdd3f4e0437321971261b62a8a1d15039ad3",
+        "south": "3bd9657ab7f4945a3b3423e06633f7e188f968dc365f7121be5dce84666f59d8",
+        "west": "dba5363f946c547e81284c10022da5cf7bbab42971a73c9c5c776e5388676a1b"
+      },
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x01_y00",
+      "tile_id": "tile_x05_y02"
+    },
+    {
+      "manifest_asset": "tiles/tile_x05_y03/manifest.json",
+      "origin_m": [
+        5000.0,
+        3000.0
+      ],
+      "seam_hashes": {
+        "east": "eddf0efdad49f1cc243481cc4d9fead950bb229e6e32ecd8e76ba59e174ccce6",
+        "north": "94320d47800dfced127b65fab1acece658cb1bc7638ffe7f2cf47e6d085fab43",
+        "south": "eb7ebf2693a0a49970fd01377172bdd3f4e0437321971261b62a8a1d15039ad3",
+        "west": "e4012f5b0676af6055417553edac9b0b3ce464c5b14f71e85f2fb2303460d853"
+      },
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x01_y00",
+      "tile_id": "tile_x05_y03"
+    },
+    {
       "manifest_asset": "tiles/tile_x05_y04/manifest.json",
       "origin_m": [
         5000.0,
         4000.0
       ],
+      "seam_hashes": {
+        "east": "87ab759c063ff6e4eed514bc08e9ec6f602f58dac180e1c65a26ee717c599530",
+        "north": "b31dbd7e6b602f2af1e8faf39b5ce2b732edc03f311586764b6990fface21e04",
+        "south": "94320d47800dfced127b65fab1acece658cb1bc7638ffe7f2cf47e6d085fab43",
+        "west": "0bd84973d301e821ae93e96d98db8da34f5a7a05b4bb9159c5c84d276cc26893"
+      },
       "size_m": [
         1000.0,
         1000.0
@@ -716,11 +584,93 @@
       "tile_id": "tile_x05_y04"
     },
     {
+      "manifest_asset": "tiles/tile_x06_y00/manifest.json",
+      "origin_m": [
+        6000.0,
+        0.0
+      ],
+      "seam_hashes": {
+        "east": "17516d3601dff5106befdccaf144555c41f0708a8be31f1b588c73835e2e4d90",
+        "north": "3ffc759139372e7a0845da068bef658bf5903a593b34077caa7e1783832b39d6",
+        "south": "2217ad03d425f61d59d7905275f563c0debbc82021be280c4c28ad1eab591b1c",
+        "west": "635eb964d026809ff899c03a706f7a59dc6a2a5a1268c194a3b3d0fe23671a8e"
+      },
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x01_y00",
+      "tile_id": "tile_x06_y00"
+    },
+    {
+      "manifest_asset": "tiles/tile_x06_y01/manifest.json",
+      "origin_m": [
+        6000.0,
+        1000.0
+      ],
+      "seam_hashes": {
+        "east": "87f984011f4d36b449b860e5eed8b950929d242e47efbb1fe43216df258d2249",
+        "north": "b01694dcf5519b1299c01882836b3d054ed7265463eba3a1815dc6a24d3cc0da",
+        "south": "3ffc759139372e7a0845da068bef658bf5903a593b34077caa7e1783832b39d6",
+        "west": "95cd20f4e81362ee81cd60538c697cb0cd51179a85515edb4682571896f0b85b"
+      },
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x01_y00",
+      "tile_id": "tile_x06_y01"
+    },
+    {
+      "manifest_asset": "tiles/tile_x06_y02/manifest.json",
+      "origin_m": [
+        6000.0,
+        2000.0
+      ],
+      "seam_hashes": {
+        "east": "bd8261b39dd6adb4c4047067fc74a729c560e807147d7209205be8fc71b86d88",
+        "north": "a940cf04bdf778fce9fd41a5641dd9dfc3ded81bd5981e3fe14a4e568547b34b",
+        "south": "b01694dcf5519b1299c01882836b3d054ed7265463eba3a1815dc6a24d3cc0da",
+        "west": "97670b7ba05c267c7bd85666615774f083a62f7475a1ed0e43acd201f2e87895"
+      },
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x01_y00",
+      "tile_id": "tile_x06_y02"
+    },
+    {
+      "manifest_asset": "tiles/tile_x06_y03/manifest.json",
+      "origin_m": [
+        6000.0,
+        3000.0
+      ],
+      "seam_hashes": {
+        "east": "0c0d89ea23774045239d8a43c40fecd170d19cea417cfc10fc20649d9b9677ef",
+        "north": "7ecca8e57a682bb3c994b0bcadcfc704e3aeac1c50161aa7d0abbc45a301fc44",
+        "south": "a940cf04bdf778fce9fd41a5641dd9dfc3ded81bd5981e3fe14a4e568547b34b",
+        "west": "eddf0efdad49f1cc243481cc4d9fead950bb229e6e32ecd8e76ba59e174ccce6"
+      },
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x01_y00",
+      "tile_id": "tile_x06_y03"
+    },
+    {
       "manifest_asset": "tiles/tile_x06_y04/manifest.json",
       "origin_m": [
         6000.0,
         4000.0
       ],
+      "seam_hashes": {
+        "east": "1f30eb75a978c510ea687a1846e14e7726411a80fd5c37fa9ab5c305deeb3bec",
+        "north": "7d3f43504dc6b134d75a027f1f83e22580b39c6d6daf492d59201c82c216c67b",
+        "south": "7ecca8e57a682bb3c994b0bcadcfc704e3aeac1c50161aa7d0abbc45a301fc44",
+        "west": "87ab759c063ff6e4eed514bc08e9ec6f602f58dac180e1c65a26ee717c599530"
+      },
       "size_m": [
         1000.0,
         1000.0
@@ -729,11 +679,93 @@
       "tile_id": "tile_x06_y04"
     },
     {
+      "manifest_asset": "tiles/tile_x07_y00/manifest.json",
+      "origin_m": [
+        7000.0,
+        0.0
+      ],
+      "seam_hashes": {
+        "east": "30d42e8f0e8a7169dac2915cb11feaac1e21b3026d0734406b127b1669d13fa2",
+        "north": "76cdf55111a0caf9e3ca5a9eeb9a7170c9aee5f669efdd00cee8a8810a666a86",
+        "south": "154c1d234bf48395820185a7d359a8ce034e486be53c09155bd13f82cb1792c5",
+        "west": "17516d3601dff5106befdccaf144555c41f0708a8be31f1b588c73835e2e4d90"
+      },
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x01_y00",
+      "tile_id": "tile_x07_y00"
+    },
+    {
+      "manifest_asset": "tiles/tile_x07_y01/manifest.json",
+      "origin_m": [
+        7000.0,
+        1000.0
+      ],
+      "seam_hashes": {
+        "east": "10e8647f2ea9858b999161a12a2027a9d3340179cd35371c93d728a3e5fca892",
+        "north": "9eaf41d4f33cf872699990ef3d6107098adb46588f41ad6337d9cc534eb3fffa",
+        "south": "76cdf55111a0caf9e3ca5a9eeb9a7170c9aee5f669efdd00cee8a8810a666a86",
+        "west": "87f984011f4d36b449b860e5eed8b950929d242e47efbb1fe43216df258d2249"
+      },
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x01_y00",
+      "tile_id": "tile_x07_y01"
+    },
+    {
+      "manifest_asset": "tiles/tile_x07_y02/manifest.json",
+      "origin_m": [
+        7000.0,
+        2000.0
+      ],
+      "seam_hashes": {
+        "east": "ba8c094445163381ad9a75a73428d4c3fb7573646dfd07cb611825069b7cdb75",
+        "north": "cd52000b41a5826b4d583148d1ee850fee696bdd4a461a49656dfbe9c7493fcd",
+        "south": "9eaf41d4f33cf872699990ef3d6107098adb46588f41ad6337d9cc534eb3fffa",
+        "west": "bd8261b39dd6adb4c4047067fc74a729c560e807147d7209205be8fc71b86d88"
+      },
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x01_y00",
+      "tile_id": "tile_x07_y02"
+    },
+    {
+      "manifest_asset": "tiles/tile_x07_y03/manifest.json",
+      "origin_m": [
+        7000.0,
+        3000.0
+      ],
+      "seam_hashes": {
+        "east": "13de7229177f953eed2d9d686c556c5a275f7b26e648c14ae7da64cb34cc35cd",
+        "north": "e1f568c1b3d933377c452a03ba31dda9054f019f874a6ae1ceaf61fdd6712c70",
+        "south": "cd52000b41a5826b4d583148d1ee850fee696bdd4a461a49656dfbe9c7493fcd",
+        "west": "0c0d89ea23774045239d8a43c40fecd170d19cea417cfc10fc20649d9b9677ef"
+      },
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x01_y00",
+      "tile_id": "tile_x07_y03"
+    },
+    {
       "manifest_asset": "tiles/tile_x07_y04/manifest.json",
       "origin_m": [
         7000.0,
         4000.0
       ],
+      "seam_hashes": {
+        "east": "a930e39a98661d5d37cb13f4ba8928b436d666c82334f67c8a1a63e3a348f576",
+        "north": "4872f562eaee5f5a0cfe03ea6a99d9b0b124097fc40e7370ad0f4b90d4f3585c",
+        "south": "e1f568c1b3d933377c452a03ba31dda9054f019f874a6ae1ceaf61fdd6712c70",
+        "west": "1f30eb75a978c510ea687a1846e14e7726411a80fd5c37fa9ab5c305deeb3bec"
+      },
       "size_m": [
         1000.0,
         1000.0
@@ -742,11 +774,93 @@
       "tile_id": "tile_x07_y04"
     },
     {
+      "manifest_asset": "tiles/tile_x08_y00/manifest.json",
+      "origin_m": [
+        8000.0,
+        0.0
+      ],
+      "seam_hashes": {
+        "east": "a85454f1aa391073dbf06486b87ef64cada5e3e8288ce72503e2acbbbca3013f",
+        "north": "6f3e1c4d89e367c170815928ac425883fed588cc5b01d0406af860a0b8924904",
+        "south": "55e78ce1f9358ea7b41ba000ed33eb36ebaf5bd6b6b529828fe2034fd9076864",
+        "west": "30d42e8f0e8a7169dac2915cb11feaac1e21b3026d0734406b127b1669d13fa2"
+      },
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x02_y00",
+      "tile_id": "tile_x08_y00"
+    },
+    {
+      "manifest_asset": "tiles/tile_x08_y01/manifest.json",
+      "origin_m": [
+        8000.0,
+        1000.0
+      ],
+      "seam_hashes": {
+        "east": "a4aeb9c911882df25ce0061a07c31115ff15f375584228e9df49ec32dad71cab",
+        "north": "b55a66a2dd7ef318fd0d9999c952e258793b04bcf63a8c70bf5e5745c7e48c4a",
+        "south": "6f3e1c4d89e367c170815928ac425883fed588cc5b01d0406af860a0b8924904",
+        "west": "10e8647f2ea9858b999161a12a2027a9d3340179cd35371c93d728a3e5fca892"
+      },
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x02_y00",
+      "tile_id": "tile_x08_y01"
+    },
+    {
+      "manifest_asset": "tiles/tile_x08_y02/manifest.json",
+      "origin_m": [
+        8000.0,
+        2000.0
+      ],
+      "seam_hashes": {
+        "east": "76c17cb18ec4e410a821f5e5130a38a59d5cdc7846221d9c0e10a56377ca6db4",
+        "north": "bb35278e4bf4c1e034f86803a4047c0c34bcb305f05c49e3ed073a0c9f3b990d",
+        "south": "b55a66a2dd7ef318fd0d9999c952e258793b04bcf63a8c70bf5e5745c7e48c4a",
+        "west": "ba8c094445163381ad9a75a73428d4c3fb7573646dfd07cb611825069b7cdb75"
+      },
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x02_y00",
+      "tile_id": "tile_x08_y02"
+    },
+    {
+      "manifest_asset": "tiles/tile_x08_y03/manifest.json",
+      "origin_m": [
+        8000.0,
+        3000.0
+      ],
+      "seam_hashes": {
+        "east": "b63c8e40ffab93f3b96193c3451ed90d746b11b8d2dcd467f46b4ee47cd57e6b",
+        "north": "a922e40df0a3169e26d83f5adfb116208dd820ae3ad6b6670bb491df9a3c395b",
+        "south": "bb35278e4bf4c1e034f86803a4047c0c34bcb305f05c49e3ed073a0c9f3b990d",
+        "west": "13de7229177f953eed2d9d686c556c5a275f7b26e648c14ae7da64cb34cc35cd"
+      },
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x02_y00",
+      "tile_id": "tile_x08_y03"
+    },
+    {
       "manifest_asset": "tiles/tile_x08_y04/manifest.json",
       "origin_m": [
         8000.0,
         4000.0
       ],
+      "seam_hashes": {
+        "east": "0913599e24c1234bf5af66001ac38d4780fa8e1165c954ebf5d12d39e5b2b36b",
+        "north": "d217a017c99da69cea48f2ff0a825f8aaa63a2fd96df7cf86b6f8bb67ad6dcdb",
+        "south": "a922e40df0a3169e26d83f5adfb116208dd820ae3ad6b6670bb491df9a3c395b",
+        "west": "a930e39a98661d5d37cb13f4ba8928b436d666c82334f67c8a1a63e3a348f576"
+      },
       "size_m": [
         1000.0,
         1000.0
@@ -755,11 +869,93 @@
       "tile_id": "tile_x08_y04"
     },
     {
+      "manifest_asset": "tiles/tile_x09_y00/manifest.json",
+      "origin_m": [
+        9000.0,
+        0.0
+      ],
+      "seam_hashes": {
+        "east": "e94b296f827fc3e6f6a76a730207b68043faff25a9a81aa23f6dde8f59d55c6d",
+        "north": "0d68f959a7e441deae0bfc581fb7b180edc2496b5c2506c84ba3bb1322979f78",
+        "south": "c4d453693fdeaeaefc110d9d3e850a5d8dfc761e7efa50f556e4b1b2747e4d12",
+        "west": "a85454f1aa391073dbf06486b87ef64cada5e3e8288ce72503e2acbbbca3013f"
+      },
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x02_y00",
+      "tile_id": "tile_x09_y00"
+    },
+    {
+      "manifest_asset": "tiles/tile_x09_y01/manifest.json",
+      "origin_m": [
+        9000.0,
+        1000.0
+      ],
+      "seam_hashes": {
+        "east": "c76f21e3b1de65f38eac95ab4de4db61e7380a64c69603a0cbeec82d04ef7aba",
+        "north": "884623fd80f7e517e76db7fafd021591d8a41ed790c61ea137b86bfad9a1b550",
+        "south": "0d68f959a7e441deae0bfc581fb7b180edc2496b5c2506c84ba3bb1322979f78",
+        "west": "a4aeb9c911882df25ce0061a07c31115ff15f375584228e9df49ec32dad71cab"
+      },
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x02_y00",
+      "tile_id": "tile_x09_y01"
+    },
+    {
+      "manifest_asset": "tiles/tile_x09_y02/manifest.json",
+      "origin_m": [
+        9000.0,
+        2000.0
+      ],
+      "seam_hashes": {
+        "east": "2b15b0155a51dffbe40fe1869081bec54a5d08f9dd45b33995ea6217d0b51b29",
+        "north": "ab87d4e4634ec0d021208941da8504eb0c86b768d7fcd90bdd772f54ba645dd2",
+        "south": "884623fd80f7e517e76db7fafd021591d8a41ed790c61ea137b86bfad9a1b550",
+        "west": "76c17cb18ec4e410a821f5e5130a38a59d5cdc7846221d9c0e10a56377ca6db4"
+      },
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x02_y00",
+      "tile_id": "tile_x09_y02"
+    },
+    {
+      "manifest_asset": "tiles/tile_x09_y03/manifest.json",
+      "origin_m": [
+        9000.0,
+        3000.0
+      ],
+      "seam_hashes": {
+        "east": "98766c49e1aac2d9cd50cee27b56ed911009b353d29240b5294221dc8f292b74",
+        "north": "62a5f1857fd6b07b5984b06d21ff8722f7855d4a4a96574b52bbce433b903f95",
+        "south": "ab87d4e4634ec0d021208941da8504eb0c86b768d7fcd90bdd772f54ba645dd2",
+        "west": "b63c8e40ffab93f3b96193c3451ed90d746b11b8d2dcd467f46b4ee47cd57e6b"
+      },
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x02_y00",
+      "tile_id": "tile_x09_y03"
+    },
+    {
       "manifest_asset": "tiles/tile_x09_y04/manifest.json",
       "origin_m": [
         9000.0,
         4000.0
       ],
+      "seam_hashes": {
+        "east": "275de52898e3f6cb37c093115ce74363312a3a6b0a1a00616e5e89055e813ce5",
+        "north": "95282637da5cbae0b4ac3f7ee51e2ca7f15781c7bcbc2a3db961c551167957a0",
+        "south": "62a5f1857fd6b07b5984b06d21ff8722f7855d4a4a96574b52bbce433b903f95",
+        "west": "0913599e24c1234bf5af66001ac38d4780fa8e1165c954ebf5d12d39e5b2b36b"
+      },
       "size_m": [
         1000.0,
         1000.0
@@ -768,498 +964,99 @@
       "tile_id": "tile_x09_y04"
     },
     {
+      "manifest_asset": "tiles/tile_x10_y00/manifest.json",
+      "origin_m": [
+        10000.0,
+        0.0
+      ],
+      "seam_hashes": {
+        "east": "e94b296f827fc3e6f6a76a730207b68043faff25a9a81aa23f6dde8f59d55c6d",
+        "north": "b71786644cdfe546d97cd8ecd90124efb2d1813622f79e4ae7126795225008d2",
+        "south": "45f1d277bd6708a7fb09848fd368028dfe37ef0e8fee95e696746fe42a6ef159",
+        "west": "e94b296f827fc3e6f6a76a730207b68043faff25a9a81aa23f6dde8f59d55c6d"
+      },
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x02_y00",
+      "tile_id": "tile_x10_y00"
+    },
+    {
+      "manifest_asset": "tiles/tile_x10_y01/manifest.json",
+      "origin_m": [
+        10000.0,
+        1000.0
+      ],
+      "seam_hashes": {
+        "east": "c76f21e3b1de65f38eac95ab4de4db61e7380a64c69603a0cbeec82d04ef7aba",
+        "north": "2f73009244db7100cd93ade358a905514c244222d858c811a77e39a9019466c7",
+        "south": "b71786644cdfe546d97cd8ecd90124efb2d1813622f79e4ae7126795225008d2",
+        "west": "c76f21e3b1de65f38eac95ab4de4db61e7380a64c69603a0cbeec82d04ef7aba"
+      },
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x02_y00",
+      "tile_id": "tile_x10_y01"
+    },
+    {
+      "manifest_asset": "tiles/tile_x10_y02/manifest.json",
+      "origin_m": [
+        10000.0,
+        2000.0
+      ],
+      "seam_hashes": {
+        "east": "2b15b0155a51dffbe40fe1869081bec54a5d08f9dd45b33995ea6217d0b51b29",
+        "north": "ce6815c8961f8c174ec988bf7403da583dbebda977c80d01dfec76e11bef43c2",
+        "south": "2f73009244db7100cd93ade358a905514c244222d858c811a77e39a9019466c7",
+        "west": "2b15b0155a51dffbe40fe1869081bec54a5d08f9dd45b33995ea6217d0b51b29"
+      },
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x02_y00",
+      "tile_id": "tile_x10_y02"
+    },
+    {
+      "manifest_asset": "tiles/tile_x10_y03/manifest.json",
+      "origin_m": [
+        10000.0,
+        3000.0
+      ],
+      "seam_hashes": {
+        "east": "98766c49e1aac2d9cd50cee27b56ed911009b353d29240b5294221dc8f292b74",
+        "north": "6ad13fc3fea46f89d2b6258c618abaeee0a164386ce6e377861fdb1d9879f141",
+        "south": "ce6815c8961f8c174ec988bf7403da583dbebda977c80d01dfec76e11bef43c2",
+        "west": "98766c49e1aac2d9cd50cee27b56ed911009b353d29240b5294221dc8f292b74"
+      },
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x02_y00",
+      "tile_id": "tile_x10_y03"
+    },
+    {
       "manifest_asset": "tiles/tile_x10_y04/manifest.json",
       "origin_m": [
         10000.0,
         4000.0
       ],
+      "seam_hashes": {
+        "east": "275de52898e3f6cb37c093115ce74363312a3a6b0a1a00616e5e89055e813ce5",
+        "north": "28318f40bd07893e51bb99279f84f09bea2083094b650a9742dff0b29179796f",
+        "south": "6ad13fc3fea46f89d2b6258c618abaeee0a164386ce6e377861fdb1d9879f141",
+        "west": "275de52898e3f6cb37c093115ce74363312a3a6b0a1a00616e5e89055e813ce5"
+      },
       "size_m": [
         1000.0,
         1000.0
       ],
       "stream_region_id": "stream_x02_y01",
       "tile_id": "tile_x10_y04"
-    },
-    {
-      "manifest_asset": "tiles/tile_x11_y04/manifest.json",
-      "origin_m": [
-        11000.0,
-        4000.0
-      ],
-      "size_m": [
-        1000.0,
-        1000.0
-      ],
-      "stream_region_id": "stream_x02_y01",
-      "tile_id": "tile_x11_y04"
-    },
-    {
-      "manifest_asset": "tiles/tile_x00_y05/manifest.json",
-      "origin_m": [
-        0.0,
-        5000.0
-      ],
-      "size_m": [
-        1000.0,
-        1000.0
-      ],
-      "stream_region_id": "stream_x00_y01",
-      "tile_id": "tile_x00_y05"
-    },
-    {
-      "manifest_asset": "tiles/tile_x01_y05/manifest.json",
-      "origin_m": [
-        1000.0,
-        5000.0
-      ],
-      "size_m": [
-        1000.0,
-        1000.0
-      ],
-      "stream_region_id": "stream_x00_y01",
-      "tile_id": "tile_x01_y05"
-    },
-    {
-      "manifest_asset": "tiles/tile_x02_y05/manifest.json",
-      "origin_m": [
-        2000.0,
-        5000.0
-      ],
-      "size_m": [
-        1000.0,
-        1000.0
-      ],
-      "stream_region_id": "stream_x00_y01",
-      "tile_id": "tile_x02_y05"
-    },
-    {
-      "manifest_asset": "tiles/tile_x03_y05/manifest.json",
-      "origin_m": [
-        3000.0,
-        5000.0
-      ],
-      "size_m": [
-        1000.0,
-        1000.0
-      ],
-      "stream_region_id": "stream_x00_y01",
-      "tile_id": "tile_x03_y05"
-    },
-    {
-      "manifest_asset": "tiles/tile_x04_y05/manifest.json",
-      "origin_m": [
-        4000.0,
-        5000.0
-      ],
-      "size_m": [
-        1000.0,
-        1000.0
-      ],
-      "stream_region_id": "stream_x01_y01",
-      "tile_id": "tile_x04_y05"
-    },
-    {
-      "manifest_asset": "tiles/tile_x05_y05/manifest.json",
-      "origin_m": [
-        5000.0,
-        5000.0
-      ],
-      "size_m": [
-        1000.0,
-        1000.0
-      ],
-      "stream_region_id": "stream_x01_y01",
-      "tile_id": "tile_x05_y05"
-    },
-    {
-      "manifest_asset": "tiles/tile_x06_y05/manifest.json",
-      "origin_m": [
-        6000.0,
-        5000.0
-      ],
-      "size_m": [
-        1000.0,
-        1000.0
-      ],
-      "stream_region_id": "stream_x01_y01",
-      "tile_id": "tile_x06_y05"
-    },
-    {
-      "manifest_asset": "tiles/tile_x07_y05/manifest.json",
-      "origin_m": [
-        7000.0,
-        5000.0
-      ],
-      "size_m": [
-        1000.0,
-        1000.0
-      ],
-      "stream_region_id": "stream_x01_y01",
-      "tile_id": "tile_x07_y05"
-    },
-    {
-      "manifest_asset": "tiles/tile_x08_y05/manifest.json",
-      "origin_m": [
-        8000.0,
-        5000.0
-      ],
-      "size_m": [
-        1000.0,
-        1000.0
-      ],
-      "stream_region_id": "stream_x02_y01",
-      "tile_id": "tile_x08_y05"
-    },
-    {
-      "manifest_asset": "tiles/tile_x09_y05/manifest.json",
-      "origin_m": [
-        9000.0,
-        5000.0
-      ],
-      "size_m": [
-        1000.0,
-        1000.0
-      ],
-      "stream_region_id": "stream_x02_y01",
-      "tile_id": "tile_x09_y05"
-    },
-    {
-      "manifest_asset": "tiles/tile_x10_y05/manifest.json",
-      "origin_m": [
-        10000.0,
-        5000.0
-      ],
-      "size_m": [
-        1000.0,
-        1000.0
-      ],
-      "stream_region_id": "stream_x02_y01",
-      "tile_id": "tile_x10_y05"
-    },
-    {
-      "manifest_asset": "tiles/tile_x11_y05/manifest.json",
-      "origin_m": [
-        11000.0,
-        5000.0
-      ],
-      "size_m": [
-        1000.0,
-        1000.0
-      ],
-      "stream_region_id": "stream_x02_y01",
-      "tile_id": "tile_x11_y05"
-    },
-    {
-      "manifest_asset": "tiles/tile_x00_y06/manifest.json",
-      "origin_m": [
-        0.0,
-        6000.0
-      ],
-      "size_m": [
-        1000.0,
-        1000.0
-      ],
-      "stream_region_id": "stream_x00_y01",
-      "tile_id": "tile_x00_y06"
-    },
-    {
-      "manifest_asset": "tiles/tile_x01_y06/manifest.json",
-      "origin_m": [
-        1000.0,
-        6000.0
-      ],
-      "size_m": [
-        1000.0,
-        1000.0
-      ],
-      "stream_region_id": "stream_x00_y01",
-      "tile_id": "tile_x01_y06"
-    },
-    {
-      "manifest_asset": "tiles/tile_x02_y06/manifest.json",
-      "origin_m": [
-        2000.0,
-        6000.0
-      ],
-      "size_m": [
-        1000.0,
-        1000.0
-      ],
-      "stream_region_id": "stream_x00_y01",
-      "tile_id": "tile_x02_y06"
-    },
-    {
-      "manifest_asset": "tiles/tile_x03_y06/manifest.json",
-      "origin_m": [
-        3000.0,
-        6000.0
-      ],
-      "size_m": [
-        1000.0,
-        1000.0
-      ],
-      "stream_region_id": "stream_x00_y01",
-      "tile_id": "tile_x03_y06"
-    },
-    {
-      "manifest_asset": "tiles/tile_x04_y06/manifest.json",
-      "origin_m": [
-        4000.0,
-        6000.0
-      ],
-      "size_m": [
-        1000.0,
-        1000.0
-      ],
-      "stream_region_id": "stream_x01_y01",
-      "tile_id": "tile_x04_y06"
-    },
-    {
-      "manifest_asset": "tiles/tile_x05_y06/manifest.json",
-      "origin_m": [
-        5000.0,
-        6000.0
-      ],
-      "size_m": [
-        1000.0,
-        1000.0
-      ],
-      "stream_region_id": "stream_x01_y01",
-      "tile_id": "tile_x05_y06"
-    },
-    {
-      "manifest_asset": "tiles/tile_x06_y06/manifest.json",
-      "origin_m": [
-        6000.0,
-        6000.0
-      ],
-      "size_m": [
-        1000.0,
-        1000.0
-      ],
-      "stream_region_id": "stream_x01_y01",
-      "tile_id": "tile_x06_y06"
-    },
-    {
-      "manifest_asset": "tiles/tile_x07_y06/manifest.json",
-      "origin_m": [
-        7000.0,
-        6000.0
-      ],
-      "size_m": [
-        1000.0,
-        1000.0
-      ],
-      "stream_region_id": "stream_x01_y01",
-      "tile_id": "tile_x07_y06"
-    },
-    {
-      "manifest_asset": "tiles/tile_x08_y06/manifest.json",
-      "origin_m": [
-        8000.0,
-        6000.0
-      ],
-      "size_m": [
-        1000.0,
-        1000.0
-      ],
-      "stream_region_id": "stream_x02_y01",
-      "tile_id": "tile_x08_y06"
-    },
-    {
-      "manifest_asset": "tiles/tile_x09_y06/manifest.json",
-      "origin_m": [
-        9000.0,
-        6000.0
-      ],
-      "size_m": [
-        1000.0,
-        1000.0
-      ],
-      "stream_region_id": "stream_x02_y01",
-      "tile_id": "tile_x09_y06"
-    },
-    {
-      "manifest_asset": "tiles/tile_x10_y06/manifest.json",
-      "origin_m": [
-        10000.0,
-        6000.0
-      ],
-      "size_m": [
-        1000.0,
-        1000.0
-      ],
-      "stream_region_id": "stream_x02_y01",
-      "tile_id": "tile_x10_y06"
-    },
-    {
-      "manifest_asset": "tiles/tile_x11_y06/manifest.json",
-      "origin_m": [
-        11000.0,
-        6000.0
-      ],
-      "size_m": [
-        1000.0,
-        1000.0
-      ],
-      "stream_region_id": "stream_x02_y01",
-      "tile_id": "tile_x11_y06"
-    },
-    {
-      "manifest_asset": "tiles/tile_x00_y07/manifest.json",
-      "origin_m": [
-        0.0,
-        7000.0
-      ],
-      "size_m": [
-        1000.0,
-        1000.0
-      ],
-      "stream_region_id": "stream_x00_y01",
-      "tile_id": "tile_x00_y07"
-    },
-    {
-      "manifest_asset": "tiles/tile_x01_y07/manifest.json",
-      "origin_m": [
-        1000.0,
-        7000.0
-      ],
-      "size_m": [
-        1000.0,
-        1000.0
-      ],
-      "stream_region_id": "stream_x00_y01",
-      "tile_id": "tile_x01_y07"
-    },
-    {
-      "manifest_asset": "tiles/tile_x02_y07/manifest.json",
-      "origin_m": [
-        2000.0,
-        7000.0
-      ],
-      "size_m": [
-        1000.0,
-        1000.0
-      ],
-      "stream_region_id": "stream_x00_y01",
-      "tile_id": "tile_x02_y07"
-    },
-    {
-      "manifest_asset": "tiles/tile_x03_y07/manifest.json",
-      "origin_m": [
-        3000.0,
-        7000.0
-      ],
-      "size_m": [
-        1000.0,
-        1000.0
-      ],
-      "stream_region_id": "stream_x00_y01",
-      "tile_id": "tile_x03_y07"
-    },
-    {
-      "manifest_asset": "tiles/tile_x04_y07/manifest.json",
-      "origin_m": [
-        4000.0,
-        7000.0
-      ],
-      "size_m": [
-        1000.0,
-        1000.0
-      ],
-      "stream_region_id": "stream_x01_y01",
-      "tile_id": "tile_x04_y07"
-    },
-    {
-      "manifest_asset": "tiles/tile_x05_y07/manifest.json",
-      "origin_m": [
-        5000.0,
-        7000.0
-      ],
-      "size_m": [
-        1000.0,
-        1000.0
-      ],
-      "stream_region_id": "stream_x01_y01",
-      "tile_id": "tile_x05_y07"
-    },
-    {
-      "manifest_asset": "tiles/tile_x06_y07/manifest.json",
-      "origin_m": [
-        6000.0,
-        7000.0
-      ],
-      "size_m": [
-        1000.0,
-        1000.0
-      ],
-      "stream_region_id": "stream_x01_y01",
-      "tile_id": "tile_x06_y07"
-    },
-    {
-      "manifest_asset": "tiles/tile_x07_y07/manifest.json",
-      "origin_m": [
-        7000.0,
-        7000.0
-      ],
-      "size_m": [
-        1000.0,
-        1000.0
-      ],
-      "stream_region_id": "stream_x01_y01",
-      "tile_id": "tile_x07_y07"
-    },
-    {
-      "manifest_asset": "tiles/tile_x08_y07/manifest.json",
-      "origin_m": [
-        8000.0,
-        7000.0
-      ],
-      "size_m": [
-        1000.0,
-        1000.0
-      ],
-      "stream_region_id": "stream_x02_y01",
-      "tile_id": "tile_x08_y07"
-    },
-    {
-      "manifest_asset": "tiles/tile_x09_y07/manifest.json",
-      "origin_m": [
-        9000.0,
-        7000.0
-      ],
-      "size_m": [
-        1000.0,
-        1000.0
-      ],
-      "stream_region_id": "stream_x02_y01",
-      "tile_id": "tile_x09_y07"
-    },
-    {
-      "manifest_asset": "tiles/tile_x10_y07/manifest.json",
-      "origin_m": [
-        10000.0,
-        7000.0
-      ],
-      "size_m": [
-        1000.0,
-        1000.0
-      ],
-      "stream_region_id": "stream_x02_y01",
-      "tile_id": "tile_x10_y07"
-    },
-    {
-      "manifest_asset": "tiles/tile_x11_y07/manifest.json",
-      "origin_m": [
-        11000.0,
-        7000.0
-      ],
-      "size_m": [
-        1000.0,
-        1000.0
-      ],
-      "stream_region_id": "stream_x02_y01",
-      "tile_id": "tile_x11_y07"
     }
   ]
 }

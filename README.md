@@ -98,10 +98,10 @@ The staged build remains lightweight and deterministic in-repo, but the public p
 
 The repository now also includes the Phase 2 Milwaukee world-pack implementation:
 
-- a streamed Milwaukee `city + core trails` synthetic world pack with `1 km` tiles and `4 km` stream regions
-- root and tile-level manifests, route catalog, streaming region descriptors, and attribution/source bundles
-- three curated starter routes plus retained GPX import against the full Phase 2 ride graph
-- a Godot client that streams adjacent regions around the rider and renders representative terrain, roads, buildings, and biome props
+- a streamed Milwaukee `city + core trails` source-derived acceptance pack with `1 km` tiles and `4 km` stream regions
+- staged Phase 2 source fixtures and manifests that preserve AOI identity, toolchain versions, deterministic build knobs, and source lineage
+- four curated starter routes plus retained GPX import against the full Phase 2 ride graph
+- a Godot client that streams adjacent regions around the rider and renders seam-safe terrain meshes, terrain-aligned roads, buildings, and biome props
 
 ## Rebuild Walkthrough
 
@@ -124,7 +124,7 @@ PYTHONPATH=geo-pipeline python3 -m geo_pipeline.cli snap-gpx region-data/milwauk
 
 - Python 3.11+
 - bare-Python CLI under `geo-pipeline/`
-- optional GDAL/raster tooling, `osmium-tool`, and `awscli` for future live-source expansion
+- Homebrew-installed `osmium-tool`, `gdal`, `duckdb`, and `rasterio` for the documented Phase 2 open geospatial stack
 - Godot 4 for the runtime client
 - no mandatory proprietary services or SDKs
 

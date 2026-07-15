@@ -48,21 +48,9 @@
     "stream_region_id": "stream_x00_y01",
     "tile_ids": [
       "tile_x00_y04",
-      "tile_x00_y05",
-      "tile_x00_y06",
-      "tile_x00_y07",
       "tile_x01_y04",
-      "tile_x01_y05",
-      "tile_x01_y06",
-      "tile_x01_y07",
       "tile_x02_y04",
-      "tile_x02_y05",
-      "tile_x02_y06",
-      "tile_x02_y07",
-      "tile_x03_y04",
-      "tile_x03_y05",
-      "tile_x03_y06",
-      "tile_x03_y07"
+      "tile_x03_y04"
     ]
   },
   {
@@ -116,21 +104,9 @@
     "stream_region_id": "stream_x01_y01",
     "tile_ids": [
       "tile_x04_y04",
-      "tile_x04_y05",
-      "tile_x04_y06",
-      "tile_x04_y07",
       "tile_x05_y04",
-      "tile_x05_y05",
-      "tile_x05_y06",
-      "tile_x05_y07",
       "tile_x06_y04",
-      "tile_x06_y05",
-      "tile_x06_y06",
-      "tile_x06_y07",
-      "tile_x07_y04",
-      "tile_x07_y05",
-      "tile_x07_y06",
-      "tile_x07_y07"
+      "tile_x07_y04"
     ]
   },
   {
@@ -159,11 +135,7 @@
       "tile_x10_y00",
       "tile_x10_y01",
       "tile_x10_y02",
-      "tile_x10_y03",
-      "tile_x11_y00",
-      "tile_x11_y01",
-      "tile_x11_y02",
-      "tile_x11_y03"
+      "tile_x10_y03"
     ]
   },
   {
@@ -182,21 +154,8 @@
     "stream_region_id": "stream_x02_y01",
     "tile_ids": [
       "tile_x08_y04",
-      "tile_x08_y05",
-      "tile_x08_y06",
-      "tile_x08_y07",
       "tile_x09_y04",
-      "tile_x09_y05",
-      "tile_x09_y06",
-      "tile_x09_y07",
-      "tile_x10_y04",
-      "tile_x10_y05",
-      "tile_x10_y06",
-      "tile_x10_y07",
-      "tile_x11_y04",
-      "tile_x11_y05",
-      "tile_x11_y06",
-      "tile_x11_y07"
+      "tile_x10_y04"
     ]
   }
 ]

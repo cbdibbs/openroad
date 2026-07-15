@@ -1,16 +1,26 @@
 {
+  "aoi": {
+    "id": "milwaukee_city_core_trails_v1",
+    "routeable_inclusion_rule": "Include bikeable OSM ways and connected trail segments that intersect the AOI bbox after bike-access filtering."
+  },
   "bbox_wgs84": [
-    -88.0600,
-    42.9800,
-    -87.8800,
-    43.1200
+    -88.0110,
+    43.0240,
+    -87.8880,
+    43.0630
   ],
   "build_date": "2026-07-14",
   "corridor_id": "milwaukee_city_core_trails",
   "deterministic_knobs": {
     "grade_smoothing_window": 5,
     "max_snap_distance_m": 120.0,
-    "min_match_ratio": 0.95
+    "min_match_ratio": 0.9
+  },
+  "fixture_assets": {
+    "esa_worldcover": "geo-pipeline/geo_pipeline/fixtures/milwaukee_phase2/esa_worldcover.json",
+    "openstreetmap": "geo-pipeline/geo_pipeline/fixtures/milwaukee_phase2/openstreetmap.json",
+    "usda_naip": "geo-pipeline/geo_pipeline/fixtures/milwaukee_phase2/usda_naip.json",
+    "usgs_3dep": "geo-pipeline/geo_pipeline/fixtures/milwaukee_phase2/usgs_3dep_dem.json"
   },
   "graph_profile": "phase2-city-v1",
   "optional_source_ids": [
@@ -44,14 +54,21 @@
   },
   "streaming_region_size_m": 4000.0,
   "target_crs": "EPSG:26916",
+  "terrain_grid_samples": 9,
   "tile_size_m": 1000.0,
+  "toolchain_versions": {
+    "duckdb": "1.1+",
+    "gdal": "3.9+",
+    "osmium_tool": "1.16+",
+    "python": "3.11+"
+  },
   "work_dirs": {
     "build": "work/builds/milwaukee_phase2",
     "raw": "work/raw/milwaukee_phase2",
     "staged": "work/staged/milwaukee_phase2"
   },
   "world_bounds_m": [
-    12000.0,
-    8000.0
+    10000.0,
+    4500.0
   ]
 }

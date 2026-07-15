@@ -38,3 +38,5 @@ The checked-in Milwaukee Phase 2 region pack under `region-data/milwaukee/mke_ph
 - ESA WorldCover, CC BY 4.0, v200 2021 tile lineage
 
 See `region-data/milwaukee/mke_phase2_region_pack/attribution.json` and `region-data/milwaukee/mke_phase2_region_pack/source_manifest.json` for the versioned source list, optional-source flags, usage mapping, source receipts, and redistribution notices for that pack.
+
+The checked-in Phase 2 acceptance fixtures under `geo-pipeline/geo_pipeline/fixtures/milwaukee_phase2/` are staged, source-derived excerpts used for deterministic local rebuilds and test coverage. They do not replace pack-local attribution or source manifests.
