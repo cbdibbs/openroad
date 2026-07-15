@@ -34,6 +34,12 @@ Milwaukee is the first target region. The MVP prioritizes solo riding, GPX impor
 4. Add sample data and tests whenever a new contract is introduced.
 5. Preserve deterministic outputs for the same source inputs wherever feasible.
 
+## Workflow Requirements
+
+- Test everything implemented in the turn before ending the turn. If a meaningful test cannot be run, state that explicitly and explain why.
+- Prefer the narrowest verification that proves the change works, but do not skip verification for implemented behavior.
+- Use conventional commits for all repository commits, such as `docs: update roadmap` or `feat: add region validation cli`.
+
 ## Implementation Notes For Future Agents
 
 - Update `docs/source-policy.md` and `THIRD_PARTY_NOTICES.md` whenever adding or changing upstream data sources.
