@@ -42,6 +42,37 @@ PYTHONPATH=geo-pipeline python3 -m geo_pipeline.cli snap-gpx region-data/milwauk
 game-client/godot/test_headless.sh
 ```
 
+## Run The Game
+
+Current playable state: a Godot debug ride loop that loads the checked-in Milwaukee Phase 1 pack.
+
+Requirements:
+- Python 3.11+
+- Godot 4, or `/Applications/Godot.app/Contents/MacOS/Godot` on macOS
+
+From the repo root:
+
+```bash
+PYTHONPATH=geo-pipeline python3 -m geo_pipeline.cli build-phase1-region milwaukee_phase1
+game-client/godot/run_local.sh
+```
+
+If the pack is already built and you just want to launch the game again:
+
+```bash
+game-client/godot/run_local.sh
+```
+
+Controls:
+- `W` / `S`: power up/down
+- `A` / `D`: brake down/up
+- `Q` / `E`: cadence down/up
+- `Space`: clear brake
+- `R`: restart route
+- `P`: pause/resume
+- `I`: import GPX
+- `Tab`: toggle the debug HUD
+
 ## Current Status
 
 This repository currently provides the Phase 0 foundation:
