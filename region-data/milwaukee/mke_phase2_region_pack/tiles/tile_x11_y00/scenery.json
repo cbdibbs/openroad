@@ -1,0 +1,201 @@
+{
+  "biome_patches": [
+    {
+      "biome_id": "tile_x11_y00_biome",
+      "color_hint": "#6aa7b8",
+      "landcover_class": "shoreline",
+      "polygon_m": [
+        [
+          11080.0,
+          80.0
+        ],
+        [
+          11920.0,
+          110.0
+        ],
+        [
+          11840.0,
+          900.0
+        ],
+        [
+          11120.0,
+          860.0
+        ]
+      ]
+    }
+  ],
+  "buildings": [
+    {
+      "building_id": "tile_x11_y00_bldg_01",
+      "footprint_m": [
+        [
+          11180.0,
+          180.0
+        ],
+        [
+          11300.0,
+          180.0
+        ],
+        [
+          11300.0,
+          320.0
+        ],
+        [
+          11180.0,
+          320.0
+        ]
+      ],
+      "height_m": 28.0,
+      "kind": "midrise"
+    },
+    {
+      "building_id": "tile_x11_y00_bldg_02",
+      "footprint_m": [
+        [
+          11620.0,
+          560.0
+        ],
+        [
+          11780.0,
+          560.0
+        ],
+        [
+          11780.0,
+          760.0
+        ],
+        [
+          11620.0,
+          760.0
+        ]
+      ],
+      "height_m": 18.0,
+      "kind": "mixed_use"
+    }
+  ],
+  "corridor_id": "milwaukee_city_core_trails",
+  "prop_masks": [
+    {
+      "density": 0.7,
+      "mask_id": "tile_x11_y00_trees",
+      "polygon_m": [
+        [
+          11080.0,
+          640.0
+        ],
+        [
+          11400.0,
+          600.0
+        ],
+        [
+          11440.0,
+          920.0
+        ],
+        [
+          11120.0,
+          940.0
+        ]
+      ],
+      "prop_class": "trees"
+    },
+    {
+      "density": 0.45,
+      "mask_id": "tile_x11_y00_shore",
+      "polygon_m": [
+        [
+          11520.0,
+          60.0
+        ],
+        [
+          11940.0,
+          100.0
+        ],
+        [
+          11900.0,
+          360.0
+        ],
+        [
+          11540.0,
+          300.0
+        ]
+      ],
+      "prop_class": "shoreline_grass"
+    }
+  ],
+  "region_id": "milwaukee_phase2",
+  "region_version": "milwaukee-v2.0.0",
+  "road_segments": [
+    {
+      "edge_id": "osm_edge_7c4e3d13",
+      "material": "packed_gravel",
+      "structure": "surface",
+      "width_m": 4.0
+    },
+    {
+      "edge_id": "osm_edge_ab735fa2",
+      "material": "asphalt",
+      "structure": "surface",
+      "width_m": 5.5
+    }
+  ],
+  "style_hints": {
+    "building_color_variation": 0.35,
+    "shoreline_emphasis": 0.58,
+    "vegetation_density": 0.64
+  },
+  "terrain_chunks": [
+    {
+      "chunk_id": "tile_x11_y00_terrain",
+      "elevation_grid_m": [
+        [
+          195.59,
+          195.89,
+          196.09,
+          196.18,
+          196.16
+        ],
+        [
+          195.57,
+          195.88,
+          196.07,
+          196.16,
+          196.14
+        ],
+        [
+          195.49,
+          195.79,
+          195.99,
+          196.08,
+          196.06
+        ],
+        [
+          195.34,
+          195.65,
+          195.84,
+          195.93,
+          195.91
+        ],
+        [
+          195.13,
+          195.43,
+          195.63,
+          195.72,
+          195.7
+        ]
+      ],
+      "origin_m": [
+        11000.0,
+        0.0
+      ],
+      "seam_keys": {
+        "east": "east_11_0",
+        "north": "north_11_0",
+        "south": "south_11_0",
+        "west": "west_11_0"
+      },
+      "size_m": [
+        1000.0,
+        1000.0
+      ]
+    }
+  ]
+}

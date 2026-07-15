@@ -18,11 +18,14 @@ from geo_pipeline.phase1 import (
     route_from_gpx,
     stable_edge_id,
 )
+from geo_pipeline.gpx import GpxPoint, load_gpx_points
 
 
 ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_REGION_CONFIG = "milwaukee_phase2"
 DEFAULT_REGION_DIR = ROOT / "region-data" / "milwaukee" / "mke_phase2_region_pack"
+SAMPLE_TRACK_PATH = ROOT / "sample-tracks" / "Wauwatosa_to_Lakefront.gpx"
+OAKLEAF_TRACK_PATH = ROOT / "region-data" / "milwaukee" / "oak_leaf_demo_loop.gpx"
 
 
 @dataclass(frozen=True)
@@ -82,6 +85,50 @@ def _grid_lines(start: float, end: float, step: float) -> list[float]:
         values.append(round(current, 1))
         current += step
     return values
+
+
+def _gpx_track_geometry_m(points: list[GpxPoint], offset_x: float, offset_y: float) -> list[list[float]]:
+    first = points[0]
+    mean_lat = math.radians(sum(point.latitude for point in points) / len(points))
+    meters_per_degree_lon = 111_320.0 * math.cos(mean_lat)
+    meters_per_degree_lat = 110_540.0
+    geometry: list[list[float]] = []
+    for point in points:
+        x = offset_x + ((point.longitude - first.longitude) * meters_per_degree_lon)
+        y = offset_y + ((point.latitude - first.latitude) * meters_per_degree_lat)
+        rounded = [round(x, 1), round(y, 1)]
+        if not geometry or geometry[-1] != rounded:
+            geometry.append(rounded)
+    if geometry[0] != geometry[-1]:
+        geometry.append(list(geometry[0]))
+    return geometry
+
+
+def _feature_from_gpx_track(config: dict[str, Any], path: Path, osm_way_id: str, offset_x: float, offset_y: float) -> dict[str, Any]:
+    points = load_gpx_points(path)
+    deduped_points: list[GpxPoint] = []
+    for point in points:
+        if deduped_points and point.latitude == deduped_points[-1].latitude and point.longitude == deduped_points[-1].longitude:
+            continue
+        deduped_points.append(point)
+    geometry_wgs84 = [[round(point.longitude, 6), round(point.latitude, 6)] for point in deduped_points]
+    if geometry_wgs84[0] != geometry_wgs84[-1]:
+        geometry_wgs84.append(list(geometry_wgs84[0]))
+    geometry_m = _gpx_track_geometry_m(deduped_points, offset_x, offset_y)
+    feature = _corridor_feature(
+        config,
+        osm_way_id,
+        {"highway": "cycleway", "bicycle": "designated", "surface": "asphalt"},
+        geometry_m,
+        geometry_wgs84,
+    )
+    feature["elevation_profile_m"] = [
+        round((point.elevation_m if point.elevation_m is not None else _sample_elevation(geometry_m[index])) - 8.0, 2)
+        for index, point in enumerate(deduped_points)
+    ]
+    if len(feature["elevation_profile_m"]) < len(feature["geometry_m"]):
+        feature["elevation_profile_m"].append(feature["elevation_profile_m"][0])
+    return feature
 
 
 def _network_features(config: dict[str, Any]) -> list[dict[str, Any]]:
@@ -175,21 +222,8 @@ def _network_features(config: dict[str, Any]) -> list[dict[str, Any]]:
             )
         )
 
-    for osm_way_id, geometry_m, geometry_wgs84 in [
-        ("way/oakleaf-01", [[0.0, 0.0], [650.0, 120.0], [1400.0, 400.0]], [[-87.9852, 43.0275], [-87.9778, 43.0288], [-87.9680, 43.0316]]),
-        ("way/oakleaf-02", [[1400.0, 400.0], [2050.0, 950.0], [2800.0, 1600.0]], [[-87.9680, 43.0316], [-87.9602, 43.0382], [-87.9508, 43.0458]]),
-        ("way/oakleaf-03", [[2800.0, 1600.0], [3325.0, 2250.0], [4000.0, 3000.0]], [[-87.9508, 43.0458], [-87.9448, 43.0532], [-87.9368, 43.0621]]),
-        ("way/oakleaf-04", [[4000.0, 3000.0], [2300.0, 2400.0], [1200.0, 1450.0], [0.0, 0.0]], [[-87.9368, 43.0621], [-87.9565, 43.0550], [-87.9718, 43.0440], [-87.9852, 43.0275]]),
-    ]:
-        features.append(
-            _corridor_feature(
-                config,
-                osm_way_id,
-                {"highway": "cycleway", "bicycle": "designated", "surface": "asphalt"},
-                geometry_m,
-                geometry_wgs84,
-            )
-        )
+    features.append(_feature_from_gpx_track(config, OAKLEAF_TRACK_PATH, "way/oakleaf-fixture-01", 400.0, 700.0))
+    features.append(_feature_from_gpx_track(config, SAMPLE_TRACK_PATH, "way/sample-track-01", 900.0, 4200.0))
 
     features.append(
         _corridor_feature(
@@ -674,6 +708,7 @@ def _starter_routes(ride_graph: dict[str, Any], config: dict[str, Any]) -> tuple
         ("starter_cross_city", "Cross-City Connector", "moderate", ["way/cross-01", "way/cross-02", "way/bridge-3001", "way/cross-03", "way/cross-04", "way/lake-04", "way/lake-05"]),
         ("starter_lakefront_spin", "Lakefront Spin", "easy", ["way/lake-01", "way/lake-02", "way/lake-03", "way/lake-04", "way/lake-05"]),
         ("starter_river_loop", "River Loop", "moderate", ["way/river-01", "way/river-02", "way/river-03", "way/river-04", "way/river-05", "way/river-06", "way/river-07", "way/river-08", "way/river-09"]),
+        ("starter_wauwatosa_lakefront", "Wauwatosa to Lakefront", "moderate", ["way/sample-track-01"]),
     ]
     routes: list[dict[str, Any]] = []
     catalog_entries: list[dict[str, Any]] = []

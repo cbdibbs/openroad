@@ -12,6 +12,7 @@ from geo_pipeline.phase2 import DEFAULT_REGION_CONFIG, build_phase2_region
 
 ROOT = Path(__file__).resolve().parents[1]
 REGION_DIR = ROOT / "region-data" / "milwaukee" / "mke_phase2_region_pack"
+SAMPLE_TRACK = ROOT / "sample-tracks" / "Wauwatosa_to_Lakefront.gpx"
 
 
 class Phase2PipelineTests(unittest.TestCase):
@@ -37,13 +38,13 @@ class Phase2PipelineTests(unittest.TestCase):
             env=env,
         )
         self.assertIn("validated", validate.stdout)
-        self.assertIn("routes=3", validate.stdout)
+        self.assertIn("routes=4", validate.stdout)
 
     def test_phase2_region_contracts_validate(self) -> None:
         region = validate_region_pack_directory(REGION_DIR)
         self.assertEqual(region["manifest"]["schema_version"], "phase2-region-root-v1")
         self.assertEqual(region["manifest"]["compatible_clients"], ["godot-phase2"])
-        self.assertEqual(len(region["route_catalog"]), 3)
+        self.assertEqual(len(region["route_catalog"]), 4)
         self.assertGreaterEqual(len(region["streaming_regions"]), 4)
         self.assertGreaterEqual(len(region["scenery_index"]["tiles"]), 1)
 
@@ -112,6 +113,35 @@ class Phase2PipelineTests(unittest.TestCase):
         route = json.loads(output_path.read_text(encoding="utf-8"))
         self.assertIn("grade_profile_pct", route)
         self.assertEqual(route["region_version"], "milwaukee-v2.0.0")
+
+    def test_sample_track_snaps_and_is_baked_as_starter_route(self) -> None:
+        env = dict(os.environ)
+        env["PYTHONPATH"] = str(ROOT / "geo-pipeline")
+        output_path = ROOT / "work" / "builds" / "milwaukee_phase2" / "wauwatosa_to_lakefront.fixture.route.json"
+        snap = subprocess.run(
+            [
+                "python3",
+                "-m",
+                "geo_pipeline.cli",
+                "snap-gpx",
+                str(REGION_DIR),
+                str(SAMPLE_TRACK),
+                "--output",
+                str(output_path),
+            ],
+            cwd=ROOT,
+            check=True,
+            capture_output=True,
+            text=True,
+            env=env,
+        )
+        self.assertIn("wrote", snap.stdout)
+        route = json.loads(output_path.read_text(encoding="utf-8"))
+        self.assertGreater(route["distance_m"], 1000.0)
+
+        region = validate_region_pack_directory(REGION_DIR)
+        baked_ids = {entry["route_id"] for entry in region["route_catalog"]}
+        self.assertIn("starter_wauwatosa_lakefront", baked_ids)
 
 
 if __name__ == "__main__":

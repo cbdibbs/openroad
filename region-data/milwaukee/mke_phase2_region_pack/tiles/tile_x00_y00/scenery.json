@@ -125,19 +125,13 @@
   "region_version": "milwaukee-v2.0.0",
   "road_segments": [
     {
-      "edge_id": "osm_edge_2d6f7ffb",
-      "material": "asphalt",
-      "structure": "surface",
-      "width_m": 5.5
-    },
-    {
       "edge_id": "osm_edge_2e9d1e5a",
       "material": "asphalt",
       "structure": "surface",
       "width_m": 5.5
     },
     {
-      "edge_id": "osm_edge_ae8e7cf9",
+      "edge_id": "osm_edge_52973d09",
       "material": "asphalt",
       "structure": "surface",
       "width_m": 5.5

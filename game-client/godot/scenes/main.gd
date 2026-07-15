@@ -83,7 +83,7 @@ func _unhandled_input(event: InputEvent) -> void:
 				_select_route_delta(-1)
 			KEY_BRACKETRIGHT:
 				_select_route_delta(1)
-			KEY_1, KEY_2, KEY_3:
+			KEY_1, KEY_2, KEY_3, KEY_4:
 				_select_route_by_number(int(event.keycode - KEY_1))
 
 
@@ -542,7 +542,7 @@ func _update_overlay() -> void:
 		"resistance: %.2f" % resistance_factor,
 		"stream region: %s" % str(edge_status.get("stream_region_id", "n/a")),
 		"loaded regions: %s" % ", ".join(_loaded_region_ids),
-		"keys: [ ] or 1/2/3 routes  W/S power  A/D brake  Q/E cadence",
+		"keys: [ ] or 1/2/3/4 routes  W/S power  A/D brake  Q/E cadence",
 		"R restart  P pause  I import GPX  Tab overlay",
 		_import_status
 	]).strip_edges()

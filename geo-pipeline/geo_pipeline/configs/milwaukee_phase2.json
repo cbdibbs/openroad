@@ -51,7 +51,7 @@
     "staged": "work/staged/milwaukee_phase2"
   },
   "world_bounds_m": [
-    8000.0,
+    12000.0,
     8000.0
   ]
 }

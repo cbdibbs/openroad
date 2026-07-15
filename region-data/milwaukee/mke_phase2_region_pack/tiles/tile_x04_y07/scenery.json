@@ -131,25 +131,25 @@
       "width_m": 5.5
     },
     {
-      "edge_id": "osm_edge_5032d4c8",
-      "material": "asphalt",
-      "structure": "surface",
-      "width_m": 5.5
-    },
-    {
       "edge_id": "osm_edge_9407e3e4",
       "material": "asphalt",
       "structure": "surface",
       "width_m": 5.5
     },
     {
-      "edge_id": "osm_edge_ae60327d",
+      "edge_id": "osm_edge_dc404dcb",
       "material": "asphalt",
       "structure": "surface",
       "width_m": 5.5
     },
     {
       "edge_id": "osm_edge_ef969687",
+      "material": "asphalt",
+      "structure": "surface",
+      "width_m": 5.5
+    },
+    {
+      "edge_id": "osm_edge_f250c44f",
       "material": "asphalt",
       "structure": "surface",
       "width_m": 5.5

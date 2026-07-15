@@ -68,7 +68,8 @@
   {
     "neighbor_region_ids": [
       "stream_x00_y00",
-      "stream_x01_y01"
+      "stream_x01_y01",
+      "stream_x02_y00"
     ],
     "origin_m": [
       4000.0,
@@ -101,7 +102,8 @@
   {
     "neighbor_region_ids": [
       "stream_x00_y01",
-      "stream_x01_y00"
+      "stream_x01_y00",
+      "stream_x02_y01"
     ],
     "origin_m": [
       4000.0,
@@ -129,6 +131,72 @@
       "tile_x07_y05",
       "tile_x07_y06",
       "tile_x07_y07"
+    ]
+  },
+  {
+    "neighbor_region_ids": [
+      "stream_x01_y00",
+      "stream_x02_y01"
+    ],
+    "origin_m": [
+      8000.0,
+      0.0
+    ],
+    "size_m": [
+      4000.0,
+      4000.0
+    ],
+    "stream_region_id": "stream_x02_y00",
+    "tile_ids": [
+      "tile_x08_y00",
+      "tile_x08_y01",
+      "tile_x08_y02",
+      "tile_x08_y03",
+      "tile_x09_y00",
+      "tile_x09_y01",
+      "tile_x09_y02",
+      "tile_x09_y03",
+      "tile_x10_y00",
+      "tile_x10_y01",
+      "tile_x10_y02",
+      "tile_x10_y03",
+      "tile_x11_y00",
+      "tile_x11_y01",
+      "tile_x11_y02",
+      "tile_x11_y03"
+    ]
+  },
+  {
+    "neighbor_region_ids": [
+      "stream_x01_y01",
+      "stream_x02_y00"
+    ],
+    "origin_m": [
+      8000.0,
+      4000.0
+    ],
+    "size_m": [
+      4000.0,
+      4000.0
+    ],
+    "stream_region_id": "stream_x02_y01",
+    "tile_ids": [
+      "tile_x08_y04",
+      "tile_x08_y05",
+      "tile_x08_y06",
+      "tile_x08_y07",
+      "tile_x09_y04",
+      "tile_x09_y05",
+      "tile_x09_y06",
+      "tile_x09_y07",
+      "tile_x10_y04",
+      "tile_x10_y05",
+      "tile_x10_y06",
+      "tile_x10_y07",
+      "tile_x11_y04",
+      "tile_x11_y05",
+      "tile_x11_y06",
+      "tile_x11_y07"
     ]
   }
 ]

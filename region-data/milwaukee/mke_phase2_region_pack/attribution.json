@@ -5,7 +5,7 @@
     "ODbL-sensitive ride graph outputs retain attribution and provenance requirements on redistribution.",
     "Optional preprocessing sources may degrade scenery richness, but route graph and gameplay remain valid."
   ],
-  "region_hash": "811fdc9e70be51372e689dbb1ca8a972682c5da27e57583972a910f72da86c83",
+  "region_hash": "b89d5f79d083114177bba06c6de630db582b192ade017a84fadf6853b874d132",
   "region_id": "milwaukee_phase2",
   "region_version": "milwaukee-v2.0.0",
   "sources": [

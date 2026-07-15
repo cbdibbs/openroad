@@ -13,47 +13,6 @@
         0.0,
         800.0
       ],
-      "edge_id": "osm_edge_089bbe0d",
-      "elevation_profile_m": [
-        185.32,
-        186.12
-      ],
-      "end_node_id": "milwaukee_phase2_node_bf5c29c959",
-      "geometry_m": [
-        [
-          7200.0,
-          2400.0
-        ],
-        [
-          8000.0,
-          2400.0
-        ]
-      ],
-      "geometry_wgs84": [
-        [
-          -87.898,
-          43.022
-        ],
-        [
-          -87.88,
-          43.022
-        ]
-      ],
-      "layer": "0",
-      "length_m": 800.0,
-      "osm_way_id": "way/2070",
-      "start_node_id": "milwaukee_phase2_node_b38ebca5de",
-      "stream_region_id": "stream_x01_y00",
-      "structure": "surface",
-      "surface": "packed_gravel",
-      "tile_id": "tile_x07_y02"
-    },
-    {
-      "bike_access": "designated",
-      "distance_profile_m": [
-        0.0,
-        800.0
-      ],
       "edge_id": "osm_edge_442e869e",
       "elevation_profile_m": [
         186.63,
@@ -72,11 +31,11 @@
       ],
       "geometry_wgs84": [
         [
-          -87.898,
+          -87.952,
           43.008
         ],
         [
-          -87.898,
+          -87.952,
           43.022
         ]
       ],
@@ -95,7 +54,7 @@
         0.0,
         800.0
       ],
-      "edge_id": "osm_edge_5b07d8f0",
+      "edge_id": "osm_edge_c08f267d",
       "elevation_profile_m": [
         185.63,
         185.32
@@ -113,17 +72,17 @@
       ],
       "geometry_wgs84": [
         [
-          -87.916,
+          -87.964,
           43.022
         ],
         [
-          -87.898,
+          -87.952,
           43.022
         ]
       ],
       "layer": "0",
       "length_m": 800.0,
-      "osm_way_id": "way/2069",
+      "osm_way_id": "way/2094",
       "start_node_id": "milwaukee_phase2_node_6e1a80210b",
       "stream_region_id": "stream_x01_y00",
       "structure": "surface",
@@ -142,7 +101,7 @@
         2400.0
       ],
       "point_wgs84": [
-        -87.916,
+        -87.964,
         43.022
       ],
       "stream_region_id": "stream_x01_y00",
@@ -157,22 +116,7 @@
         2400.0
       ],
       "point_wgs84": [
-        -87.898,
-        43.022
-      ],
-      "stream_region_id": "stream_x01_y00",
-      "tile_id": "tile_x07_y02"
-    },
-    {
-      "junction_kind": "junction",
-      "layer": "0",
-      "node_id": "milwaukee_phase2_node_bf5c29c959",
-      "point_m": [
-        8000.0,
-        2400.0
-      ],
-      "point_wgs84": [
-        -87.88,
+        -87.952,
         43.022
       ],
       "stream_region_id": "stream_x01_y00",
@@ -187,7 +131,7 @@
         1600.0
       ],
       "point_wgs84": [
-        -87.898,
+        -87.952,
         43.008
       ],
       "stream_region_id": "stream_x01_y00",

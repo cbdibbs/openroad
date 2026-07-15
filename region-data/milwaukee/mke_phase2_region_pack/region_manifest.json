@@ -30,7 +30,8 @@
   "starter_route_ids": [
     "starter_cross_city",
     "starter_lakefront_spin",
-    "starter_river_loop"
+    "starter_river_loop",
+    "starter_wauwatosa_lakefront"
   ],
   "streaming_region_size_m": 4000.0,
   "streaming_regions_asset": "streaming_regions.json",

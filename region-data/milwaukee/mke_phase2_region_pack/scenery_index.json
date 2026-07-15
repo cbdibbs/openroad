@@ -118,6 +118,58 @@
       "tile_id": "tile_x07_y00"
     },
     {
+      "manifest_asset": "tiles/tile_x08_y00/manifest.json",
+      "origin_m": [
+        8000.0,
+        0.0
+      ],
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x02_y00",
+      "tile_id": "tile_x08_y00"
+    },
+    {
+      "manifest_asset": "tiles/tile_x09_y00/manifest.json",
+      "origin_m": [
+        9000.0,
+        0.0
+      ],
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x02_y00",
+      "tile_id": "tile_x09_y00"
+    },
+    {
+      "manifest_asset": "tiles/tile_x10_y00/manifest.json",
+      "origin_m": [
+        10000.0,
+        0.0
+      ],
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x02_y00",
+      "tile_id": "tile_x10_y00"
+    },
+    {
+      "manifest_asset": "tiles/tile_x11_y00/manifest.json",
+      "origin_m": [
+        11000.0,
+        0.0
+      ],
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x02_y00",
+      "tile_id": "tile_x11_y00"
+    },
+    {
       "manifest_asset": "tiles/tile_x00_y01/manifest.json",
       "origin_m": [
         0.0,
@@ -220,6 +272,58 @@
       ],
       "stream_region_id": "stream_x01_y00",
       "tile_id": "tile_x07_y01"
+    },
+    {
+      "manifest_asset": "tiles/tile_x08_y01/manifest.json",
+      "origin_m": [
+        8000.0,
+        1000.0
+      ],
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x02_y00",
+      "tile_id": "tile_x08_y01"
+    },
+    {
+      "manifest_asset": "tiles/tile_x09_y01/manifest.json",
+      "origin_m": [
+        9000.0,
+        1000.0
+      ],
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x02_y00",
+      "tile_id": "tile_x09_y01"
+    },
+    {
+      "manifest_asset": "tiles/tile_x10_y01/manifest.json",
+      "origin_m": [
+        10000.0,
+        1000.0
+      ],
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x02_y00",
+      "tile_id": "tile_x10_y01"
+    },
+    {
+      "manifest_asset": "tiles/tile_x11_y01/manifest.json",
+      "origin_m": [
+        11000.0,
+        1000.0
+      ],
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x02_y00",
+      "tile_id": "tile_x11_y01"
     },
     {
       "manifest_asset": "tiles/tile_x00_y02/manifest.json",
@@ -326,6 +430,58 @@
       "tile_id": "tile_x07_y02"
     },
     {
+      "manifest_asset": "tiles/tile_x08_y02/manifest.json",
+      "origin_m": [
+        8000.0,
+        2000.0
+      ],
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x02_y00",
+      "tile_id": "tile_x08_y02"
+    },
+    {
+      "manifest_asset": "tiles/tile_x09_y02/manifest.json",
+      "origin_m": [
+        9000.0,
+        2000.0
+      ],
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x02_y00",
+      "tile_id": "tile_x09_y02"
+    },
+    {
+      "manifest_asset": "tiles/tile_x10_y02/manifest.json",
+      "origin_m": [
+        10000.0,
+        2000.0
+      ],
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x02_y00",
+      "tile_id": "tile_x10_y02"
+    },
+    {
+      "manifest_asset": "tiles/tile_x11_y02/manifest.json",
+      "origin_m": [
+        11000.0,
+        2000.0
+      ],
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x02_y00",
+      "tile_id": "tile_x11_y02"
+    },
+    {
       "manifest_asset": "tiles/tile_x00_y03/manifest.json",
       "origin_m": [
         0.0,
@@ -428,6 +584,58 @@
       ],
       "stream_region_id": "stream_x01_y00",
       "tile_id": "tile_x07_y03"
+    },
+    {
+      "manifest_asset": "tiles/tile_x08_y03/manifest.json",
+      "origin_m": [
+        8000.0,
+        3000.0
+      ],
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x02_y00",
+      "tile_id": "tile_x08_y03"
+    },
+    {
+      "manifest_asset": "tiles/tile_x09_y03/manifest.json",
+      "origin_m": [
+        9000.0,
+        3000.0
+      ],
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x02_y00",
+      "tile_id": "tile_x09_y03"
+    },
+    {
+      "manifest_asset": "tiles/tile_x10_y03/manifest.json",
+      "origin_m": [
+        10000.0,
+        3000.0
+      ],
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x02_y00",
+      "tile_id": "tile_x10_y03"
+    },
+    {
+      "manifest_asset": "tiles/tile_x11_y03/manifest.json",
+      "origin_m": [
+        11000.0,
+        3000.0
+      ],
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x02_y00",
+      "tile_id": "tile_x11_y03"
     },
     {
       "manifest_asset": "tiles/tile_x00_y04/manifest.json",
@@ -534,6 +742,58 @@
       "tile_id": "tile_x07_y04"
     },
     {
+      "manifest_asset": "tiles/tile_x08_y04/manifest.json",
+      "origin_m": [
+        8000.0,
+        4000.0
+      ],
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x02_y01",
+      "tile_id": "tile_x08_y04"
+    },
+    {
+      "manifest_asset": "tiles/tile_x09_y04/manifest.json",
+      "origin_m": [
+        9000.0,
+        4000.0
+      ],
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x02_y01",
+      "tile_id": "tile_x09_y04"
+    },
+    {
+      "manifest_asset": "tiles/tile_x10_y04/manifest.json",
+      "origin_m": [
+        10000.0,
+        4000.0
+      ],
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x02_y01",
+      "tile_id": "tile_x10_y04"
+    },
+    {
+      "manifest_asset": "tiles/tile_x11_y04/manifest.json",
+      "origin_m": [
+        11000.0,
+        4000.0
+      ],
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x02_y01",
+      "tile_id": "tile_x11_y04"
+    },
+    {
       "manifest_asset": "tiles/tile_x00_y05/manifest.json",
       "origin_m": [
         0.0,
@@ -636,6 +896,58 @@
       ],
       "stream_region_id": "stream_x01_y01",
       "tile_id": "tile_x07_y05"
+    },
+    {
+      "manifest_asset": "tiles/tile_x08_y05/manifest.json",
+      "origin_m": [
+        8000.0,
+        5000.0
+      ],
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x02_y01",
+      "tile_id": "tile_x08_y05"
+    },
+    {
+      "manifest_asset": "tiles/tile_x09_y05/manifest.json",
+      "origin_m": [
+        9000.0,
+        5000.0
+      ],
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x02_y01",
+      "tile_id": "tile_x09_y05"
+    },
+    {
+      "manifest_asset": "tiles/tile_x10_y05/manifest.json",
+      "origin_m": [
+        10000.0,
+        5000.0
+      ],
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x02_y01",
+      "tile_id": "tile_x10_y05"
+    },
+    {
+      "manifest_asset": "tiles/tile_x11_y05/manifest.json",
+      "origin_m": [
+        11000.0,
+        5000.0
+      ],
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x02_y01",
+      "tile_id": "tile_x11_y05"
     },
     {
       "manifest_asset": "tiles/tile_x00_y06/manifest.json",
@@ -742,6 +1054,58 @@
       "tile_id": "tile_x07_y06"
     },
     {
+      "manifest_asset": "tiles/tile_x08_y06/manifest.json",
+      "origin_m": [
+        8000.0,
+        6000.0
+      ],
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x02_y01",
+      "tile_id": "tile_x08_y06"
+    },
+    {
+      "manifest_asset": "tiles/tile_x09_y06/manifest.json",
+      "origin_m": [
+        9000.0,
+        6000.0
+      ],
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x02_y01",
+      "tile_id": "tile_x09_y06"
+    },
+    {
+      "manifest_asset": "tiles/tile_x10_y06/manifest.json",
+      "origin_m": [
+        10000.0,
+        6000.0
+      ],
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x02_y01",
+      "tile_id": "tile_x10_y06"
+    },
+    {
+      "manifest_asset": "tiles/tile_x11_y06/manifest.json",
+      "origin_m": [
+        11000.0,
+        6000.0
+      ],
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x02_y01",
+      "tile_id": "tile_x11_y06"
+    },
+    {
       "manifest_asset": "tiles/tile_x00_y07/manifest.json",
       "origin_m": [
         0.0,
@@ -844,6 +1208,58 @@
       ],
       "stream_region_id": "stream_x01_y01",
       "tile_id": "tile_x07_y07"
+    },
+    {
+      "manifest_asset": "tiles/tile_x08_y07/manifest.json",
+      "origin_m": [
+        8000.0,
+        7000.0
+      ],
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x02_y01",
+      "tile_id": "tile_x08_y07"
+    },
+    {
+      "manifest_asset": "tiles/tile_x09_y07/manifest.json",
+      "origin_m": [
+        9000.0,
+        7000.0
+      ],
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x02_y01",
+      "tile_id": "tile_x09_y07"
+    },
+    {
+      "manifest_asset": "tiles/tile_x10_y07/manifest.json",
+      "origin_m": [
+        10000.0,
+        7000.0
+      ],
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x02_y01",
+      "tile_id": "tile_x10_y07"
+    },
+    {
+      "manifest_asset": "tiles/tile_x11_y07/manifest.json",
+      "origin_m": [
+        11000.0,
+        7000.0
+      ],
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x02_y01",
+      "tile_id": "tile_x11_y07"
     }
   ]
 }

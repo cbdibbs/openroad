@@ -131,16 +131,16 @@
       "width_m": 5.5
     },
     {
+      "edge_id": "osm_edge_d2b85f39",
+      "material": "packed_gravel",
+      "structure": "surface",
+      "width_m": 4.0
+    },
+    {
       "edge_id": "osm_edge_d9252c7d",
       "material": "asphalt",
       "structure": "surface",
       "width_m": 5.5
-    },
-    {
-      "edge_id": "osm_edge_ffb9e8b9",
-      "material": "packed_gravel",
-      "structure": "surface",
-      "width_m": 4.0
     }
   ],
   "style_hints": {
