@@ -17,7 +17,7 @@ def content_hash(data: Any) -> str:
 
 
 def region_pack_hash(
-    manifest: Any, ride_graph: Any, scenery: Any, routes: Any, attribution: Any
+    manifest: Any, ride_graph: Any, scenery: Any, routes: Any, attribution: Any, source_manifest: Any
 ) -> str:
     attribution_without_hash = dict(attribution)
     attribution_without_hash["region_hash"] = "<computed>"
@@ -28,5 +28,6 @@ def region_pack_hash(
             "scenery": scenery,
             "routes": routes,
             "attribution": attribution_without_hash,
+            "source_manifest": source_manifest,
         }
     )

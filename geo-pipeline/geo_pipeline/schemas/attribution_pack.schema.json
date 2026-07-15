@@ -20,8 +20,9 @@
       "type": "array",
       "items": {
         "type": "object",
-        "required": ["name", "license", "version", "used_for", "attribution"],
+        "required": ["source_id", "name", "license", "version", "used_for", "attribution"],
         "properties": {
+          "source_id": { "type": "string" },
           "name": { "type": "string" },
           "license": { "type": "string" },
           "version": { "type": "string" },

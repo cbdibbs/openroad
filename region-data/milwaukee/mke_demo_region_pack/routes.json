@@ -1,33 +1,57 @@
 [
   {
     "distance_m": 10288.4,
+    "distance_profile_m": [
+      0.0,
+      1802.8,
+      3256.2,
+      5138.4,
+      5799.4,
+      6599.9,
+      7451.4,
+      8443.8,
+      9279.3,
+      10288.4
+    ],
     "elevation_profile_m": [
-      188.2,
+      189.9,
+      189.0,
+      188.1,
+      187.5,
       188.7,
       189.1,
       190.0,
       191.0,
       190.3,
-      189.9,
-      189.0,
-      188.1,
-      187.5
+      189.9
     ],
-    "region_version": "milwaukee-v1.0.0",
+    "grade_profile_pct": [
+      -0.025,
+      -0.037,
+      -0.048,
+      0.029,
+      0.067,
+      0.112,
+      0.085,
+      0.041,
+      -0.008,
+      -0.062
+    ],
+    "region_version": "milwaukee-v1.1.0",
     "route_id": "oak_leaf_demo_loop",
     "snapped_edge_sequence": [
-      "osm_edge_1001",
-      "osm_edge_1002",
-      "osm_edge_1008",
-      "osm_edge_1015"
+      "osm_edge_d55d2ee7",
+      "osm_edge_e4930177",
+      "osm_edge_58b63a5f",
+      "osm_edge_c7390c13"
     ],
     "source_hash": "gpxsha256:25d631b1f7d639d018f3309ca0a61a73b26e195ddc86b74512d12ffc135e952a",
     "source_type": "gpx_import",
     "surface_profile": [
       "asphalt",
       "asphalt",
-      "packed_gravel",
-      "asphalt"
+      "asphalt",
+      "packed_gravel"
     ]
   }
 ]

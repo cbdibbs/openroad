@@ -49,29 +49,33 @@
   ],
   "corridor_id": "oak_leaf_demo",
   "region_id": "milwaukee_demo",
-  "region_version": "milwaukee-v1.0.0",
+  "region_version": "milwaukee-v1.1.0",
   "road_segments": [
     {
-      "edge_id": "osm_edge_1001",
+      "edge_id": "osm_edge_58b63a5f",
       "material": "asphalt",
       "width_m": 5.0
     },
     {
-      "edge_id": "osm_edge_1002",
-      "material": "asphalt",
-      "width_m": 5.0
-    },
-    {
-      "edge_id": "osm_edge_1008",
+      "edge_id": "osm_edge_c7390c13",
       "material": "packed_gravel",
       "width_m": 4.0
     },
     {
-      "edge_id": "osm_edge_1015",
+      "edge_id": "osm_edge_d55d2ee7",
+      "material": "asphalt",
+      "width_m": 5.0
+    },
+    {
+      "edge_id": "osm_edge_e4930177",
       "material": "asphalt",
       "width_m": 5.0
     }
   ],
+  "style_hints": {
+    "shoreline_emphasis": 0.55,
+    "vegetation_density": 0.67
+  },
   "terrain_chunks": [
     {
       "chunk_id": "terrain_chunk_0001",
@@ -79,17 +83,26 @@
         [
           187.9,
           188.8,
-          189.7
+          189.7,
+          190.0
         ],
         [
           188.4,
           189.9,
-          190.6
+          190.6,
+          190.2
         ],
         [
           188.1,
           189.4,
-          189.8
+          189.8,
+          189.4
+        ],
+        [
+          187.8,
+          188.7,
+          189.2,
+          189.0
         ]
       ],
       "origin_m": [

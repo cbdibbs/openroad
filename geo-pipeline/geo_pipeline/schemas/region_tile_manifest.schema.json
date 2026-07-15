@@ -15,7 +15,8 @@
     "ride_graph_asset",
     "scenery_asset",
     "route_definitions_asset",
-    "attribution_asset"
+    "attribution_asset",
+    "source_manifest_asset"
   ],
   "properties": {
     "schema_version": { "type": "string" },
@@ -40,7 +41,8 @@
     "ride_graph_asset": { "type": "string" },
     "scenery_asset": { "type": "string" },
     "route_definitions_asset": { "type": "string" },
-    "attribution_asset": { "type": "string" }
+    "attribution_asset": { "type": "string" },
+    "source_manifest_asset": { "type": "string" }
   },
   "additionalProperties": false
 }

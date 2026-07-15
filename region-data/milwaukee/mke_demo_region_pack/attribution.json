@@ -2,19 +2,20 @@
   "build_date": "2026-07-14",
   "notices": [
     "This region pack contains a deterministic Milwaukee corridor proof for local validation and client integration.",
-    "ODbL-sensitive ride graph outputs must retain attribution and provenance when redistributed."
+    "ODbL-sensitive ride graph outputs must retain attribution and provenance when redistributed.",
+    "NAIP is used only for preprocessing heuristics and is not redistributed as raw imagery in this pack."
   ],
-  "region_hash": "98952da4b351c88dfd9c041d851ea49589465688dcc3945fbaf49c601efd809c",
+  "region_hash": "93899107baea14a91f28af3994a837cdd87d0c7a56651eee8aec357b2e1c11e5",
   "region_id": "milwaukee_demo",
-  "region_version": "milwaukee-v1.0.0",
+  "region_version": "milwaukee-v1.1.0",
   "sources": [
     {
       "attribution": "Copyright OpenStreetMap contributors",
       "license": "ODbL 1.0",
       "name": "OpenStreetMap",
+      "source_id": "openstreetmap",
       "used_for": [
-        "ride_graph",
-        "road_geometry"
+        "ride_graph"
       ],
       "version": "planet extract 2026-07-01"
     },
@@ -22,9 +23,9 @@
       "attribution": "Source: U.S. Geological Survey",
       "license": "USGS public use guidance",
       "name": "USGS 3DEP",
+      "source_id": "usgs_3dep",
       "used_for": [
-        "terrain",
-        "route_elevation"
+        "terrain_dem"
       ],
       "version": "1m DEM 2025-11-15"
     },
@@ -32,8 +33,9 @@
       "attribution": "USDA Farm Production and Conservation - Aerial Photography Field Office",
       "license": "public use with requested credit",
       "name": "USDA NAIP",
+      "source_id": "usda_naip",
       "used_for": [
-        "imagery_heuristics"
+        "style_hints"
       ],
       "version": "2024 collection"
     },
@@ -41,9 +43,9 @@
       "attribution": "Contains modified Copernicus WorldCover data (2021) processed by ESA WorldCover consortium",
       "license": "CC BY 4.0",
       "name": "ESA WorldCover",
+      "source_id": "esa_worldcover",
       "used_for": [
-        "biome_masks",
-        "landcover_classes"
+        "biome_masks"
       ],
       "version": "v200"
     }

@@ -21,9 +21,9 @@ Project-level notices in this file are not a substitute for per-region attributi
 
 The checked-in Milwaukee Phase 1 sample corridor pack under `region-data/milwaukee/mke_demo_region_pack` references the following upstream sources in machine-readable form:
 
-- OpenStreetMap contributors, ODbL 1.0
-- U.S. Geological Survey 3DEP, public use guidance
-- USDA NAIP, public use with requested credit
-- ESA WorldCover, CC BY 4.0
+- OpenStreetMap contributors, ODbL 1.0, Geofabrik Wisconsin extract lineage
+- U.S. Geological Survey 3DEP, public use guidance, TNM 1 m DEM lineage
+- USDA NAIP, public use with requested credit, preprocessing-only heuristic lineage
+- ESA WorldCover, CC BY 4.0, v200 2021 tile lineage
 
-See `region-data/milwaukee/mke_demo_region_pack/attribution.json` for the versioned source list, usage mapping, and redistribution notices for that pack.
+See `region-data/milwaukee/mke_demo_region_pack/attribution.json` and `region-data/milwaukee/mke_demo_region_pack/source_manifest.json` for the versioned source list, usage mapping, source receipts, and redistribution notices for that pack.

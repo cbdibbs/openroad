@@ -31,3 +31,21 @@ position = Vector3(0, 1, 0)
 position = Vector3(0, 7, 0)
 billboard = 1
 modulate = Color(1, 0.96, 0.84, 1)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HudLabel" type="Label" parent="CanvasLayer"]
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 700.0
+offset_bottom = 240.0
+theme_override_font_sizes/font_size = 18
+text = "Loading..."
+
+[node name="ImportDialog" type="FileDialog" parent="."]
+title = "Import GPX"
+file_mode = 0
+access = 2
+filters = PackedStringArray("*.gpx ; GPX files")
+
+[connection signal="file_selected" from="ImportDialog" to="." method="_on_import_dialog_file_selected"]

@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://procedural-trainer.dev/schemas/source_manifest.schema.json",
+  "title": "SourceManifest",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "region_id",
+    "corridor_id",
+    "region_version",
+    "generated_at",
+    "artifacts"
+  ],
+  "properties": {
+    "schema_version": { "type": "string" },
+    "region_id": { "type": "string" },
+    "corridor_id": { "type": "string" },
+    "region_version": { "type": "string" },
+    "generated_at": { "type": "string" },
+    "artifacts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "source_id",
+          "name",
+          "role",
+          "fetch_url",
+          "product_id",
+          "version",
+          "license",
+          "attribution",
+          "checksum_sha256",
+          "retrieved_at",
+          "local_filename"
+        ],
+        "properties": {
+          "source_id": { "type": "string" },
+          "name": { "type": "string" },
+          "role": { "type": "string" },
+          "fetch_url": { "type": "string" },
+          "product_id": { "type": "string" },
+          "version": { "type": "string" },
+          "license": { "type": "string" },
+          "attribution": { "type": "string" },
+          "checksum_sha256": { "type": "string" },
+          "retrieved_at": { "type": "string" },
+          "local_filename": { "type": "string" }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

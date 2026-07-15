@@ -24,7 +24,7 @@ class DocsAndLayoutTests(unittest.TestCase):
         readme = (ROOT / "README.md").read_text(encoding="utf-8")
         self.assertIn("open-source", readme)
         self.assertIn("Godot-first", readme)
-        self.assertIn("build-sample-region", readme)
+        self.assertIn("build-phase1-region", readme)
 
     def test_roadmap_covers_remaining_phases(self) -> None:
         roadmap = (ROOT / "docs" / "roadmap.md").read_text(encoding="utf-8")

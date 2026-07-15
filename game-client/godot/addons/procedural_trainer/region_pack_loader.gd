@@ -24,8 +24,9 @@ func load_region_pack(region_dir: String) -> Dictionary:
 	var scenery = _read_json(region_dir.path_join(str(manifest["scenery_asset"])))
 	var routes = _read_json(region_dir.path_join(str(manifest["route_definitions_asset"])))
 	var attribution = _read_json(region_dir.path_join(str(manifest["attribution_asset"])))
+	var source_manifest = _read_json(region_dir.path_join(str(manifest["source_manifest_asset"])))
 
-	if ride_graph.is_empty() or scenery.is_empty() or routes.is_empty() or attribution.is_empty():
+	if ride_graph.is_empty() or scenery.is_empty() or routes.is_empty() or attribution.is_empty() or source_manifest.is_empty():
 		return {"ok": false, "error": "region pack assets could not be loaded", "path": region_dir}
 
 	return {
@@ -35,7 +36,8 @@ func load_region_pack(region_dir: String) -> Dictionary:
 			"ride_graph": ride_graph,
 			"scenery": scenery,
 			"routes": routes,
-			"attribution": attribution
+			"attribution": attribution,
+			"source_manifest": source_manifest
 		}
 	}
 
@@ -64,7 +66,8 @@ func _validate_manifest(manifest: Dictionary) -> String:
 		"ride_graph_asset",
 		"scenery_asset",
 		"route_definitions_asset",
-		"attribution_asset"
+		"attribution_asset",
+		"source_manifest_asset"
 	]:
 		if not manifest.has(field):
 			return "manifest missing required field: %s" % field

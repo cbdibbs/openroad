@@ -9,7 +9,8 @@
     "region_version",
     "terrain_chunks",
     "road_segments",
-    "biome_patches"
+    "biome_patches",
+    "style_hints"
   ],
   "properties": {
     "region_id": { "type": "string" },
@@ -79,6 +80,10 @@
         },
         "additionalProperties": false
       }
+    },
+    "style_hints": {
+      "type": "object",
+      "additionalProperties": { "type": "number" }
     }
   },
   "additionalProperties": false

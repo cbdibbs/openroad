@@ -61,6 +61,7 @@
           "length_m",
           "geometry_wgs84",
           "geometry_m",
+          "distance_profile_m",
           "elevation_profile_m"
         ],
         "properties": {
@@ -88,6 +89,10 @@
               "maxItems": 2,
               "items": { "type": "number" }
             }
+          },
+          "distance_profile_m": {
+            "type": "array",
+            "items": { "type": "number" }
           },
           "elevation_profile_m": {
             "type": "array",

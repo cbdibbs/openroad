@@ -4,6 +4,7 @@ __pycache__/
 .DS_Store
 dist/
 build/
+work/
 *.import
 *.godot/
 *.tmp

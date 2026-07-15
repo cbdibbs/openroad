@@ -35,7 +35,7 @@ The initial MVP target follows the open-world plan:
 Python 3.11+ is assumed.
 
 ```bash
-PYTHONPATH=geo-pipeline python3 -m geo_pipeline.cli build-sample-region
+PYTHONPATH=geo-pipeline python3 -m geo_pipeline.cli build-phase1-region milwaukee_phase1
 PYTHONPATH=geo-pipeline python3 -m unittest discover -s tests
 PYTHONPATH=geo-pipeline python3 -m geo_pipeline.cli validate-region region-data/milwaukee/mke_demo_region_pack
 PYTHONPATH=geo-pipeline python3 -m geo_pipeline.cli snap-gpx region-data/milwaukee/mke_demo_region_pack region-data/milwaukee/oak_leaf_demo_loop.gpx
@@ -54,11 +54,32 @@ This repository currently provides the Phase 0 foundation:
 
 The repository now includes a deterministic Phase 1 Milwaukee corridor proof:
 
-- a generated `RideGraphPack` and `SceneryPack`
+- a staged `fetch-sources` -> `prepare-sources` -> `build-phase1-region` corridor pipeline
+- a generated `RideGraphPack`, `SceneryPack`, and `source_manifest.json`
 - a curated Milwaukee GPX fixture for canonical snapping
-- CLI commands to rebuild the sample region pack and emit snapped route definitions
-- a Godot runtime scaffold that loads the pack shape without embedding bake logic
+- CLI commands to rebuild the sample region pack and emit snapped route definitions with distance and grade profiles
+- a Godot runtime debug ride loop with virtual trainer controls and client-side GPX import through the external CLI boundary
 
-The geospatial ingestion path is still intentionally lightweight and sample-backed in-repo, but the public pack interfaces and validation flow now match the Phase 1 corridor proof target.
+The staged build remains lightweight and deterministic in-repo, but the public pack interfaces now model source fetch receipts, pack-local provenance, DEM-backed route grades, and a playable on-rails debug loop.
+
+## Rebuild Walkthrough
+
+The canonical Milwaukee proof rebuild is:
+
+```bash
+PYTHONPATH=geo-pipeline python3 -m geo_pipeline.cli fetch-sources milwaukee_phase1
+PYTHONPATH=geo-pipeline python3 -m geo_pipeline.cli prepare-sources milwaukee_phase1
+PYTHONPATH=geo-pipeline python3 -m geo_pipeline.cli build-phase1-region milwaukee_phase1
+PYTHONPATH=geo-pipeline python3 -m geo_pipeline.cli validate-region region-data/milwaukee/mke_demo_region_pack
+PYTHONPATH=geo-pipeline python3 -m geo_pipeline.cli snap-gpx region-data/milwaukee/mke_demo_region_pack region-data/milwaukee/oak_leaf_demo_loop.gpx
+```
+
+## Toolchain
+
+- Python 3.11+
+- bare-Python CLI under `geo-pipeline/`
+- optional GDAL/raster tooling, `osmium-tool`, and `awscli` for future live-source expansion
+- Godot 4 for the runtime client
+- no mandatory proprietary services or SDKs
 
 The next execution targets are documented in [docs/roadmap.md](docs/roadmap.md).

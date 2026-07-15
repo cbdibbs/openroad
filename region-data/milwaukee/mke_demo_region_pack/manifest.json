@@ -11,11 +11,12 @@
   ],
   "corridor_id": "oak_leaf_demo",
   "region_id": "milwaukee_demo",
-  "region_version": "milwaukee-v1.0.0",
+  "region_version": "milwaukee-v1.1.0",
   "ride_graph_asset": "ride_graph.json",
   "route_definitions_asset": "routes.json",
   "scenery_asset": "scenery.json",
   "schema_version": "phase1-region-pack-v1",
+  "source_manifest_asset": "source_manifest.json",
   "source_versions": {
     "esa_worldcover": "v200",
     "openstreetmap": "planet extract 2026-07-01",

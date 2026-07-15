@@ -25,8 +25,10 @@ The checked-in Phase 1 scaffold loads the Milwaukee sample pack from `../../regi
 - ride graph road segments
 - minimal terrain and biome patches
 - deterministic route playback from the baked snapped edge sequence
+- keyboard-driven debug trainer controls with a live HUD
+- GPX import through the external Python CLI boundary
 
-GPX snapping remains outside the client. Use the Python CLI to rebuild the sample pack and emit route definitions before testing the Godot scene.
+GPX snapping remains outside the client. The runtime shells out to `geo-pipeline/run_geo_pipeline_cli.py` using the configured Python executable and loads the resulting route JSON from a temp output directory.
 
 ## Local Run And Test
 
@@ -43,3 +45,14 @@ game-client/godot/test_headless.sh
 ```
 
 Both scripts prefer `/Applications/Godot.app/Contents/MacOS/Godot`, fall back to `godot` on `PATH`, and isolate Godot user data under a writable temp-style home if needed. Override the binary explicitly with `GODOT_BIN=/path/to/Godot`.
+
+## Debug Controls
+
+- `W` / `S`: power up/down
+- `A` / `D`: brake down/up
+- `Q` / `E`: cadence down/up
+- `Space`: clear brake
+- `R`: restart route
+- `P`: pause/resume
+- `I`: import GPX
+- `Tab`: toggle HUD
