@@ -16,12 +16,16 @@ def content_hash(data: Any) -> str:
     return sha256(canonical_json_bytes(data)).hexdigest()
 
 
-def region_pack_hash(manifest: Any, routes: Any, attribution: Any) -> str:
+def region_pack_hash(
+    manifest: Any, ride_graph: Any, scenery: Any, routes: Any, attribution: Any
+) -> str:
     attribution_without_hash = dict(attribution)
     attribution_without_hash["region_hash"] = "<computed>"
     return content_hash(
         {
             "manifest": manifest,
+            "ride_graph": ride_graph,
+            "scenery": scenery,
             "routes": routes,
             "attribution": attribution_without_hash,
         }

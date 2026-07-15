@@ -1,40 +1,51 @@
 {
-  "region_id": "milwaukee_demo",
-  "region_version": "milwaukee-v0.1.0",
   "build_date": "2026-07-14",
-  "region_hash": "5de73c4927c9d40050ceca5c4487f9045cdd88e95cc920e5513c2e429a84bd15",
+  "notices": [
+    "This region pack contains a deterministic Milwaukee corridor proof for local validation and client integration.",
+    "ODbL-sensitive ride graph outputs must retain attribution and provenance when redistributed."
+  ],
+  "region_hash": "98952da4b351c88dfd9c041d851ea49589465688dcc3945fbaf49c601efd809c",
+  "region_id": "milwaukee_demo",
+  "region_version": "milwaukee-v1.0.0",
   "sources": [
     {
-      "name": "OpenStreetMap",
+      "attribution": "Copyright OpenStreetMap contributors",
       "license": "ODbL 1.0",
-      "version": "planet extract 2026-07-01",
-      "used_for": ["ride_graph", "buildings"],
-      "attribution": "Copyright OpenStreetMap contributors"
+      "name": "OpenStreetMap",
+      "used_for": [
+        "ride_graph",
+        "road_geometry"
+      ],
+      "version": "planet extract 2026-07-01"
     },
     {
-      "name": "USGS 3DEP",
+      "attribution": "Source: U.S. Geological Survey",
       "license": "USGS public use guidance",
-      "version": "1m DEM 2025-11-15",
-      "used_for": ["elevation", "terrain"],
-      "attribution": "Source: U.S. Geological Survey"
+      "name": "USGS 3DEP",
+      "used_for": [
+        "terrain",
+        "route_elevation"
+      ],
+      "version": "1m DEM 2025-11-15"
     },
     {
-      "name": "USDA NAIP",
+      "attribution": "USDA Farm Production and Conservation - Aerial Photography Field Office",
       "license": "public use with requested credit",
-      "version": "2024 collection",
-      "used_for": ["imagery_heuristics"],
-      "attribution": "USDA Farm Production and Conservation - Aerial Photography Field Office"
+      "name": "USDA NAIP",
+      "used_for": [
+        "imagery_heuristics"
+      ],
+      "version": "2024 collection"
     },
     {
-      "name": "ESA WorldCover",
+      "attribution": "Contains modified Copernicus WorldCover data (2021) processed by ESA WorldCover consortium",
       "license": "CC BY 4.0",
-      "version": "v200",
-      "used_for": ["biomes", "landcover_masks"],
-      "attribution": "Contains modified Copernicus WorldCover data (2021) processed by ESA WorldCover consortium"
+      "name": "ESA WorldCover",
+      "used_for": [
+        "biome_masks",
+        "landcover_classes"
+      ],
+      "version": "v200"
     }
-  ],
-  "notices": [
-    "This sample pack demonstrates attribution structure only and does not include raw source datasets.",
-    "ODbL-covered route graph outputs must retain accompanying license and attribution notices when redistributed."
   ]
 }

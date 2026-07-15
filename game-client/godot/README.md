@@ -16,3 +16,14 @@ This directory is the default runtime client for the MVP.
 - `scenes/`: gameplay and streaming scenes
 
 The client intentionally depends on baked data contracts defined under `geo-pipeline/geo_pipeline/schemas/`.
+
+## Phase 1 Runtime
+
+The checked-in Phase 1 scaffold loads the Milwaukee sample pack from `../../region-data/milwaukee/mke_demo_region_pack` by default and renders:
+
+- manifest-driven region-pack loading
+- ride graph road segments
+- minimal terrain and biome patches
+- deterministic route playback from the baked snapped edge sequence
+
+GPX snapping remains outside the client. Use the Python CLI to rebuild the sample pack and emit route definitions before testing the Godot scene.

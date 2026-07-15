@@ -30,15 +30,37 @@ This split is intentional. It keeps engine-specific runtime choices separate fro
 
 ### RegionTileManifest
 
+- `schema_version`
+- `region_id`
+- `corridor_id`
 - `tile_id`
 - `bbox_wgs84`
 - `region_version`
 - `source_versions`
+- `compatible_clients`
 - `ride_graph_asset`
-- `terrain_asset`
-- `building_asset`
-- `biome_asset`
+- `scenery_asset`
+- `route_definitions_asset`
 - `attribution_asset`
+
+### RideGraphPack
+
+- `region_id`
+- `corridor_id`
+- `region_version`
+- `graph_profile`
+- `bbox_wgs84`
+- `nodes`
+- `edges`
+
+### SceneryPack
+
+- `region_id`
+- `corridor_id`
+- `region_version`
+- `terrain_chunks`
+- `road_segments`
+- `biome_patches`
 
 ### RouteDefinition
 
@@ -55,6 +77,7 @@ This split is intentional. It keeps engine-specific runtime choices separate fro
 
 - Code, tooling, and region datasets are separate deliverables.
 - Every region pack ships with a machine-readable attribution manifest.
+- Every region pack ships with explicit ride-graph and scenery assets referenced by manifest.
 - ODbL-covered derived data is tracked explicitly through source manifests and notices.
 - Runtime chunking defaults to 1 km generation tiles and 4 km streaming regions.
 

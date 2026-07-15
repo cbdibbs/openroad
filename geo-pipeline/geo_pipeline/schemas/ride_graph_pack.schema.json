@@ -1,0 +1,102 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://procedural-trainer.dev/schemas/ride_graph_pack.schema.json",
+  "title": "RideGraphPack",
+  "type": "object",
+  "required": [
+    "region_id",
+    "corridor_id",
+    "region_version",
+    "graph_profile",
+    "bbox_wgs84",
+    "nodes",
+    "edges"
+  ],
+  "properties": {
+    "region_id": { "type": "string" },
+    "corridor_id": { "type": "string" },
+    "region_version": { "type": "string" },
+    "graph_profile": { "type": "string" },
+    "bbox_wgs84": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "items": { "type": "number" }
+    },
+    "nodes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["node_id", "point_wgs84", "point_m", "junction_kind"],
+        "properties": {
+          "node_id": { "type": "string" },
+          "point_wgs84": {
+            "type": "array",
+            "minItems": 2,
+            "maxItems": 2,
+            "items": { "type": "number" }
+          },
+          "point_m": {
+            "type": "array",
+            "minItems": 2,
+            "maxItems": 2,
+            "items": { "type": "number" }
+          },
+          "junction_kind": { "type": "string" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "edges": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "edge_id",
+          "osm_way_id",
+          "start_node_id",
+          "end_node_id",
+          "bike_access",
+          "surface",
+          "length_m",
+          "geometry_wgs84",
+          "geometry_m",
+          "elevation_profile_m"
+        ],
+        "properties": {
+          "edge_id": { "type": "string" },
+          "osm_way_id": { "type": "string" },
+          "start_node_id": { "type": "string" },
+          "end_node_id": { "type": "string" },
+          "bike_access": { "type": "string" },
+          "surface": { "type": "string" },
+          "length_m": { "type": "number" },
+          "geometry_wgs84": {
+            "type": "array",
+            "items": {
+              "type": "array",
+              "minItems": 2,
+              "maxItems": 2,
+              "items": { "type": "number" }
+            }
+          },
+          "geometry_m": {
+            "type": "array",
+            "items": {
+              "type": "array",
+              "minItems": 2,
+              "maxItems": 2,
+              "items": { "type": "number" }
+            }
+          },
+          "elevation_profile_m": {
+            "type": "array",
+            "items": { "type": "number" }
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}
