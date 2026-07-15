@@ -1,3 +1,51 @@
-[gd_scene format=3]
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scenes/main.gd" id="1_main"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_rider"]
+radius = 0.6
+height = 1.2
 
 [node name="Main" type="Node3D"]
+script = ExtResource("1_main")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+position = Vector3(0, 12, -18)
+current = true
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+rotation = Vector3(-0.8, -0.6, 0)
+light_energy = 2.0
+
+[node name="TerrainRoot" type="Node3D" parent="."]
+
+[node name="BiomeRoot" type="Node3D" parent="."]
+
+[node name="RoadRoot" type="Node3D" parent="."]
+
+[node name="Rider" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_rider")
+position = Vector3(0, 1, 0)
+
+[node name="StatusLabel" type="Label3D" parent="."]
+position = Vector3(0, 7, 0)
+billboard = 1
+modulate = Color(1, 0.96, 0.84, 1)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HudLabel" type="Label" parent="CanvasLayer"]
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 700.0
+offset_bottom = 240.0
+theme_override_font_sizes/font_size = 18
+text = "Loading..."
+
+[node name="ImportDialog" type="FileDialog" parent="."]
+title = "Import GPX"
+file_mode = 0
+access = 2
+filters = PackedStringArray("*.gpx ; GPX files")
+
+[connection signal="file_selected" from="ImportDialog" to="." method="_on_import_dialog_file_selected"]

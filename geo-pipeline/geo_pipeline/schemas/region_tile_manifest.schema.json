@@ -4,17 +4,24 @@
   "title": "RegionTileManifest",
   "type": "object",
   "required": [
+    "schema_version",
+    "region_id",
+    "corridor_id",
     "tile_id",
     "bbox_wgs84",
     "region_version",
     "source_versions",
+    "compatible_clients",
     "ride_graph_asset",
-    "terrain_asset",
-    "building_asset",
-    "biome_asset",
-    "attribution_asset"
+    "scenery_asset",
+    "route_definitions_asset",
+    "attribution_asset",
+    "source_manifest_asset"
   ],
   "properties": {
+    "schema_version": { "type": "string" },
+    "region_id": { "type": "string" },
+    "corridor_id": { "type": "string" },
     "tile_id": { "type": "string" },
     "bbox_wgs84": {
       "type": "array",
@@ -27,11 +34,15 @@
       "type": "object",
       "additionalProperties": { "type": "string" }
     },
+    "compatible_clients": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
     "ride_graph_asset": { "type": "string" },
-    "terrain_asset": { "type": "string" },
-    "building_asset": { "type": "string" },
-    "biome_asset": { "type": "string" },
-    "attribution_asset": { "type": "string" }
+    "scenery_asset": { "type": "string" },
+    "route_definitions_asset": { "type": "string" },
+    "attribution_asset": { "type": "string" },
+    "source_manifest_asset": { "type": "string" }
   },
   "additionalProperties": false
 }

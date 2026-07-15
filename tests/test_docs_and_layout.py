@@ -13,6 +13,7 @@ class DocsAndLayoutTests(unittest.TestCase):
             ROOT / "game-client" / "godot",
             ROOT / "geo-pipeline" / "geo_pipeline",
             ROOT / "region-data" / "milwaukee" / "mke_demo_region_pack",
+            ROOT / "region-data" / "milwaukee" / "oak_leaf_demo_loop.gpx",
             ROOT / "docs" / "source-policy.md",
             ROOT / "docs" / "roadmap.md",
         ]
@@ -23,6 +24,7 @@ class DocsAndLayoutTests(unittest.TestCase):
         readme = (ROOT / "README.md").read_text(encoding="utf-8")
         self.assertIn("open-source", readme)
         self.assertIn("Godot-first", readme)
+        self.assertIn("build-phase1-region", readme)
 
     def test_roadmap_covers_remaining_phases(self) -> None:
         roadmap = (ROOT / "docs" / "roadmap.md").read_text(encoding="utf-8")

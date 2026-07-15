@@ -1,0 +1,49 @@
+{
+  "bbox_wgs84": [
+    -87.9852,
+    43.0275,
+    -87.9368,
+    43.0621
+  ],
+  "build_date": "2026-07-14",
+  "corridor_id": "oak_leaf_demo",
+  "deterministic_knobs": {
+    "grade_smoothing_window": 3,
+    "max_snap_distance_m": 80.0,
+    "min_match_ratio": 0.95
+  },
+  "graph_profile": "phase1-corridor-v1",
+  "package_dir": "region-data/milwaukee/mke_demo_region_pack",
+  "region_id": "milwaukee_demo",
+  "region_version": "milwaukee-v1.1.0",
+  "retrieved_at": "2026-07-14T00:00:00Z",
+  "sources": {
+    "esa_worldcover": {
+      "fetch_url": "https://esa-worldcover.s3.eu-central-1.amazonaws.com/v200/2021/map/ESA_WorldCover_10m_2021_v200_N42W090_Map.tif",
+      "product_id": "ESA_WorldCover_10m_2021_v200_N42W090_Map",
+      "version": "v200"
+    },
+    "openstreetmap": {
+      "fetch_url": "https://download.geofabrik.de/north-america/us/wisconsin-latest.osm.pbf",
+      "product_id": "geofabrik-wisconsin-latest",
+      "version": "planet extract 2026-07-01"
+    },
+    "usda_naip": {
+      "fetch_url": "https://tnmaccess.nationalmap.gov/api/v1/products?datasets=USDA%20National%20Agriculture%20Imagery%20Program%20(NAIP)",
+      "product_id": "naip-milwaukee-corridor-2024",
+      "version": "2024 collection"
+    },
+    "usgs_3dep": {
+      "fetch_url": "https://tnmaccess.nationalmap.gov/api/v1/products?datasets=Digital%20Elevation%20Model%20(DEM)%201%20meter",
+      "product_id": "3dep-milwaukee-corridor-1m",
+      "version": "1m DEM 2025-11-15"
+    }
+  },
+  "target_crs": "EPSG:26916",
+  "tile_id": "milwaukee_demo_4km_0001",
+  "work_dirs": {
+    "build": "work/builds/milwaukee_phase1",
+    "raw": "work/raw/milwaukee_phase1",
+    "staged": "work/staged/milwaukee_phase1"
+  }
+}

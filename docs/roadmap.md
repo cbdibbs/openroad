@@ -8,6 +8,8 @@ This document carries forward the implementation plan beyond the completed Phase
 
 Produce one playable Milwaukee corridor of roughly 10-20 km that proves the end-to-end loop from source ingestion to Godot playback.
 
+Accepted Phase 1 scope: source-backed corridor contracts plus a playable debug ride loop with GPX import, deterministic snapping, DEM-derived grade playback, and manual trainer-style controls.
+
 ### Deliverables
 
 - Milwaukee source-ingestion scripts for:
@@ -28,8 +30,9 @@ Produce one playable Milwaukee corridor of roughly 10-20 km that proves the end-
   - loading one sample region pack
   - importing a GPX file
   - snapping that GPX to the canonical ride graph
-  - riding the resulting route with elevation-driven grade playback
+  - riding the resulting route with elevation-driven grade playback and debug trainer controls
 - A generated `AttributionPack` shipped alongside the sample Milwaukee artifacts
+- A generated `source_manifest.json` shipped alongside the sample Milwaukee artifacts
 
 ### Pipeline Work
 
@@ -37,6 +40,7 @@ Produce one playable Milwaukee corridor of roughly 10-20 km that proves the end-
 - Build import jobs that normalize CRS, metadata, and source lineage.
 - Convert OSM ways and relations into a canonical bikeable graph model.
 - Replace noisy GPX elevation with DEM-derived samples.
+- Preserve distance and grade profiles in `RouteDefinition`.
 - Produce one corridor asset set that can be loaded by the Godot client without hand-authored scene dependencies.
 
 ### Client Work
@@ -52,6 +56,7 @@ Produce one playable Milwaukee corridor of roughly 10-20 km that proves the end-
 - GPX import works for the sample corridor and resolves to deterministic snapped route output.
 - Elevation playback comes from DEM-derived route data rather than raw GPX elevation.
 - Attribution files are generated automatically and validated as part of the pack.
+- Source receipts and pack-local lineage are generated automatically and validated as part of the pack.
 
 ## Phase 2: Canonical Route And World Packs
 

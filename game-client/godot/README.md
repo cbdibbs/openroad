@@ -16,3 +16,43 @@ This directory is the default runtime client for the MVP.
 - `scenes/`: gameplay and streaming scenes
 
 The client intentionally depends on baked data contracts defined under `geo-pipeline/geo_pipeline/schemas/`.
+
+## Phase 1 Runtime
+
+The checked-in Phase 1 scaffold loads the Milwaukee sample pack from `../../region-data/milwaukee/mke_demo_region_pack` by default and renders:
+
+- manifest-driven region-pack loading
+- ride graph road segments
+- minimal terrain and biome patches
+- deterministic route playback from the baked snapped edge sequence
+- keyboard-driven debug trainer controls with a live HUD
+- GPX import through the external Python CLI boundary
+
+GPX snapping remains outside the client. The runtime shells out to `geo-pipeline/run_geo_pipeline_cli.py` using the configured Python executable and loads the resulting route JSON from a temp output directory.
+
+## Local Run And Test
+
+Run the client locally:
+
+```bash
+game-client/godot/run_local.sh
+```
+
+Run a headless smoke test that loads the main scene:
+
+```bash
+game-client/godot/test_headless.sh
+```
+
+Both scripts prefer `/Applications/Godot.app/Contents/MacOS/Godot`, fall back to `godot` on `PATH`, and isolate Godot user data under a writable temp-style home if needed. Override the binary explicitly with `GODOT_BIN=/path/to/Godot`.
+
+## Debug Controls
+
+- `W` / `S`: power up/down
+- `A` / `D`: brake down/up
+- `Q` / `E`: cadence down/up
+- `Space`: clear brake
+- `R`: restart route
+- `P`: pause/resume
+- `I`: import GPX
+- `Tab`: toggle HUD

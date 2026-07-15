@@ -1,0 +1,90 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://procedural-trainer.dev/schemas/scenery_pack.schema.json",
+  "title": "SceneryPack",
+  "type": "object",
+  "required": [
+    "region_id",
+    "corridor_id",
+    "region_version",
+    "terrain_chunks",
+    "road_segments",
+    "biome_patches",
+    "style_hints"
+  ],
+  "properties": {
+    "region_id": { "type": "string" },
+    "corridor_id": { "type": "string" },
+    "region_version": { "type": "string" },
+    "terrain_chunks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["chunk_id", "origin_m", "size_m", "elevation_grid_m"],
+        "properties": {
+          "chunk_id": { "type": "string" },
+          "origin_m": {
+            "type": "array",
+            "minItems": 2,
+            "maxItems": 2,
+            "items": { "type": "number" }
+          },
+          "size_m": {
+            "type": "array",
+            "minItems": 2,
+            "maxItems": 2,
+            "items": { "type": "number" }
+          },
+          "elevation_grid_m": {
+            "type": "array",
+            "items": {
+              "type": "array",
+              "items": { "type": "number" }
+            }
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "road_segments": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["edge_id", "width_m", "material"],
+        "properties": {
+          "edge_id": { "type": "string" },
+          "width_m": { "type": "number" },
+          "material": { "type": "string" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "biome_patches": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["biome_id", "landcover_class", "polygon_m", "color_hint"],
+        "properties": {
+          "biome_id": { "type": "string" },
+          "landcover_class": { "type": "string" },
+          "polygon_m": {
+            "type": "array",
+            "items": {
+              "type": "array",
+              "minItems": 2,
+              "maxItems": 2,
+              "items": { "type": "number" }
+            }
+          },
+          "color_hint": { "type": "string" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "style_hints": {
+      "type": "object",
+      "additionalProperties": { "type": "number" }
+    }
+  },
+  "additionalProperties": false
+}

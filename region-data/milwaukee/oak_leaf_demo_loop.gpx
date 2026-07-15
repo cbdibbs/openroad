@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="procedural-trainer" xmlns="http://www.topografix.com/GPX/1/1">
+  <trk>
+    <name>oak_leaf_demo_loop</name>
+    <trkseg>
+      <trkpt lat="43.0275" lon="-87.9852"><ele>176.0</ele></trkpt>
+      <trkpt lat="43.0286" lon="-87.9798"><ele>177.1</ele></trkpt>
+      <trkpt lat="43.0316" lon="-87.9680"><ele>178.8</ele></trkpt>
+      <trkpt lat="43.0383" lon="-87.9601"><ele>181.0</ele></trkpt>
+      <trkpt lat="43.0458" lon="-87.9508"><ele>183.4</ele></trkpt>
+      <trkpt lat="43.0533" lon="-87.9447"><ele>184.1</ele></trkpt>
+      <trkpt lat="43.0621" lon="-87.9368"><ele>182.0</ele></trkpt>
+      <trkpt lat="43.0551" lon="-87.9564"><ele>179.0</ele></trkpt>
+      <trkpt lat="43.0442" lon="-87.9717"><ele>177.6</ele></trkpt>
+      <trkpt lat="43.0275" lon="-87.9852"><ele>176.0</ele></trkpt>
+    </trkseg>
+  </trk>
+</gpx>

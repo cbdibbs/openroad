@@ -9,6 +9,8 @@
     "source_hash",
     "snapped_edge_sequence",
     "elevation_profile_m",
+    "distance_profile_m",
+    "grade_profile_pct",
     "surface_profile",
     "distance_m",
     "region_version"
@@ -22,6 +24,14 @@
       "items": { "type": "string" }
     },
     "elevation_profile_m": {
+      "type": "array",
+      "items": { "type": "number" }
+    },
+    "distance_profile_m": {
+      "type": "array",
+      "items": { "type": "number" }
+    },
+    "grade_profile_pct": {
       "type": "array",
       "items": { "type": "number" }
     },

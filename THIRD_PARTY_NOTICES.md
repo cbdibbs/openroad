@@ -17,3 +17,13 @@ This repository uses or plans to use the following upstream projects and dataset
 - Microsoft Global ML Building Footprints: https://github.com/microsoft/GlobalMLBuildingFootprints
 
 Project-level notices in this file are not a substitute for per-region attribution manifests. Shipped region packs must include their own explicit source inventory and license references.
+## Milwaukee Phase 1 Sample Corridor
+
+The checked-in Milwaukee Phase 1 sample corridor pack under `region-data/milwaukee/mke_demo_region_pack` references the following upstream sources in machine-readable form:
+
+- OpenStreetMap contributors, ODbL 1.0, Geofabrik Wisconsin extract lineage
+- U.S. Geological Survey 3DEP, public use guidance, TNM 1 m DEM lineage
+- USDA NAIP, public use with requested credit, preprocessing-only heuristic lineage
+- ESA WorldCover, CC BY 4.0, v200 2021 tile lineage
+
+See `region-data/milwaukee/mke_demo_region_pack/attribution.json` and `region-data/milwaukee/mke_demo_region_pack/source_manifest.json` for the versioned source list, usage mapping, source receipts, and redistribution notices for that pack.
