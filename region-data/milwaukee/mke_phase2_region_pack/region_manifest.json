@@ -1,0 +1,39 @@
+{
+  "attribution_asset": "attribution.json",
+  "bbox_wgs84": [
+    -88.06,
+    42.98,
+    -87.88,
+    43.12
+  ],
+  "build_warnings": [
+    "optional source usda_naip not required for Phase 2 bake; using deterministic fallback synthesis"
+  ],
+  "compatible_clients": [
+    "godot-phase2"
+  ],
+  "corridor_id": "milwaukee_city_core_trails",
+  "region_id": "milwaukee_phase2",
+  "region_version": "milwaukee-v2.0.0",
+  "ride_graph_asset": "ride_graph.json",
+  "route_catalog_asset": "route_catalog.json",
+  "route_definitions_asset": "routes.json",
+  "scenery_index_asset": "scenery_index.json",
+  "schema_version": "phase2-region-root-v1",
+  "source_manifest_asset": "source_manifest.json",
+  "source_versions": {
+    "esa_worldcover": "v200",
+    "openstreetmap": "planet extract 2026-07-01",
+    "usda_naip": "2024 collection",
+    "usgs_3dep": "1m DEM 2025-11-15"
+  },
+  "starter_route_ids": [
+    "starter_cross_city",
+    "starter_lakefront_spin",
+    "starter_river_loop",
+    "starter_wauwatosa_lakefront"
+  ],
+  "streaming_region_size_m": 4000.0,
+  "streaming_regions_asset": "streaming_regions.json",
+  "tile_size_m": 1000.0
+}

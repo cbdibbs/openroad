@@ -1,0 +1,42 @@
+[
+  {
+    "difficulty": "moderate",
+    "display_name": "Cross-City Connector",
+    "distance_m": 9757.7,
+    "elevation_gain_m": 4.5,
+    "preview_edge_id": "osm_edge_d1f2a819",
+    "region_version": "milwaukee-v2.0.0",
+    "route_id": "starter_cross_city",
+    "start_area": "Milwaukee core trails"
+  },
+  {
+    "difficulty": "easy",
+    "display_name": "Lakefront Spin",
+    "distance_m": 7014.0,
+    "elevation_gain_m": 2.4,
+    "preview_edge_id": "osm_edge_efdcdd13",
+    "region_version": "milwaukee-v2.0.0",
+    "route_id": "starter_lakefront_spin",
+    "start_area": "Milwaukee core trails"
+  },
+  {
+    "difficulty": "moderate",
+    "display_name": "River Loop",
+    "distance_m": 19939.9,
+    "elevation_gain_m": 15.2,
+    "preview_edge_id": "osm_edge_99ff1e82",
+    "region_version": "milwaukee-v2.0.0",
+    "route_id": "starter_river_loop",
+    "start_area": "Milwaukee core trails"
+  },
+  {
+    "difficulty": "moderate",
+    "display_name": "Wauwatosa to Lakefront",
+    "distance_m": 33199.1,
+    "elevation_gain_m": 255.2,
+    "preview_edge_id": "osm_edge_a64c8f6b",
+    "region_version": "milwaukee-v2.0.0",
+    "route_id": "starter_wauwatosa_lakefront",
+    "start_area": "Milwaukee core trails"
+  }
+]

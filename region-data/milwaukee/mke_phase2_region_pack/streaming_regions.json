@@ -1,0 +1,202 @@
+[
+  {
+    "neighbor_region_ids": [
+      "stream_x00_y01",
+      "stream_x01_y00"
+    ],
+    "origin_m": [
+      0.0,
+      0.0
+    ],
+    "size_m": [
+      4000.0,
+      4000.0
+    ],
+    "stream_region_id": "stream_x00_y00",
+    "tile_ids": [
+      "tile_x00_y00",
+      "tile_x00_y01",
+      "tile_x00_y02",
+      "tile_x00_y03",
+      "tile_x01_y00",
+      "tile_x01_y01",
+      "tile_x01_y02",
+      "tile_x01_y03",
+      "tile_x02_y00",
+      "tile_x02_y01",
+      "tile_x02_y02",
+      "tile_x02_y03",
+      "tile_x03_y00",
+      "tile_x03_y01",
+      "tile_x03_y02",
+      "tile_x03_y03"
+    ]
+  },
+  {
+    "neighbor_region_ids": [
+      "stream_x00_y00",
+      "stream_x01_y01"
+    ],
+    "origin_m": [
+      0.0,
+      4000.0
+    ],
+    "size_m": [
+      4000.0,
+      4000.0
+    ],
+    "stream_region_id": "stream_x00_y01",
+    "tile_ids": [
+      "tile_x00_y04",
+      "tile_x00_y05",
+      "tile_x00_y06",
+      "tile_x00_y07",
+      "tile_x01_y04",
+      "tile_x01_y05",
+      "tile_x01_y06",
+      "tile_x01_y07",
+      "tile_x02_y04",
+      "tile_x02_y05",
+      "tile_x02_y06",
+      "tile_x02_y07",
+      "tile_x03_y04",
+      "tile_x03_y05",
+      "tile_x03_y06",
+      "tile_x03_y07"
+    ]
+  },
+  {
+    "neighbor_region_ids": [
+      "stream_x00_y00",
+      "stream_x01_y01",
+      "stream_x02_y00"
+    ],
+    "origin_m": [
+      4000.0,
+      0.0
+    ],
+    "size_m": [
+      4000.0,
+      4000.0
+    ],
+    "stream_region_id": "stream_x01_y00",
+    "tile_ids": [
+      "tile_x04_y00",
+      "tile_x04_y01",
+      "tile_x04_y02",
+      "tile_x04_y03",
+      "tile_x05_y00",
+      "tile_x05_y01",
+      "tile_x05_y02",
+      "tile_x05_y03",
+      "tile_x06_y00",
+      "tile_x06_y01",
+      "tile_x06_y02",
+      "tile_x06_y03",
+      "tile_x07_y00",
+      "tile_x07_y01",
+      "tile_x07_y02",
+      "tile_x07_y03"
+    ]
+  },
+  {
+    "neighbor_region_ids": [
+      "stream_x00_y01",
+      "stream_x01_y00",
+      "stream_x02_y01"
+    ],
+    "origin_m": [
+      4000.0,
+      4000.0
+    ],
+    "size_m": [
+      4000.0,
+      4000.0
+    ],
+    "stream_region_id": "stream_x01_y01",
+    "tile_ids": [
+      "tile_x04_y04",
+      "tile_x04_y05",
+      "tile_x04_y06",
+      "tile_x04_y07",
+      "tile_x05_y04",
+      "tile_x05_y05",
+      "tile_x05_y06",
+      "tile_x05_y07",
+      "tile_x06_y04",
+      "tile_x06_y05",
+      "tile_x06_y06",
+      "tile_x06_y07",
+      "tile_x07_y04",
+      "tile_x07_y05",
+      "tile_x07_y06",
+      "tile_x07_y07"
+    ]
+  },
+  {
+    "neighbor_region_ids": [
+      "stream_x01_y00",
+      "stream_x02_y01"
+    ],
+    "origin_m": [
+      8000.0,
+      0.0
+    ],
+    "size_m": [
+      4000.0,
+      4000.0
+    ],
+    "stream_region_id": "stream_x02_y00",
+    "tile_ids": [
+      "tile_x08_y00",
+      "tile_x08_y01",
+      "tile_x08_y02",
+      "tile_x08_y03",
+      "tile_x09_y00",
+      "tile_x09_y01",
+      "tile_x09_y02",
+      "tile_x09_y03",
+      "tile_x10_y00",
+      "tile_x10_y01",
+      "tile_x10_y02",
+      "tile_x10_y03",
+      "tile_x11_y00",
+      "tile_x11_y01",
+      "tile_x11_y02",
+      "tile_x11_y03"
+    ]
+  },
+  {
+    "neighbor_region_ids": [
+      "stream_x01_y01",
+      "stream_x02_y00"
+    ],
+    "origin_m": [
+      8000.0,
+      4000.0
+    ],
+    "size_m": [
+      4000.0,
+      4000.0
+    ],
+    "stream_region_id": "stream_x02_y01",
+    "tile_ids": [
+      "tile_x08_y04",
+      "tile_x08_y05",
+      "tile_x08_y06",
+      "tile_x08_y07",
+      "tile_x09_y04",
+      "tile_x09_y05",
+      "tile_x09_y06",
+      "tile_x09_y07",
+      "tile_x10_y04",
+      "tile_x10_y05",
+      "tile_x10_y06",
+      "tile_x10_y07",
+      "tile_x11_y04",
+      "tile_x11_y05",
+      "tile_x11_y06",
+      "tile_x11_y07"
+    ]
+  }
+]

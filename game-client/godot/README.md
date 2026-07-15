@@ -17,16 +17,16 @@ This directory is the default runtime client for the MVP.
 
 The client intentionally depends on baked data contracts defined under `geo-pipeline/geo_pipeline/schemas/`.
 
-## Phase 1 Runtime
+## Phase 2 Runtime
 
-The checked-in Phase 1 scaffold loads the Milwaukee sample pack from `../../region-data/milwaukee/mke_demo_region_pack` by default and renders:
+The checked-in client now loads the Milwaukee Phase 2 pack from `../../region-data/milwaukee/mke_phase2_region_pack` by default and renders:
 
-- manifest-driven region-pack loading
-- ride graph road segments
-- minimal terrain and biome patches
-- deterministic route playback from the baked snapped edge sequence
+- root-manifest driven region-pack loading
+- starter-route selection plus GPX import
+- `4 km` streaming-region loading backed by `1 km` tile assets
+- deterministic route playback from baked snapped edge sequences
+- representative terrain, roads, building extrusions, biome patches, and prop hints
 - keyboard-driven debug trainer controls with a live HUD
-- GPX import through the external Python CLI boundary
 
 GPX snapping remains outside the client. The runtime shells out to `geo-pipeline/run_geo_pipeline_cli.py` using the configured Python executable and loads the resulting route JSON from a temp output directory.
 
@@ -51,6 +51,8 @@ Both scripts prefer `/Applications/Godot.app/Contents/MacOS/Godot`, fall back to
 - `W` / `S`: power up/down
 - `A` / `D`: brake down/up
 - `Q` / `E`: cadence down/up
+- `[` / `]`: previous/next starter route
+- `1` / `2` / `3`: select starter route directly
 - `Space`: clear brake
 - `R`: restart route
 - `P`: pause/resume

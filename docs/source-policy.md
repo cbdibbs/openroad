@@ -31,7 +31,8 @@ This document defines which sources are allowed in the MVP pipeline, where they 
 - License posture: broadly reusable with requested credit
 - Rules:
   - query AOI-intersecting NAIP products from The National Map
-  - keep NAIP usage preprocessing-only for Phase 1
+  - keep NAIP usage preprocessing-only for Phases 1 and 2
+  - Phase 2 may mark NAIP as optional when deterministic fallback scenery synthesis is available
   - do not ship raw imagery unless packaging and size tradeoffs are intentional
   - preserve source references in attribution manifests
 

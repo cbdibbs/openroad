@@ -35,16 +35,19 @@ The initial MVP target follows the open-world plan:
 Python 3.11+ is assumed.
 
 ```bash
+PYTHONPATH=geo-pipeline python3 -m geo_pipeline.cli build-phase2-region milwaukee_phase2
+PYTHONPATH=geo-pipeline python3 -m geo_pipeline.cli validate-region region-data/milwaukee/mke_phase2_region_pack
+PYTHONPATH=geo-pipeline python3 -m geo_pipeline.cli snap-gpx region-data/milwaukee/mke_phase2_region_pack region-data/milwaukee/oak_leaf_demo_loop.gpx
+game-client/godot/test_headless.sh
+
+# Legacy Phase 1 proof commands remain available:
 PYTHONPATH=geo-pipeline python3 -m geo_pipeline.cli build-phase1-region milwaukee_phase1
 PYTHONPATH=geo-pipeline python3 -m unittest discover -s tests
-PYTHONPATH=geo-pipeline python3 -m geo_pipeline.cli validate-region region-data/milwaukee/mke_demo_region_pack
-PYTHONPATH=geo-pipeline python3 -m geo_pipeline.cli snap-gpx region-data/milwaukee/mke_demo_region_pack region-data/milwaukee/oak_leaf_demo_loop.gpx
-game-client/godot/test_headless.sh
 ```
 
 ## Run The Game
 
-Current playable state: a Godot debug ride loop that loads the checked-in Milwaukee Phase 1 pack.
+Current playable state: a streamed Godot solo ride that loads the checked-in Milwaukee Phase 2 pack with curated starter routes and GPX import.
 
 Requirements:
 - Python 3.11+
@@ -53,7 +56,7 @@ Requirements:
 From the repo root:
 
 ```bash
-PYTHONPATH=geo-pipeline python3 -m geo_pipeline.cli build-phase1-region milwaukee_phase1
+PYTHONPATH=geo-pipeline python3 -m geo_pipeline.cli build-phase2-region milwaukee_phase2
 game-client/godot/run_local.sh
 ```
 
@@ -93,11 +96,23 @@ The repository now includes a deterministic Phase 1 Milwaukee corridor proof:
 
 The staged build remains lightweight and deterministic in-repo, but the public pack interfaces now model source fetch receipts, pack-local provenance, DEM-backed route grades, and a playable on-rails debug loop.
 
+The repository now also includes the Phase 2 Milwaukee world-pack implementation:
+
+- a streamed Milwaukee `city + core trails` synthetic world pack with `1 km` tiles and `4 km` stream regions
+- root and tile-level manifests, route catalog, streaming region descriptors, and attribution/source bundles
+- three curated starter routes plus retained GPX import against the full Phase 2 ride graph
+- a Godot client that streams adjacent regions around the rider and renders representative terrain, roads, buildings, and biome props
+
 ## Rebuild Walkthrough
 
 The canonical Milwaukee proof rebuild is:
 
 ```bash
+PYTHONPATH=geo-pipeline python3 -m geo_pipeline.cli build-phase2-region milwaukee_phase2
+PYTHONPATH=geo-pipeline python3 -m geo_pipeline.cli validate-region region-data/milwaukee/mke_phase2_region_pack
+PYTHONPATH=geo-pipeline python3 -m geo_pipeline.cli snap-gpx region-data/milwaukee/mke_phase2_region_pack region-data/milwaukee/oak_leaf_demo_loop.gpx
+
+# Phase 1 corridor rebuild remains available:
 PYTHONPATH=geo-pipeline python3 -m geo_pipeline.cli fetch-sources milwaukee_phase1
 PYTHONPATH=geo-pipeline python3 -m geo_pipeline.cli prepare-sources milwaukee_phase1
 PYTHONPATH=geo-pipeline python3 -m geo_pipeline.cli build-phase1-region milwaukee_phase1
