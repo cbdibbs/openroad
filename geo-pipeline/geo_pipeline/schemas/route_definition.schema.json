@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://procedural-trainer.dev/schemas/route_definition.schema.json",
+  "title": "RouteDefinition",
+  "type": "object",
+  "required": [
+    "route_id",
+    "source_type",
+    "source_hash",
+    "snapped_edge_sequence",
+    "elevation_profile_m",
+    "surface_profile",
+    "distance_m",
+    "region_version"
+  ],
+  "properties": {
+    "route_id": { "type": "string" },
+    "source_type": { "type": "string" },
+    "source_hash": { "type": "string" },
+    "snapped_edge_sequence": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "elevation_profile_m": {
+      "type": "array",
+      "items": { "type": "number" }
+    },
+    "surface_profile": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "distance_m": { "type": "number" },
+    "region_version": { "type": "string" }
+  },
+  "additionalProperties": false
+}

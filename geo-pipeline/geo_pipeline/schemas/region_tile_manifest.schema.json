@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://procedural-trainer.dev/schemas/region_tile_manifest.schema.json",
+  "title": "RegionTileManifest",
+  "type": "object",
+  "required": [
+    "tile_id",
+    "bbox_wgs84",
+    "region_version",
+    "source_versions",
+    "ride_graph_asset",
+    "terrain_asset",
+    "building_asset",
+    "biome_asset",
+    "attribution_asset"
+  ],
+  "properties": {
+    "tile_id": { "type": "string" },
+    "bbox_wgs84": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "items": { "type": "number" }
+    },
+    "region_version": { "type": "string" },
+    "source_versions": {
+      "type": "object",
+      "additionalProperties": { "type": "string" }
+    },
+    "ride_graph_asset": { "type": "string" },
+    "terrain_asset": { "type": "string" },
+    "building_asset": { "type": "string" },
+    "biome_asset": { "type": "string" },
+    "attribution_asset": { "type": "string" }
+  },
+  "additionalProperties": false
+}

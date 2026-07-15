@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://procedural-trainer.dev/schemas/attribution_pack.schema.json",
+  "title": "AttributionPack",
+  "type": "object",
+  "required": [
+    "region_id",
+    "region_version",
+    "build_date",
+    "region_hash",
+    "sources",
+    "notices"
+  ],
+  "properties": {
+    "region_id": { "type": "string" },
+    "region_version": { "type": "string" },
+    "build_date": { "type": "string" },
+    "region_hash": { "type": "string" },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "license", "version", "used_for", "attribution"],
+        "properties": {
+          "name": { "type": "string" },
+          "license": { "type": "string" },
+          "version": { "type": "string" },
+          "used_for": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "attribution": { "type": "string" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "notices": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  },
+  "additionalProperties": false
+}

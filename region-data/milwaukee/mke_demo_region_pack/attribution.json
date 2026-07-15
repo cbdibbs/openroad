@@ -1,0 +1,40 @@
+{
+  "region_id": "milwaukee_demo",
+  "region_version": "milwaukee-v0.1.0",
+  "build_date": "2026-07-14",
+  "region_hash": "5de73c4927c9d40050ceca5c4487f9045cdd88e95cc920e5513c2e429a84bd15",
+  "sources": [
+    {
+      "name": "OpenStreetMap",
+      "license": "ODbL 1.0",
+      "version": "planet extract 2026-07-01",
+      "used_for": ["ride_graph", "buildings"],
+      "attribution": "Copyright OpenStreetMap contributors"
+    },
+    {
+      "name": "USGS 3DEP",
+      "license": "USGS public use guidance",
+      "version": "1m DEM 2025-11-15",
+      "used_for": ["elevation", "terrain"],
+      "attribution": "Source: U.S. Geological Survey"
+    },
+    {
+      "name": "USDA NAIP",
+      "license": "public use with requested credit",
+      "version": "2024 collection",
+      "used_for": ["imagery_heuristics"],
+      "attribution": "USDA Farm Production and Conservation - Aerial Photography Field Office"
+    },
+    {
+      "name": "ESA WorldCover",
+      "license": "CC BY 4.0",
+      "version": "v200",
+      "used_for": ["biomes", "landcover_masks"],
+      "attribution": "Contains modified Copernicus WorldCover data (2021) processed by ESA WorldCover consortium"
+    }
+  ],
+  "notices": [
+    "This sample pack demonstrates attribution structure only and does not include raw source datasets.",
+    "ODbL-covered route graph outputs must retain accompanying license and attribution notices when redistributed."
+  ]
+}

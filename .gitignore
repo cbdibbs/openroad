@@ -1,0 +1,9 @@
+.pytest_cache/
+__pycache__/
+*.pyc
+.DS_Store
+dist/
+build/
+*.import
+*.godot/
+*.tmp

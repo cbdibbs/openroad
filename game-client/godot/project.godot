@@ -1,0 +1,11 @@
+; Engine configuration file.
+; This is a minimal scaffold for the open-source MVP client.
+
+config_version=5
+
+[application]
+config/name="Procedural Trainer"
+run/main_scene="res://scenes/main.tscn"
+
+[rendering]
+renderer/rendering_method="forward_plus"
