@@ -55,6 +55,10 @@ def _validate_region(path: Path, json_output: bool = False) -> int:
     print(f"manifest_hash={manifest_hash}")
     print(f"edges={len(region['ride_graph']['edges'])}")
     print(f"routes={len(region['routes'])}")
+    if region.get("streaming_regions"):
+        print(f"stream_regions={len(region['streaming_regions'])}")
+    if region.get("route_catalog"):
+        print(f"route_catalog_entries={len(region['route_catalog'])}")
     return 0
 
 
