@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3]
+[gd_scene load_steps=6 format=3]
 
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_main"]
 
@@ -6,11 +6,22 @@
 radius = 0.6
 height = 1.2
 
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_day_sky"]
+sky_top_color = Color(0.286275, 0.545098, 0.87451, 1)
+sky_horizon_color = Color(0.717647, 0.866667, 1, 1)
+ground_bottom_color = Color(0.305882, 0.376471, 0.313726, 1)
+ground_horizon_color = Color(0.631373, 0.729412, 0.67451, 1)
+sun_angle_max = 42.0
+
+[sub_resource type="Sky" id="Sky_day_sky"]
+sky_material = SubResource("ProceduralSkyMaterial_day_sky")
+
 [sub_resource type="Environment" id="Environment_phase2_world"]
 background_mode = 2
 background_color = Color(0.678431, 0.780392, 0.905882, 1)
-ambient_light_color = Color(0.87451, 0.901961, 0.92549, 1)
-ambient_light_energy = 0.5
+sky = SubResource("Sky_day_sky")
+ambient_light_color = Color(0.952941, 0.972549, 1, 1)
+ambient_light_energy = 1.2
 fog_enabled = true
 fog_light_color = Color(0.678431, 0.780392, 0.905882, 1)
 fog_light_energy = 1.0
@@ -31,7 +42,15 @@ environment = SubResource("Environment_phase2_world")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 rotation = Vector3(-0.8, -0.6, 0)
-light_energy = 2.2
+light_color = Color(1, 0.956863, 0.878431, 1)
+light_energy = 3.8
+shadow_enabled = true
+
+[node name="FillLight" type="OmniLight3D" parent="."]
+position = Vector3(0, 9, 6)
+light_color = Color(0.772549, 0.878431, 1, 1)
+light_energy = 1.6
+omni_range = 80.0
 
 [node name="LoadedTilesRoot" type="Node3D" parent="."]
 
