@@ -23,7 +23,9 @@ The checked-in client now loads the live-built Milwaukee Phase 2 pack from `../.
 
 - root-manifest driven region-pack loading
 - starter-route selection plus GPX import
-- `4 km` streaming-region loading backed by `1 km` tile assets
+- an over-the-bars riding camera with a first-person-ish `66 degree` FOV
+- forward-biased tile streaming backed by `1 km` tile assets
+- deferred detail loading so dense props, buildings, and side-street detail stay near the rider
 - deterministic route playback from baked snapped edge sequences
 - representative terrain, roads, building extrusions, biome patches, and prop hints
 - keyboard-driven debug trainer controls with a live HUD
