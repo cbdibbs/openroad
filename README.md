@@ -108,6 +108,13 @@ The repository now also includes the Phase 2 Milwaukee world-pack implementation
 The canonical Milwaukee proof rebuild is:
 
 ```bash
+PYTHONPATH=geo-pipeline python3 -m geo_pipeline.cli fetch-sources milwaukee_phase2 --source-mode fixture
+PYTHONPATH=geo-pipeline python3 -m geo_pipeline.cli prepare-sources milwaukee_phase2 --source-mode fixture
+PYTHONPATH=geo-pipeline python3 -m geo_pipeline.cli build-ride-graph milwaukee_phase2 --source-mode fixture
+PYTHONPATH=geo-pipeline python3 -m geo_pipeline.cli build-scenery milwaukee_phase2 --source-mode fixture
+PYTHONPATH=geo-pipeline python3 -m geo_pipeline.cli package-region milwaukee_phase2 --source-mode fixture
+
+# Or run the end-to-end shortcut:
 PYTHONPATH=geo-pipeline python3 -m geo_pipeline.cli build-phase2-region milwaukee_phase2
 PYTHONPATH=geo-pipeline python3 -m geo_pipeline.cli validate-region region-data/milwaukee/mke_phase2_region_pack
 PYTHONPATH=geo-pipeline python3 -m geo_pipeline.cli snap-gpx region-data/milwaukee/mke_phase2_region_pack region-data/milwaukee/oak_leaf_demo_loop.gpx
@@ -119,6 +126,15 @@ PYTHONPATH=geo-pipeline python3 -m geo_pipeline.cli build-phase1-region milwauke
 PYTHONPATH=geo-pipeline python3 -m geo_pipeline.cli validate-region region-data/milwaukee/mke_demo_region_pack
 PYTHONPATH=geo-pipeline python3 -m geo_pipeline.cli snap-gpx region-data/milwaukee/mke_demo_region_pack region-data/milwaukee/oak_leaf_demo_loop.gpx
 ```
+
+For Milwaukee live-source receipt and cache generation, use:
+
+```bash
+PYTHONPATH=geo-pipeline python3 -m geo_pipeline.cli fetch-sources milwaukee_phase2 --source-mode live
+PYTHONPATH=geo-pipeline python3 -m geo_pipeline.cli build-phase2-region milwaukee_phase2 --source-mode live
+```
+
+The live Milwaukee lane preserves auditable upstream receipts and cached source artifacts, then normalizes through the same staged Phase 2 contracts used by the deterministic fixture lane.
 
 ## Toolchain
 

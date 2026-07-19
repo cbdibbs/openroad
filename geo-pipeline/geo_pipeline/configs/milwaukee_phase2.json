@@ -38,6 +38,7 @@
     },
     "openstreetmap": {
       "fetch_url": "https://download.geofabrik.de/north-america/us/wisconsin-latest.osm.pbf",
+      "live_fetch_url": "https://overpass-api.de/api/interpreter",
       "product_id": "geofabrik-wisconsin-latest",
       "version": "planet extract 2026-07-01"
     },
@@ -54,7 +55,7 @@
   },
   "streaming_region_size_m": 4000.0,
   "target_crs": "EPSG:26916",
-  "terrain_grid_samples": 9,
+  "terrain_grid_samples": 17,
   "tile_size_m": 1000.0,
   "toolchain_versions": {
     "duckdb": "1.1+",

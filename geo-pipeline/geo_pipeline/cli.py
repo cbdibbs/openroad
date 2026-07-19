@@ -12,12 +12,19 @@ from geo_pipeline.phase1 import (
     build_ride_graph,
     build_scenery,
     fetch_sources,
+    load_region_config,
     package_region,
     prepare_sources,
 )
 from geo_pipeline.phase2 import (
     DEFAULT_REGION_CONFIG as DEFAULT_PHASE2_REGION_CONFIG,
+    SOURCE_MODE_FIXTURE,
     build_phase2_region,
+    build_ride_graph as build_phase2_ride_graph,
+    build_scenery as build_phase2_scenery,
+    fetch_sources as fetch_phase2_sources,
+    package_region as package_phase2_region,
+    prepare_sources as prepare_phase2_sources,
     route_from_gpx_phase2,
 )
 from geo_pipeline.sample_data import (
@@ -65,38 +72,43 @@ def _snap_gpx(region_path: Path, gpx_path: Path, output_path: Path | None) -> in
     return 0
 
 
-def _fetch_sources(region_config: str) -> int:
-    manifest = fetch_sources(region_config)
+def _is_phase2_config(region_config: str) -> bool:
+    config = load_region_config(region_config)
+    return str(config.get("graph_profile", "")).startswith("phase2")
+
+
+def _fetch_sources(region_config: str, source_mode: str) -> int:
+    manifest = fetch_phase2_sources(region_config, source_mode) if _is_phase2_config(region_config) else fetch_sources(region_config)
     print(f"fetched {region_config}")
     print(f"artifacts={len(manifest['artifacts'])}")
     return 0
 
 
-def _prepare_sources(region_config: str) -> int:
-    prepared = prepare_sources(region_config)
+def _prepare_sources(region_config: str, source_mode: str) -> int:
+    prepared = prepare_phase2_sources(region_config, source_mode) if _is_phase2_config(region_config) else prepare_sources(region_config)
     print(f"prepared {region_config}")
     print(f"osm_features={len(prepared['osm_features'])}")
     return 0
 
 
-def _build_ride_graph(region_config: str) -> int:
-    ride_graph = build_ride_graph(region_config)
+def _build_ride_graph(region_config: str, source_mode: str) -> int:
+    ride_graph = build_phase2_ride_graph(region_config, source_mode) if _is_phase2_config(region_config) else build_ride_graph(region_config)
     print(f"built ride graph for {region_config}")
     print(f"edges={len(ride_graph['edges'])}")
     return 0
 
 
-def _build_scenery(region_config: str) -> int:
-    scenery = build_scenery(region_config)
+def _build_scenery(region_config: str, source_mode: str) -> int:
+    scenery = build_phase2_scenery(region_config, source_mode) if _is_phase2_config(region_config) else build_scenery(region_config)
     print(f"built scenery for {region_config}")
     print(f"tiles={len(scenery['tiles'])}")
     return 0
 
 
-def _package_region(region_config: str) -> int:
-    region = package_region(region_config)
+def _package_region(region_config: str, source_mode: str) -> int:
+    region = package_phase2_region(region_config, source_mode) if _is_phase2_config(region_config) else package_region(region_config)
     print(f"packaged {region_config}")
-    print(f"region_version={region['manifest']['region_version']}")
+    print(f"region_version={region['root_manifest']['region_version'] if 'root_manifest' in region else region['manifest']['region_version']}")
     return 0
 
 
@@ -107,8 +119,8 @@ def _build_phase1_region(region_config: str) -> int:
     return 0
 
 
-def _build_phase2_region(region_config: str) -> int:
-    region = build_phase2_region(region_config)
+def _build_phase2_region(region_config: str, source_mode: str) -> int:
+    region = build_phase2_region(region_config, source_mode)
     print(f"built phase2 region {region_config}")
     print(f"region_version={region['root_manifest']['region_version']}")
     print(f"starter_routes={len(region['route_catalog'])}")
@@ -124,24 +136,30 @@ def build_parser() -> argparse.ArgumentParser:
 
     fetch_parser = subparsers.add_parser("fetch-sources", help="fetch or receipt raw source artifacts")
     fetch_parser.add_argument("region_config", nargs="?", default=DEFAULT_REGION_CONFIG)
+    fetch_parser.add_argument("--source-mode", choices=[SOURCE_MODE_FIXTURE, "live"], default=SOURCE_MODE_FIXTURE)
 
     prepare_parser = subparsers.add_parser("prepare-sources", help="prepare staged corridor inputs")
     prepare_parser.add_argument("region_config", nargs="?", default=DEFAULT_REGION_CONFIG)
+    prepare_parser.add_argument("--source-mode", choices=[SOURCE_MODE_FIXTURE, "live"], default=SOURCE_MODE_FIXTURE)
 
     ride_graph_parser = subparsers.add_parser("build-ride-graph", help="build ride graph from staged inputs")
     ride_graph_parser.add_argument("region_config", nargs="?", default=DEFAULT_REGION_CONFIG)
+    ride_graph_parser.add_argument("--source-mode", choices=[SOURCE_MODE_FIXTURE, "live"], default=SOURCE_MODE_FIXTURE)
 
     scenery_parser = subparsers.add_parser("build-scenery", help="build scenery from staged inputs")
     scenery_parser.add_argument("region_config", nargs="?", default=DEFAULT_REGION_CONFIG)
+    scenery_parser.add_argument("--source-mode", choices=[SOURCE_MODE_FIXTURE, "live"], default=SOURCE_MODE_FIXTURE)
 
     package_parser = subparsers.add_parser("package-region", help="write a packaged region pack")
     package_parser.add_argument("region_config", nargs="?", default=DEFAULT_REGION_CONFIG)
+    package_parser.add_argument("--source-mode", choices=[SOURCE_MODE_FIXTURE, "live"], default=SOURCE_MODE_FIXTURE)
 
     phase1_parser = subparsers.add_parser("build-phase1-region", help="run the full Phase 1 region build")
     phase1_parser.add_argument("region_config", nargs="?", default=DEFAULT_REGION_CONFIG)
 
     phase2_parser = subparsers.add_parser("build-phase2-region", help="run the full Phase 2 region build")
     phase2_parser.add_argument("region_config", nargs="?", default=DEFAULT_PHASE2_REGION_CONFIG)
+    phase2_parser.add_argument("--source-mode", choices=[SOURCE_MODE_FIXTURE, "live"], default=SOURCE_MODE_FIXTURE)
 
     hash_json = subparsers.add_parser("hash-json", help="hash a JSON file canonically")
     hash_json.add_argument("path", type=Path)
@@ -170,19 +188,19 @@ def main() -> int:
         if args.command == "validate-region":
             return _validate_region(args.path)
         if args.command == "fetch-sources":
-            return _fetch_sources(args.region_config)
+            return _fetch_sources(args.region_config, args.source_mode)
         if args.command == "prepare-sources":
-            return _prepare_sources(args.region_config)
+            return _prepare_sources(args.region_config, args.source_mode)
         if args.command == "build-ride-graph":
-            return _build_ride_graph(args.region_config)
+            return _build_ride_graph(args.region_config, args.source_mode)
         if args.command == "build-scenery":
-            return _build_scenery(args.region_config)
+            return _build_scenery(args.region_config, args.source_mode)
         if args.command == "package-region":
-            return _package_region(args.region_config)
+            return _package_region(args.region_config, args.source_mode)
         if args.command == "build-phase1-region":
             return _build_phase1_region(args.region_config)
         if args.command == "build-phase2-region":
-            return _build_phase2_region(args.region_config)
+            return _build_phase2_region(args.region_config, args.source_mode)
         if args.command == "hash-json":
             return _hash_file(args.path)
         if args.command == "build-sample-region":

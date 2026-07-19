@@ -1,0 +1,62 @@
+{
+  "aoi_hash": "3b2c7db0deb114c79323c57f873ac8394bff7dedb0e7fc4b56cdc595527716bd",
+  "aoi_id": "milwaukee_city_core_trails_v1",
+  "attribution_asset": "attribution.json",
+  "bbox_wgs84": [
+    -88.011,
+    43.024,
+    -87.888,
+    43.063
+  ],
+  "build_warnings": [
+    "optional source usda_naip only affects style hints; graph, terrain, and route snapping remain source-complete without it",
+    "live source esa_worldcover cached the upstream artifact but normalized through the documented Milwaukee source-derived fixture extract for deterministic local rebuilds",
+    "live source usda_naip cached the upstream artifact but normalized through the documented Milwaukee source-derived fixture extract for deterministic local rebuilds"
+  ],
+  "compatible_clients": [
+    "godot-phase2"
+  ],
+  "corridor_id": "milwaukee_city_core_trails",
+  "deterministic_build_knobs": {
+    "grade_smoothing_window": 5,
+    "max_snap_distance_m": 120.0,
+    "min_match_ratio": 0.9
+  },
+  "intermediate_schema_version": "phase2-intermediate-v2",
+  "region_id": "milwaukee_phase2_live",
+  "region_version": "milwaukee-v2.0.0-live",
+  "ride_graph_asset": "ride_graph.json",
+  "route_catalog_asset": "route_catalog.json",
+  "route_definitions_asset": "routes.json",
+  "scenery_index_asset": "scenery_index.json",
+  "schema_version": "phase2-region-root-v2",
+  "source_manifest_asset": "source_manifest.json",
+  "source_versions": {
+    "esa_worldcover": "v200",
+    "openstreetmap": "planet extract 2026-07-01",
+    "usda_naip": "2024 collection",
+    "usgs_3dep": "1m DEM 2025-11-15"
+  },
+  "starter_route_ids": [
+    "starter_live_city_span",
+    "starter_live_river_run"
+  ],
+  "streaming_region_size_m": 4000.0,
+  "streaming_regions_asset": "streaming_regions.json",
+  "tile_size_m": 1000.0,
+  "toolchain_versions": {
+    "duckdb": "1.1+",
+    "gdal": "3.9+",
+    "osmium_tool": "1.16+",
+    "python": "3.11+"
+  },
+  "visual_qa": {
+    "camera_mode": "third_person_follow",
+    "checklist": [
+      "Ride across at least three 1 km tile seams.",
+      "Ride across at least one 4 km stream-region boundary.",
+      "Confirm terrain and road surfaces remain vertically continuous."
+    ],
+    "route_id": "starter_wauwatosa_lakefront"
+  }
+}

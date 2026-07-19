@@ -19,7 +19,7 @@ The client intentionally depends on baked data contracts defined under `geo-pipe
 
 ## Phase 2 Runtime
 
-The checked-in client now loads the Milwaukee Phase 2 pack from `../../region-data/milwaukee/mke_phase2_region_pack` by default and renders:
+The checked-in client now loads the live-built Milwaukee Phase 2 pack from `../../region-data/milwaukee/mke_phase2_live_region_pack` by default and renders:
 
 - root-manifest driven region-pack loading
 - starter-route selection plus GPX import
@@ -43,6 +43,8 @@ Run a headless smoke test that loads the main scene:
 ```bash
 game-client/godot/test_headless.sh
 ```
+
+The headless command now runs assertion-based Phase 2 playback checks by default. It validates boot, route activation, route restart, stream-region transitions, and GPX import handling, and can emit machine-readable results with `PT_HEADLESS_RESULTS_PATH=/tmp/phase2.json`.
 
 Both scripts prefer `/Applications/Godot.app/Contents/MacOS/Godot`, fall back to `godot` on `PATH`, and isolate Godot user data under a writable temp-style home if needed. Override the binary explicitly with `GODOT_BIN=/path/to/Godot`.
 
