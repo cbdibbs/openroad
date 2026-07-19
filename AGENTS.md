@@ -38,6 +38,7 @@ Milwaukee is the first target region. The MVP prioritizes solo riding, GPX impor
 
 - Test everything implemented in the turn before ending the turn. If a meaningful test cannot be run, state that explicitly and explain why.
 - Prefer the narrowest verification that proves the change works, but do not skip verification for implemented behavior.
+- When launching sub-agents, use `tmux` panes. Split the first sub-agent pane to the right of the main pane, then place each additional sub-agent in a new pane below the existing sub-agent stack. Close a sub-agent pane after that sub-agent finishes.
 - Start all new work on a new Git branch, push that branch to `gh`, and open a pull request when the work is complete.
 - After opening or updating a pull request, add a PR comment that records the testing evidence for the work in that turn. Include the commands run and whether they passed or why they could not be run.
 - Use conventional commits for all repository commits, such as `docs: update roadmap` or `feat: add region validation cli`.
