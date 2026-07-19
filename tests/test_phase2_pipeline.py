@@ -70,6 +70,8 @@ class Phase2PipelineTests(unittest.TestCase):
         )
         self.assertIn("validated", validate.stdout)
         self.assertIn("routes=4", validate.stdout)
+        self.assertIn("stream_regions=", validate.stdout)
+        self.assertIn("route_catalog_entries=4", validate.stdout)
 
     def test_phase2_staged_cli_fixture_mode(self) -> None:
         env = dict(os.environ)
