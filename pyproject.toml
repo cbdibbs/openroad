@@ -22,3 +22,40 @@ package-dir = { "" = "geo-pipeline" }
 
 [tool.setuptools.packages.find]
 where = ["geo-pipeline"]
+
+[tool.semantic_release]
+allow_zero_version = true
+assets = []
+commit_author = "github-actions <actions@github.com>"
+commit_message = "chore(release): {version} [skip ci]"
+commit_parser = "conventional"
+logging_use_named_masks = true
+major_on_zero = false
+tag_format = "v{version}"
+version_toml = ["pyproject.toml:project.version"]
+
+[tool.semantic_release.branches.main]
+match = "main"
+prerelease = false
+
+[tool.semantic_release.changelog.default_templates]
+changelog_file = "CHANGELOG.md"
+mask_initial_release = false
+output_format = "md"
+
+[tool.semantic_release.commit_parser_options]
+allowed_tags = ["feat", "fix", "perf", "build", "chore", "ci", "docs", "style", "refactor", "test"]
+minor_tags = ["feat"]
+other_allowed_tags = []
+patch_tags = ["fix", "perf", "build", "chore", "ci", "docs", "style", "refactor", "test"]
+
+[tool.semantic_release.publish]
+dist_glob_patterns = ["dist/*"]
+upload_to_vcs_release = true
+
+[tool.semantic_release.remote]
+name = "origin"
+type = "github"
+
+[tool.semantic_release.remote.token]
+env = "GH_TOKEN"

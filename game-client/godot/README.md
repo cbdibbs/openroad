@@ -19,7 +19,7 @@ The client intentionally depends on baked data contracts defined under `geo-pipe
 
 ## Phase 2 Runtime
 
-The checked-in client now loads the live-built Milwaukee Phase 2 pack from `../../region-data/milwaukee/mke_phase2_live_region_pack` by default and renders:
+The checked-in client now loads the deterministic Milwaukee Phase 2 pack from `region-data/milwaukee/mke_phase2_region_pack` by default and renders:
 
 - root-manifest driven region-pack loading
 - starter-route selection plus GPX import
@@ -29,6 +29,8 @@ The checked-in client now loads the live-built Milwaukee Phase 2 pack from `../.
 - deterministic route playback from baked snapped edge sequences
 - representative terrain, roads, building extrusions, biome patches, and prop hints
 - keyboard-driven debug trainer controls with a live HUD
+
+When exported for release, the client also looks for the same `region-data/`, `sample-tracks/`, and `geo-pipeline/` layout adjacent to the app bundle so the shipped starter routes still work outside the repo checkout. GPX import continues to rely on an available `python3` runtime.
 
 GPX snapping remains outside the client. The runtime shells out to `geo-pipeline/run_geo_pipeline_cli.py` using the configured Python executable and loads the resulting route JSON from a temp output directory.
 

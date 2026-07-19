@@ -35,9 +35,22 @@ from geo_pipeline.sample_data import (
 )
 
 
-def _validate_region(path: Path) -> int:
+def _validate_region(path: Path, json_output: bool = False) -> int:
     region = validate_region_pack_directory(path)
     manifest_hash = content_hash(region["manifest"])
+    payload = {
+        "path": str(path),
+        "schema_version": region["manifest"]["schema_version"],
+        "region_id": region["manifest"]["region_id"],
+        "region_version": region["manifest"]["region_version"],
+        "compatible_clients": region["manifest"]["compatible_clients"],
+        "manifest_hash": manifest_hash,
+        "edges": len(region["ride_graph"]["edges"]),
+        "routes": len(region["routes"]),
+    }
+    if json_output:
+        print(json.dumps(payload, indent=2, sort_keys=True))
+        return 0
     print(f"validated {path}")
     print(f"manifest_hash={manifest_hash}")
     print(f"edges={len(region['ride_graph']['edges'])}")
@@ -133,6 +146,7 @@ def build_parser() -> argparse.ArgumentParser:
 
     validate_region = subparsers.add_parser("validate-region", help="validate a region pack")
     validate_region.add_argument("path", type=Path)
+    validate_region.add_argument("--json", action="store_true", help="emit a machine-readable validation summary")
 
     fetch_parser = subparsers.add_parser("fetch-sources", help="fetch or receipt raw source artifacts")
     fetch_parser.add_argument("region_config", nargs="?", default=DEFAULT_REGION_CONFIG)
@@ -186,7 +200,7 @@ def main() -> int:
 
     try:
         if args.command == "validate-region":
-            return _validate_region(args.path)
+            return _validate_region(args.path, args.json)
         if args.command == "fetch-sources":
             return _fetch_sources(args.region_config, args.source_mode)
         if args.command == "prepare-sources":

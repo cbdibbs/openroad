@@ -11,6 +11,29 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 class Phase1CliTests(unittest.TestCase):
+    def test_validate_region_json_output(self) -> None:
+        env = dict(os.environ)
+        env["PYTHONPATH"] = str(ROOT / "geo-pipeline")
+        validate = subprocess.run(
+            [
+                "python3",
+                "-m",
+                "geo_pipeline.cli",
+                "validate-region",
+                str(ROOT / "region-data" / "milwaukee" / "mke_demo_region_pack"),
+                "--json",
+            ],
+            cwd=ROOT,
+            check=True,
+            capture_output=True,
+            text=True,
+            env=env,
+        )
+        payload = json.loads(validate.stdout)
+        self.assertEqual(payload["region_id"], "milwaukee_oak_leaf_demo")
+        self.assertEqual(payload["routes"], 1)
+        self.assertGreater(payload["edges"], 1)
+
     def test_build_phase1_cli_and_snap_output(self) -> None:
         env = dict(os.environ)
         env["PYTHONPATH"] = str(ROOT / "geo-pipeline")
