@@ -3,12 +3,61 @@ extends RefCounted
 
 const REQUIRED_PHASE1_CLIENT_ID := "godot-phase1"
 const REQUIRED_PHASE2_CLIENT_ID := "godot-phase2"
+const RELEASE_ROOT_ENV := "PT_RELEASE_ROOT"
 
 
 func resolve_repo_relative_path(path: String) -> String:
+	if path.strip_edges() == "":
+		return ""
+	if path.begins_with("res://") or path.begins_with("user://"):
+		return ProjectSettings.globalize_path(path).simplify_path()
 	if path.is_absolute_path():
-		return path
+		return path.simplify_path()
+	for root in _candidate_runtime_roots():
+		for variant in _path_variants(path):
+			var candidate := root.path_join(variant).simplify_path()
+			if FileAccess.file_exists(candidate) or DirAccess.dir_exists_absolute(candidate):
+				return candidate
 	return ProjectSettings.globalize_path("res://%s" % path).simplify_path()
+
+
+func _candidate_runtime_roots() -> Array[String]:
+	var roots: Array[String] = []
+	var release_root := OS.get_environment(RELEASE_ROOT_ENV).strip_edges()
+	if release_root != "":
+		_collect_parent_roots(release_root, roots)
+	_collect_parent_roots(ProjectSettings.globalize_path("res://"), roots)
+	var executable_path := OS.get_executable_path().strip_edges()
+	if executable_path != "":
+		_collect_parent_roots(executable_path.get_base_dir(), roots)
+	return roots
+
+
+func _collect_parent_roots(start_path: String, roots: Array[String]) -> void:
+	var current := start_path.simplify_path()
+	for _index in range(8):
+		if current == "" or roots.has(current):
+			break
+		roots.append(current)
+		var parent := current.get_base_dir().simplify_path()
+		if parent == current:
+			break
+		current = parent
+
+
+func _path_variants(path: String) -> Array[String]:
+	var variants: Array[String] = []
+	var current := path.strip_edges()
+	while current.begins_with("./"):
+		current = current.substr(2)
+	if current != "":
+		variants.append(current)
+	var trimmed := current
+	while trimmed.begins_with("../"):
+		trimmed = trimmed.substr(3)
+		if trimmed != "" and not variants.has(trimmed):
+			variants.append(trimmed)
+	return variants
 
 
 func load_region_pack(region_dir: String) -> Dictionary:

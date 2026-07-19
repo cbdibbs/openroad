@@ -2,9 +2,9 @@ extends Node3D
 
 const RegionPackLoader = preload("res://addons/procedural_trainer/region_pack_loader.gd")
 
-@export var region_pack_dir := "../../region-data/milwaukee/mke_phase2_live_region_pack"
+@export var region_pack_dir := "region-data/milwaukee/mke_phase2_region_pack"
 @export var active_route_id := "starter_cross_city_connector"
-@export var default_gpx_path := "../../sample-tracks/Wauwatosa_to_Lakefront.gpx"
+@export var default_gpx_path := "sample-tracks/Wauwatosa_to_Lakefront.gpx"
 @export var world_scale := 0.18
 @export var elevation_scale := 0.24
 @export var python_executable := "python3"
@@ -108,6 +108,15 @@ func _ready() -> void:
 
 
 func _configure_headless_test() -> void:
+	var region_override := OS.get_environment("PT_REGION_PACK_DIR").strip_edges()
+	if region_override != "":
+		region_pack_dir = region_override
+	var gpx_override := OS.get_environment("PT_DEFAULT_GPX_PATH").strip_edges()
+	if gpx_override != "":
+		default_gpx_path = gpx_override
+	var python_override := OS.get_environment("PT_PYTHON_EXECUTABLE").strip_edges()
+	if python_override != "":
+		python_executable = python_override
 	_headless_test_enabled = OS.get_environment("PT_HEADLESS_ASSERT") == "1"
 	if not _headless_test_enabled:
 		return
@@ -838,8 +847,13 @@ func _target_speed_mps(grade_pct: float) -> float:
 
 
 func _import_route_from_path(path: String, record_error: bool = true) -> bool:
-	var repo_root := _region_dir.get_base_dir().get_base_dir().get_base_dir()
-	var cli_path := repo_root.path_join("geo-pipeline/run_geo_pipeline_cli.py")
+	var cli_path := _loader.resolve_repo_relative_path("geo-pipeline/run_geo_pipeline_cli.py")
+	if not FileAccess.file_exists(cli_path):
+		_import_status = "GPX import helper missing: %s" % cli_path
+		if record_error:
+			_record_runtime_error(_import_status)
+		_set_status(_import_status)
+		return false
 	var output_dir := snap_output_dir
 	if output_dir == "":
 		output_dir = "user://snapped_routes"

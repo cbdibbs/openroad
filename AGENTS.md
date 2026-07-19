@@ -39,7 +39,7 @@ Milwaukee is the first target region. The MVP prioritizes solo riding, GPX impor
 - Test everything implemented in the turn before ending the turn. If a meaningful test cannot be run, state that explicitly and explain why.
 - Prefer the narrowest verification that proves the change works, but do not skip verification for implemented behavior.
 - Start all new work on a new Git branch, push that branch to `gh`, and open a pull request when the work is complete.
-- After opening or updating a pull request, add a PR comment that records the testing evidence for the work in that turn. Include the commands run and whether they passed or why they could not be run.
+- After opening or updating a pull request, rely on the CI workflow comment for durable testing evidence instead of posting a duplicate manual PR comment. Still report local verification in your handoff.
 - Use conventional commits for all repository commits, such as `docs: update roadmap` or `feat: add region validation cli`.
 
 ## Implementation Notes For Future Agents
