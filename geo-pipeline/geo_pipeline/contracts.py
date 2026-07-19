@@ -7,6 +7,9 @@ import json
 from geo_pipeline.determinism import content_hash, region_pack_hash
 
 
+ROOT = Path(__file__).resolve().parents[2]
+
+
 class ValidationError(ValueError):
     """Raised when a manifest violates the repository contracts."""
 
@@ -415,6 +418,8 @@ def _ensure_source_cache_paths(source_manifest: dict[str, Any]) -> None:
     for artifact in source_manifest["artifacts"]:
         if "local_cache_path" in artifact:
             cache_path = Path(artifact["local_cache_path"])
+            if not cache_path.is_absolute():
+                cache_path = ROOT / cache_path
             if artifact.get("required", False) and not cache_path.exists():
                 raise ValidationError(f"required source artifact missing from local cache: {artifact['source_id']}")
 

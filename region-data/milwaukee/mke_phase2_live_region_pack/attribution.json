@@ -1,0 +1,53 @@
+{
+  "build_date": "2026-07-18",
+  "notices": [
+    "This Milwaukee Phase 2 pack is baked from documented staged source fixtures and retains explicit rebuild provenance.",
+    "ODbL-sensitive ride graph outputs must retain attribution and provenance on redistribution.",
+    "NAIP remains an optional scenery enrichment source and does not affect the canonical ride graph."
+  ],
+  "region_hash": "e7187776e21870c65f917b557a8214538c16bea0dc22f7e989b0af2e82237a16",
+  "region_id": "milwaukee_phase2_live",
+  "region_version": "milwaukee-v2.0.0-live",
+  "sources": [
+    {
+      "attribution": "Contains modified Copernicus WorldCover data (2021) processed by ESA WorldCover consortium",
+      "license": "CC BY 4.0",
+      "name": "ESA WorldCover",
+      "source_id": "esa_worldcover",
+      "used_for": [
+        "biome_masks"
+      ],
+      "version": "v200"
+    },
+    {
+      "attribution": "Copyright OpenStreetMap contributors",
+      "license": "ODbL 1.0",
+      "name": "OpenStreetMap",
+      "source_id": "openstreetmap",
+      "used_for": [
+        "ride_graph"
+      ],
+      "version": "planet extract 2026-07-01"
+    },
+    {
+      "attribution": "USDA Farm Production and Conservation - Aerial Photography Field Office",
+      "license": "public use with requested credit",
+      "name": "USDA NAIP",
+      "source_id": "usda_naip",
+      "used_for": [
+        "style_hints"
+      ],
+      "version": "2024 collection"
+    },
+    {
+      "attribution": "Source: U.S. Geological Survey",
+      "license": "USGS public use guidance",
+      "name": "USGS 3DEP",
+      "source_id": "usgs_3dep",
+      "used_for": [
+        "terrain_dem"
+      ],
+      "version": "1m DEM 2025-11-15"
+    }
+  ]
+}

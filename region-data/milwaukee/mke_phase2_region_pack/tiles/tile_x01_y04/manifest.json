@@ -17,10 +17,10 @@
   "scenery_asset": "tiles/tile_x01_y04/scenery.json",
   "schema_version": "phase2-region-tile-v2",
   "seam_hashes": {
-    "east": "d24e5f59a7bf3f40efd6a756a9ebb4fb4800b7f1bf9a73b26f7b75a8a04dfd82",
-    "north": "048dfb25af5d4b13279e7392387a00b824133e35d2d3132b5cf9478672298e97",
-    "south": "a94dbaf85dd83a4e257c827ab4b775d02fd09b5f710e1c4af7e98809288aa969",
-    "west": "f958dffeff1cf238b8157fb3c746b089d18f0b4776b478885c088e5eebb5fac9"
+    "east": "148bef47e8267c5759a4cabaa5cfb665d380fd5667ad4adc63f691cb686100d9",
+    "north": "6067e8713131b5bc2b1bc023b9f07dfddc47e6ec0468b2ef984a867137e88b2f",
+    "south": "b9ed52bac4fd2bcc9c6e6d1a96f019bc2c6495cc239a69042631b9867a6fbc20",
+    "west": "bf8d8a38d9d9003de012462a097baa255b2053c9b373787817d0dcda052841b6"
   },
   "source_manifest_asset": "source_manifest.json",
   "source_versions": {

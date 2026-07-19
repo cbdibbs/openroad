@@ -1,0 +1,22 @@
+[
+  {
+    "difficulty": "moderate",
+    "display_name": "Live City Span",
+    "distance_m": 11127.3,
+    "elevation_gain_m": 81.0,
+    "preview_edge_id": "osm_edge_16b23e88",
+    "region_version": "milwaukee-v2.0.0-live",
+    "route_id": "starter_live_city_span",
+    "start_area": "Milwaukee live OSM"
+  },
+  {
+    "difficulty": "easy",
+    "display_name": "Live River Run",
+    "distance_m": 6072.0,
+    "elevation_gain_m": 36.1,
+    "preview_edge_id": "osm_edge_25ee534e",
+    "region_version": "milwaukee-v2.0.0-live",
+    "route_id": "starter_live_river_run",
+    "start_area": "Milwaukee live OSM"
+  }
+]

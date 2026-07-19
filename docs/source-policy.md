@@ -15,6 +15,13 @@ python3 -m pip install rasterio
 
 Checked-in Milwaukee Phase 2 fixtures under `geo-pipeline/geo_pipeline/fixtures/milwaukee_phase2/` represent clipped, version-pinned source excerpts derived from that toolchain so contributors can run deterministic local rebuilds without re-fetching large upstreams on every test run.
 
+The repo now supports two Milwaukee Phase 2 source lanes:
+
+- `--source-mode fixture`: deterministic local rebuilds from the checked-in clipped source excerpts
+- `--source-mode live`: auditable upstream receipt and cache generation for Milwaukee using the documented source URLs, followed by normalization through the same staged Phase 2 contracts
+
+When a live upstream artifact is cached but not yet normalized by the lightweight local toolchain, the Milwaukee live lane may materialize the documented source-derived acceptance extract so downstream staged builds remain deterministic and testable.
+
 ### OpenStreetMap
 
 - Use: canonical road, trail, access, and route graph data

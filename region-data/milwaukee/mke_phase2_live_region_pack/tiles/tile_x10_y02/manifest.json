@@ -1,0 +1,33 @@
+{
+  "attribution_asset": "attribution.json",
+  "bbox_wgs84": [
+    -88.011,
+    43.024,
+    -87.888,
+    43.063
+  ],
+  "compatible_clients": [
+    "godot-phase2"
+  ],
+  "corridor_id": "milwaukee_city_core_trails",
+  "region_id": "milwaukee_phase2_live",
+  "region_version": "milwaukee-v2.0.0-live",
+  "ride_graph_asset": "tiles/tile_x10_y02/ride_graph.json",
+  "route_definitions_asset": "routes.json",
+  "scenery_asset": "tiles/tile_x10_y02/scenery.json",
+  "schema_version": "phase2-region-tile-v2",
+  "seam_hashes": {
+    "east": "0795ec0b961a1497667f881c93ff13bf6247b9d89453cf3a0ff9226c0333fcff",
+    "north": "852a2fe6c339b9bf1e4405412e6f518bd5eea81573fdb53a06b3576686d6159c",
+    "south": "d4e3863dcb0b2da5205704bf0075c9eee07de0165f5905177615a6f449f377dc",
+    "west": "ff0f184ca309e7276f3209f6065b064d14bfc3f29ed97716738813de662b5891"
+  },
+  "source_manifest_asset": "source_manifest.json",
+  "source_versions": {
+    "esa_worldcover": "v200",
+    "openstreetmap": "planet extract 2026-07-01",
+    "usda_naip": "2024 collection",
+    "usgs_3dep": "1m DEM 2025-11-15"
+  },
+  "tile_id": "tile_x10_y02"
+}

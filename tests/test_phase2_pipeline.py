@@ -9,7 +9,7 @@ import unittest
 from pathlib import Path
 
 from geo_pipeline.contracts import ValidationError, load_json, validate_region_pack_directory
-from geo_pipeline.phase2 import DEFAULT_REGION_CONFIG, build_phase2_region, load_region_config, route_from_gpx_phase2
+from geo_pipeline.phase2 import DEFAULT_REGION_CONFIG, build_phase2_region, fetch_sources, load_region_config, prepare_sources, route_from_gpx_phase2
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -20,7 +20,7 @@ SAMPLE_TRACK = ROOT / "sample-tracks" / "Wauwatosa_to_Lakefront.gpx"
 VISUAL_QA_DOC = ROOT / "docs" / "phase2-visual-qa.md"
 
 
-def _temp_phase2_config(temp_root: Path) -> Path:
+def _temp_phase2_config(temp_root: Path, source_urls: dict[str, str] | None = None) -> Path:
     config = json.loads(CONFIG_PATH.read_text(encoding="utf-8"))
     config["work_dirs"] = {
         "raw": str((temp_root / "raw").relative_to(ROOT)),
@@ -28,6 +28,9 @@ def _temp_phase2_config(temp_root: Path) -> Path:
         "build": str((temp_root / "build").relative_to(ROOT)),
     }
     config["package_dir"] = str((temp_root / "package").relative_to(ROOT))
+    if source_urls is not None:
+        for source_id, url in source_urls.items():
+            config["sources"][source_id]["fetch_url"] = url
     config_path = temp_root / "milwaukee_phase2.temp.json"
     config_path.write_text(json.dumps(config, indent=2, sort_keys=True) + "\n", encoding="utf-8")
     return config_path
@@ -68,6 +71,20 @@ class Phase2PipelineTests(unittest.TestCase):
         self.assertIn("validated", validate.stdout)
         self.assertIn("routes=4", validate.stdout)
 
+    def test_phase2_staged_cli_fixture_mode(self) -> None:
+        env = dict(os.environ)
+        env["PYTHONPATH"] = str(ROOT / "geo-pipeline")
+        commands = [
+            ["python3", "-m", "geo_pipeline.cli", "fetch-sources", DEFAULT_REGION_CONFIG, "--source-mode", "fixture"],
+            ["python3", "-m", "geo_pipeline.cli", "prepare-sources", DEFAULT_REGION_CONFIG, "--source-mode", "fixture"],
+            ["python3", "-m", "geo_pipeline.cli", "build-ride-graph", DEFAULT_REGION_CONFIG, "--source-mode", "fixture"],
+            ["python3", "-m", "geo_pipeline.cli", "build-scenery", DEFAULT_REGION_CONFIG, "--source-mode", "fixture"],
+            ["python3", "-m", "geo_pipeline.cli", "package-region", DEFAULT_REGION_CONFIG, "--source-mode", "fixture"],
+        ]
+        for command in commands:
+            result = subprocess.run(command, cwd=ROOT, check=True, capture_output=True, text=True, env=env)
+            self.assertEqual(result.returncode, 0, msg=result.stdout + result.stderr)
+
     def test_phase2_region_contracts_validate(self) -> None:
         region = validate_region_pack_directory(REGION_DIR)
         self.assertEqual(region["manifest"]["schema_version"], "phase2-region-root-v2")
@@ -105,6 +122,125 @@ class Phase2PipelineTests(unittest.TestCase):
                 route_second = route_from_gpx_phase2(gpx_path, second_build["ride_graph"], second_config_data)
                 self.assertEqual(route_first["snapped_edge_sequence"], route_second["snapped_edge_sequence"])
                 self.assertEqual(route_first["distance_profile_m"], route_second["distance_profile_m"])
+
+    def test_live_source_mode_matches_fixture_build_when_pointed_at_local_source_urls(self) -> None:
+        source_urls = {
+            source_id: (ROOT / path).as_uri()
+            for source_id, path in json.loads(CONFIG_PATH.read_text(encoding="utf-8"))["fixture_assets"].items()
+        }
+        with tempfile.TemporaryDirectory(dir=ROOT / "work") as fixture_dir_name, tempfile.TemporaryDirectory(dir=ROOT / "work") as live_dir_name:
+            fixture_root = Path(fixture_dir_name)
+            live_root = Path(live_dir_name)
+            fixture_config = _temp_phase2_config(fixture_root)
+            live_config = _temp_phase2_config(live_root, source_urls=source_urls)
+
+            fixture_build = build_phase2_region(fixture_config, "fixture")
+            live_build = build_phase2_region(live_config, "live")
+
+            for field in ["schema_version", "region_id", "corridor_id", "tile_size_m", "streaming_region_size_m"]:
+                self.assertEqual(fixture_build["root_manifest"][field], live_build["root_manifest"][field])
+            self.assertEqual(fixture_build["route_catalog"], live_build["route_catalog"])
+            self.assertEqual(
+                [(tile["tile_id"], tile["seam_hashes"]) for tile in fixture_build["scenery_index"]["tiles"]],
+                [(tile["tile_id"], tile["seam_hashes"]) for tile in live_build["scenery_index"]["tiles"]],
+            )
+            self.assertEqual(
+                [edge["edge_id"] for edge in fixture_build["ride_graph"]["edges"]],
+                [edge["edge_id"] for edge in live_build["ride_graph"]["edges"]],
+            )
+            self.assertEqual(
+                [route["snapped_edge_sequence"] for route in fixture_build["routes"]],
+                [route["snapped_edge_sequence"] for route in live_build["routes"]],
+            )
+            self.assertEqual(live_build["source_manifest"]["source_mode"], "live")
+            strategies = {artifact["source_id"]: artifact["normalization_strategy"] for artifact in live_build["source_manifest"]["artifacts"]}
+            self.assertEqual(strategies["openstreetmap"], "direct_source_extract")
+            self.assertTrue(
+                all(
+                    strategy in {"direct_source_extract", "fixture_fallback_extract"}
+                    for strategy in strategies.values()
+                )
+            )
+
+    def test_live_overpass_osm_payload_normalizes_into_richer_phase2_inputs(self) -> None:
+        overpass_payload = {
+            "elements": [
+                {
+                    "type": "way",
+                    "id": 101,
+                    "tags": {"highway": "residential", "name": "Test Street"},
+                    "geometry": [
+                        {"lon": -88.0, "lat": 43.03},
+                        {"lon": -87.999, "lat": 43.031},
+                    ],
+                },
+                {
+                    "type": "way",
+                    "id": 102,
+                    "tags": {"building": "commercial", "name": "Test Building", "building:levels": "4"},
+                    "geometry": [
+                        {"lon": -87.998, "lat": 43.032},
+                        {"lon": -87.9975, "lat": 43.032},
+                        {"lon": -87.9975, "lat": 43.0325},
+                        {"lon": -87.998, "lat": 43.0325},
+                        {"lon": -87.998, "lat": 43.032},
+                    ],
+                },
+                {
+                    "type": "way",
+                    "id": 103,
+                    "tags": {"natural": "water", "name": "Test Lagoon"},
+                    "geometry": [
+                        {"lon": -87.9965, "lat": 43.033},
+                        {"lon": -87.9958, "lat": 43.033},
+                        {"lon": -87.9958, "lat": 43.0336},
+                        {"lon": -87.9965, "lat": 43.0336},
+                        {"lon": -87.9965, "lat": 43.033},
+                    ],
+                },
+                {
+                    "type": "way",
+                    "id": 104,
+                    "tags": {"leisure": "park", "name": "Test Park"},
+                    "geometry": [
+                        {"lon": -87.9995, "lat": 43.034},
+                        {"lon": -87.9985, "lat": 43.034},
+                        {"lon": -87.9985, "lat": 43.0348},
+                        {"lon": -87.9995, "lat": 43.0348},
+                        {"lon": -87.9995, "lat": 43.034},
+                    ],
+                },
+                {
+                    "type": "node",
+                    "id": 201,
+                    "lon": -87.9972,
+                    "lat": 43.0318,
+                    "tags": {"tourism": "museum", "name": "Test Museum"},
+                },
+            ]
+        }
+        with tempfile.TemporaryDirectory(dir=ROOT / "work") as temp_dir_name:
+            temp_root = Path(temp_dir_name)
+            overpass_path = temp_root / "openstreetmap.live.json"
+            overpass_path.write_text(json.dumps(overpass_payload, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+            config = json.loads(CONFIG_PATH.read_text(encoding="utf-8"))
+            source_urls = {
+                "openstreetmap": overpass_path.as_uri(),
+                "usgs_3dep": (ROOT / config["fixture_assets"]["usgs_3dep"]).as_uri(),
+                "usda_naip": (ROOT / config["fixture_assets"]["usda_naip"]).as_uri(),
+                "esa_worldcover": (ROOT / config["fixture_assets"]["esa_worldcover"]).as_uri(),
+            }
+            temp_config = _temp_phase2_config(temp_root, source_urls=source_urls)
+            manifest = fetch_sources(temp_config, "live")
+            prepared = prepare_sources(temp_config, "live")
+
+            osm_artifact = next(artifact for artifact in manifest["artifacts"] if artifact["source_id"] == "openstreetmap")
+            self.assertEqual(osm_artifact["normalization_strategy"], "overpass_osm_normalization")
+            self.assertTrue((ROOT / osm_artifact["normalized_extract_path"]).exists())
+            self.assertGreaterEqual(len(prepared["street_features"]), 1)
+            self.assertGreaterEqual(len(prepared["buildings"]), 1)
+            self.assertGreaterEqual(len(prepared["water_patches"]), 1)
+            self.assertGreaterEqual(len(prepared["landmarks"]), 1)
 
     def test_required_sources_and_edge_lineage_are_present(self) -> None:
         region = validate_region_pack_directory(REGION_DIR)
@@ -183,20 +319,31 @@ class Phase2PipelineTests(unittest.TestCase):
         self.assertIn("third_person_follow", visual_qa)
         self.assertIn("tile seams", visual_qa)
 
-        godot_bin = shutil.which("godot4") or shutil.which("godot")
+        default_godot_app = Path("/Applications/Godot.app/Contents/MacOS/Godot")
+        godot_bin = shutil.which("godot4") or shutil.which("godot") or (str(default_godot_app) if default_godot_app.exists() else None)
         if godot_bin is None:
             self.skipTest("Godot executable not available in this environment")
 
         env = dict(os.environ)
         env["GODOT_BIN"] = godot_bin
-        result = subprocess.run(
-            ["zsh", "game-client/godot/test_headless.sh"],
-            cwd=ROOT,
-            capture_output=True,
-            text=True,
-            env=env,
-        )
-        self.assertEqual(result.returncode, 0, msg=result.stdout + result.stderr)
+        with tempfile.TemporaryDirectory(dir=ROOT / "work") as temp_dir_name:
+            results_path = Path(temp_dir_name) / "headless_results.json"
+            env["PT_HEADLESS_RESULTS_PATH"] = str(results_path)
+            env["PT_HEADLESS_TEST_GPX"] = str(SAMPLE_TRACK)
+            result = subprocess.run(
+                ["zsh", "game-client/godot/test_headless.sh"],
+                cwd=ROOT,
+                capture_output=True,
+                text=True,
+                env=env,
+            )
+            self.assertEqual(result.returncode, 0, msg=result.stdout + result.stderr)
+            payload = json.loads(results_path.read_text(encoding="utf-8"))
+            self.assertTrue(payload["ok"])
+            self.assertGreaterEqual(payload["stream_region_count"], 1)
+            self.assertGreaterEqual(len(payload["loaded_region_snapshots"]), 1)
+            self.assertGreaterEqual(len(payload["progress_samples_m"]), 8)
+            self.assertEqual(payload["runtime_errors"], [])
 
 
 if __name__ == "__main__":

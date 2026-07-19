@@ -1,0 +1,1064 @@
+{
+  "build_warnings": [
+    "optional source usda_naip only affects style hints; graph, terrain, and route snapping remain source-complete without it",
+    "live source esa_worldcover cached the upstream artifact but normalized through the documented Milwaukee source-derived fixture extract for deterministic local rebuilds",
+    "live source usda_naip cached the upstream artifact but normalized through the documented Milwaukee source-derived fixture extract for deterministic local rebuilds"
+  ],
+  "corridor_id": "milwaukee_city_core_trails",
+  "region_id": "milwaukee_phase2_live",
+  "region_version": "milwaukee-v2.0.0-live",
+  "streaming_region_size_m": 4000.0,
+  "style_hints": {
+    "building_color_variation": 0.22,
+    "shoreline_emphasis": 0.71,
+    "vegetation_density": 0.66
+  },
+  "tile_size_m": 1000.0,
+  "tiles": [
+    {
+      "manifest_asset": "tiles/tile_x00_y00/manifest.json",
+      "origin_m": [
+        0.0,
+        0.0
+      ],
+      "seam_hashes": {
+        "east": "595a5f04911c63917c3eca114db10c43a1fe3365ed5a3ce06f07adc17289904f",
+        "north": "5f8a1a42149081abdbf6ec88e564d402ff184084ad5665bb3a68b18276e2adc9",
+        "south": "606dea33b46d0154f62e924d168bbc158a3ac1fd9192b8376bfbaf5fb9b44b68",
+        "west": "274a1b500ef3dabfb43235d86b07dd24205569ff5882e87a853476915854383e"
+      },
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x00_y00",
+      "tile_id": "tile_x00_y00"
+    },
+    {
+      "manifest_asset": "tiles/tile_x00_y01/manifest.json",
+      "origin_m": [
+        0.0,
+        1000.0
+      ],
+      "seam_hashes": {
+        "east": "17835638f109c8f1ce15424358c0688684af3c053fc61293f45e0940f11829c9",
+        "north": "056172ba3b191532f65031e39f17675977f8c94caf7632014505ae2fd6f72c2f",
+        "south": "5f8a1a42149081abdbf6ec88e564d402ff184084ad5665bb3a68b18276e2adc9",
+        "west": "601b9040777b148380e9931a466101730a93c7c3f2e4370276ab9c8a62dbc0e9"
+      },
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x00_y00",
+      "tile_id": "tile_x00_y01"
+    },
+    {
+      "manifest_asset": "tiles/tile_x00_y02/manifest.json",
+      "origin_m": [
+        0.0,
+        2000.0
+      ],
+      "seam_hashes": {
+        "east": "e739c0ae4a0c17ffa8e03ffec24f131ca2eba051cf3d2764534442a150f90255",
+        "north": "6b03a1a20841d5c32d86eb7c626150c20aa5e9190103e8e5be3c239a6863a1e6",
+        "south": "056172ba3b191532f65031e39f17675977f8c94caf7632014505ae2fd6f72c2f",
+        "west": "9cdb196bf00f4a66b88a7cfa7f9df9e0b796f2571acf3108806a6b64617db79f"
+      },
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x00_y00",
+      "tile_id": "tile_x00_y02"
+    },
+    {
+      "manifest_asset": "tiles/tile_x00_y03/manifest.json",
+      "origin_m": [
+        0.0,
+        3000.0
+      ],
+      "seam_hashes": {
+        "east": "5fa3e2a4450054b072b29e69ade8c71ded689aa18eef2034f68798fbbeaede2d",
+        "north": "c486b6237c914d385102ed024e706b0928e7cd05ffde38d986574b4cbf816a20",
+        "south": "6b03a1a20841d5c32d86eb7c626150c20aa5e9190103e8e5be3c239a6863a1e6",
+        "west": "2e2689312d3261b909aae6e86f091eb564ce57102460a5da7a231e058e11da61"
+      },
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x00_y00",
+      "tile_id": "tile_x00_y03"
+    },
+    {
+      "manifest_asset": "tiles/tile_x00_y04/manifest.json",
+      "origin_m": [
+        0.0,
+        4000.0
+      ],
+      "seam_hashes": {
+        "east": "8e03671c9ae9896dbd0ba80568c99d7afe1db8981fd13319cbd7e4a9ab673492",
+        "north": "42406c9c4af915ec49c17ef913f3104fae8b443632994324701d2153d2cb1b26",
+        "south": "c486b6237c914d385102ed024e706b0928e7cd05ffde38d986574b4cbf816a20",
+        "west": "8d6dd9ed6871281420c46b472b5c58e35c0d095c29577994d89c4618ac3a4933"
+      },
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x00_y01",
+      "tile_id": "tile_x00_y04"
+    },
+    {
+      "manifest_asset": "tiles/tile_x01_y00/manifest.json",
+      "origin_m": [
+        1000.0,
+        0.0
+      ],
+      "seam_hashes": {
+        "east": "130c0e0c604e9e4cced3726c8acc312c2324679f1383fd03317e58f478252f86",
+        "north": "8915f4022905f1ee9e9675c02310e5d2abef0199a3279c2e644ec907655cbd8f",
+        "south": "ba2b9947928701ac36b4a07ce4526bded3c82157a1665e64291c3afc8d2799e1",
+        "west": "595a5f04911c63917c3eca114db10c43a1fe3365ed5a3ce06f07adc17289904f"
+      },
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x00_y00",
+      "tile_id": "tile_x01_y00"
+    },
+    {
+      "manifest_asset": "tiles/tile_x01_y01/manifest.json",
+      "origin_m": [
+        1000.0,
+        1000.0
+      ],
+      "seam_hashes": {
+        "east": "85e3aa015732bddf8d054ec6ff4c1f620dcf12374ed35017195af6104502af46",
+        "north": "277649250b12b540488fc51d9d78d82886bd06accb312de1e9e8207f5580992b",
+        "south": "8915f4022905f1ee9e9675c02310e5d2abef0199a3279c2e644ec907655cbd8f",
+        "west": "17835638f109c8f1ce15424358c0688684af3c053fc61293f45e0940f11829c9"
+      },
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x00_y00",
+      "tile_id": "tile_x01_y01"
+    },
+    {
+      "manifest_asset": "tiles/tile_x01_y02/manifest.json",
+      "origin_m": [
+        1000.0,
+        2000.0
+      ],
+      "seam_hashes": {
+        "east": "3bd8539613cb52011c5e4dfb3f36c072cea86f6abca303508ec1e981dcc487f4",
+        "north": "e264a1368019aca6f7958110290e739ff0606d0b4623db91736561770eb0a68f",
+        "south": "277649250b12b540488fc51d9d78d82886bd06accb312de1e9e8207f5580992b",
+        "west": "e739c0ae4a0c17ffa8e03ffec24f131ca2eba051cf3d2764534442a150f90255"
+      },
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x00_y00",
+      "tile_id": "tile_x01_y02"
+    },
+    {
+      "manifest_asset": "tiles/tile_x01_y03/manifest.json",
+      "origin_m": [
+        1000.0,
+        3000.0
+      ],
+      "seam_hashes": {
+        "east": "9a3cdd5571941f3e3ea0780a10474cbff2744982db7668f77d9e97e97688c299",
+        "north": "301d00757671525ff7548a61246122a4cb026e77436a2b001ae829dc82d63333",
+        "south": "e264a1368019aca6f7958110290e739ff0606d0b4623db91736561770eb0a68f",
+        "west": "5fa3e2a4450054b072b29e69ade8c71ded689aa18eef2034f68798fbbeaede2d"
+      },
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x00_y00",
+      "tile_id": "tile_x01_y03"
+    },
+    {
+      "manifest_asset": "tiles/tile_x01_y04/manifest.json",
+      "origin_m": [
+        1000.0,
+        4000.0
+      ],
+      "seam_hashes": {
+        "east": "3d56868136b788c4c275d1dea719bf87f4009236a79a541863dfc192a4d3fbc9",
+        "north": "e7b65291d624fe4799105b6e452cef0259c9c1a92c0faaf6d7d73919ea34970a",
+        "south": "301d00757671525ff7548a61246122a4cb026e77436a2b001ae829dc82d63333",
+        "west": "8e03671c9ae9896dbd0ba80568c99d7afe1db8981fd13319cbd7e4a9ab673492"
+      },
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x00_y01",
+      "tile_id": "tile_x01_y04"
+    },
+    {
+      "manifest_asset": "tiles/tile_x02_y00/manifest.json",
+      "origin_m": [
+        2000.0,
+        0.0
+      ],
+      "seam_hashes": {
+        "east": "f5595b500d8b14d32ab0ff3a155fb8fc6490fc259dc1cc4f11b95c327b2983a0",
+        "north": "d47966c71582ac3096964248c41ae3f8cc19556537054bd7d98de975bf297ccb",
+        "south": "6c965cd68833ddd6af15b574051b9a1c5cc23503d71ecf33b288a7f4ad2b22df",
+        "west": "130c0e0c604e9e4cced3726c8acc312c2324679f1383fd03317e58f478252f86"
+      },
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x00_y00",
+      "tile_id": "tile_x02_y00"
+    },
+    {
+      "manifest_asset": "tiles/tile_x02_y01/manifest.json",
+      "origin_m": [
+        2000.0,
+        1000.0
+      ],
+      "seam_hashes": {
+        "east": "9698627df786a581a4ba74bdf5b11d60b00f49fc273c82e80ac5f8d5020057c0",
+        "north": "2279aca7429164e786885fc1f74a4d33c596ee0fa929d264032d0226d3ce896b",
+        "south": "d47966c71582ac3096964248c41ae3f8cc19556537054bd7d98de975bf297ccb",
+        "west": "85e3aa015732bddf8d054ec6ff4c1f620dcf12374ed35017195af6104502af46"
+      },
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x00_y00",
+      "tile_id": "tile_x02_y01"
+    },
+    {
+      "manifest_asset": "tiles/tile_x02_y02/manifest.json",
+      "origin_m": [
+        2000.0,
+        2000.0
+      ],
+      "seam_hashes": {
+        "east": "58001c9bb43b3a3b4cf2afc0e7afddefdadca6cc7127c085e5ca7f2fe84a29cc",
+        "north": "3b8b9810796ffbbaa26110ac4e132391a71dd856fb27e04c8301dbb46c9e89f4",
+        "south": "2279aca7429164e786885fc1f74a4d33c596ee0fa929d264032d0226d3ce896b",
+        "west": "3bd8539613cb52011c5e4dfb3f36c072cea86f6abca303508ec1e981dcc487f4"
+      },
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x00_y00",
+      "tile_id": "tile_x02_y02"
+    },
+    {
+      "manifest_asset": "tiles/tile_x02_y03/manifest.json",
+      "origin_m": [
+        2000.0,
+        3000.0
+      ],
+      "seam_hashes": {
+        "east": "3832242c94c7129efc6e0feff7b319088c54786070d8343369423c69eae7b7a3",
+        "north": "8826c3e6d4aa56e06f6a76f15bbec44b9c272bcb8e5b4f548f56024f9a366c20",
+        "south": "3b8b9810796ffbbaa26110ac4e132391a71dd856fb27e04c8301dbb46c9e89f4",
+        "west": "9a3cdd5571941f3e3ea0780a10474cbff2744982db7668f77d9e97e97688c299"
+      },
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x00_y00",
+      "tile_id": "tile_x02_y03"
+    },
+    {
+      "manifest_asset": "tiles/tile_x02_y04/manifest.json",
+      "origin_m": [
+        2000.0,
+        4000.0
+      ],
+      "seam_hashes": {
+        "east": "aec14c451af7230ce4cceecd1be16d84587ca0ec6563cdeb3d11300382841bd1",
+        "north": "82cab2ba80217b8994d55339d9bb8e3e13348c1fb037a290dabe212a14196f65",
+        "south": "8826c3e6d4aa56e06f6a76f15bbec44b9c272bcb8e5b4f548f56024f9a366c20",
+        "west": "3d56868136b788c4c275d1dea719bf87f4009236a79a541863dfc192a4d3fbc9"
+      },
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x00_y01",
+      "tile_id": "tile_x02_y04"
+    },
+    {
+      "manifest_asset": "tiles/tile_x03_y00/manifest.json",
+      "origin_m": [
+        3000.0,
+        0.0
+      ],
+      "seam_hashes": {
+        "east": "0085776417a213ff92dcf04f51891f0db84562bbb42b28007a1e79638f11b7da",
+        "north": "50ec13abfa38a15df12ca2ff8d7a7c289b0c843ef86b4b79f70095870585a11b",
+        "south": "48cfc5b3ecc486b27b7eec9e5ef76161f0c1175f5143d5d6f2833348aa8560d3",
+        "west": "f5595b500d8b14d32ab0ff3a155fb8fc6490fc259dc1cc4f11b95c327b2983a0"
+      },
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x00_y00",
+      "tile_id": "tile_x03_y00"
+    },
+    {
+      "manifest_asset": "tiles/tile_x03_y01/manifest.json",
+      "origin_m": [
+        3000.0,
+        1000.0
+      ],
+      "seam_hashes": {
+        "east": "60c2b402394d64e11316609dd93d130ba751ce2f64887964f2fcf611c758aa37",
+        "north": "e6cd7e3fe3b441d8eb85ef16f8ab69210c9b6cce046e8c161a45a42c736222c3",
+        "south": "50ec13abfa38a15df12ca2ff8d7a7c289b0c843ef86b4b79f70095870585a11b",
+        "west": "9698627df786a581a4ba74bdf5b11d60b00f49fc273c82e80ac5f8d5020057c0"
+      },
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x00_y00",
+      "tile_id": "tile_x03_y01"
+    },
+    {
+      "manifest_asset": "tiles/tile_x03_y02/manifest.json",
+      "origin_m": [
+        3000.0,
+        2000.0
+      ],
+      "seam_hashes": {
+        "east": "6b168f683b53a952e8e926fe2855fea1bc20a0d45c7dd33592fa0e8920c650fd",
+        "north": "d48a43ab3d50c5aabd6cb02c41c5e08d15c5d921bdee0b9b6bef070ec086a045",
+        "south": "e6cd7e3fe3b441d8eb85ef16f8ab69210c9b6cce046e8c161a45a42c736222c3",
+        "west": "58001c9bb43b3a3b4cf2afc0e7afddefdadca6cc7127c085e5ca7f2fe84a29cc"
+      },
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x00_y00",
+      "tile_id": "tile_x03_y02"
+    },
+    {
+      "manifest_asset": "tiles/tile_x03_y03/manifest.json",
+      "origin_m": [
+        3000.0,
+        3000.0
+      ],
+      "seam_hashes": {
+        "east": "38c9230f8faccdc578fa8e89e176e34d40f1fe9498ec5503692f503f0c5d7764",
+        "north": "e0dfb126ca724dca96fc29a4b7a795f4b8b947cfb5a2bc8d05a29aa68715a645",
+        "south": "d48a43ab3d50c5aabd6cb02c41c5e08d15c5d921bdee0b9b6bef070ec086a045",
+        "west": "3832242c94c7129efc6e0feff7b319088c54786070d8343369423c69eae7b7a3"
+      },
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x00_y00",
+      "tile_id": "tile_x03_y03"
+    },
+    {
+      "manifest_asset": "tiles/tile_x03_y04/manifest.json",
+      "origin_m": [
+        3000.0,
+        4000.0
+      ],
+      "seam_hashes": {
+        "east": "0e516ef898377a040338e842f6418b4c83fccd4ee9742103dc7fa17c6713e336",
+        "north": "0f4115aaf05b28dde822dd2f104cf7476d90e72ffe98e5effcc70dfcf5bfbbf6",
+        "south": "e0dfb126ca724dca96fc29a4b7a795f4b8b947cfb5a2bc8d05a29aa68715a645",
+        "west": "aec14c451af7230ce4cceecd1be16d84587ca0ec6563cdeb3d11300382841bd1"
+      },
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x00_y01",
+      "tile_id": "tile_x03_y04"
+    },
+    {
+      "manifest_asset": "tiles/tile_x04_y00/manifest.json",
+      "origin_m": [
+        4000.0,
+        0.0
+      ],
+      "seam_hashes": {
+        "east": "a6e2781d63104d8e5ac44815e29a2daf7607c9ee6dc42f1a4249a75b316d6c60",
+        "north": "c6299921bb002aaf01daf731f980802c00d45eea2a53799bf02554a2e96dfdfb",
+        "south": "79d654d2ef5aadb3d7fd897c9295d736fff3f88e8c2484a850057577deffeb1a",
+        "west": "0085776417a213ff92dcf04f51891f0db84562bbb42b28007a1e79638f11b7da"
+      },
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x01_y00",
+      "tile_id": "tile_x04_y00"
+    },
+    {
+      "manifest_asset": "tiles/tile_x04_y01/manifest.json",
+      "origin_m": [
+        4000.0,
+        1000.0
+      ],
+      "seam_hashes": {
+        "east": "67ef9c93d8bedb6ddbde72d812d9124334a3fdf4a8e2fddbb6ddcf3fe21b8169",
+        "north": "354580e55e364fbdb98749a1a23f2227cc3b614a46cdb8f56da0abda95dc74be",
+        "south": "c6299921bb002aaf01daf731f980802c00d45eea2a53799bf02554a2e96dfdfb",
+        "west": "60c2b402394d64e11316609dd93d130ba751ce2f64887964f2fcf611c758aa37"
+      },
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x01_y00",
+      "tile_id": "tile_x04_y01"
+    },
+    {
+      "manifest_asset": "tiles/tile_x04_y02/manifest.json",
+      "origin_m": [
+        4000.0,
+        2000.0
+      ],
+      "seam_hashes": {
+        "east": "8c53dee0b80a0c21c25d8f7a8f384456076fe2eb2aaa7ccb18b8386864f85f90",
+        "north": "37a69c3c6331a61d85723b6974a6a812ba0564b6bbca7a57776571b9b6b19db3",
+        "south": "354580e55e364fbdb98749a1a23f2227cc3b614a46cdb8f56da0abda95dc74be",
+        "west": "6b168f683b53a952e8e926fe2855fea1bc20a0d45c7dd33592fa0e8920c650fd"
+      },
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x01_y00",
+      "tile_id": "tile_x04_y02"
+    },
+    {
+      "manifest_asset": "tiles/tile_x04_y03/manifest.json",
+      "origin_m": [
+        4000.0,
+        3000.0
+      ],
+      "seam_hashes": {
+        "east": "7a28a341d9cf61d7bbd424bcc96e828ddfcb127b0f01ce5a9344ef082eb627da",
+        "north": "276d64624153548bb62de2b545fedfc3877bee6daa682d383ed995df6fa02a34",
+        "south": "37a69c3c6331a61d85723b6974a6a812ba0564b6bbca7a57776571b9b6b19db3",
+        "west": "38c9230f8faccdc578fa8e89e176e34d40f1fe9498ec5503692f503f0c5d7764"
+      },
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x01_y00",
+      "tile_id": "tile_x04_y03"
+    },
+    {
+      "manifest_asset": "tiles/tile_x04_y04/manifest.json",
+      "origin_m": [
+        4000.0,
+        4000.0
+      ],
+      "seam_hashes": {
+        "east": "aad6fc78ef7c7eeb64799e9381f5cf76e305514fed7d3056694dd2740456df13",
+        "north": "b12d017581c21933b1f7518715cdeefd4568cc899e215a2c4346e687351e961d",
+        "south": "276d64624153548bb62de2b545fedfc3877bee6daa682d383ed995df6fa02a34",
+        "west": "0e516ef898377a040338e842f6418b4c83fccd4ee9742103dc7fa17c6713e336"
+      },
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x01_y01",
+      "tile_id": "tile_x04_y04"
+    },
+    {
+      "manifest_asset": "tiles/tile_x05_y00/manifest.json",
+      "origin_m": [
+        5000.0,
+        0.0
+      ],
+      "seam_hashes": {
+        "east": "f6f32546ac7284d85066112b70a618c209521ab4df2a32957ba5fed218a7e6dd",
+        "north": "6bd5d41952576d6105d5262929d6183ab1ad4b0d0448ae25352904c748abfeb7",
+        "south": "2e023cb405ade28502040f0c8dbcfa8732649128325b3af02839e98e988076de",
+        "west": "a6e2781d63104d8e5ac44815e29a2daf7607c9ee6dc42f1a4249a75b316d6c60"
+      },
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x01_y00",
+      "tile_id": "tile_x05_y00"
+    },
+    {
+      "manifest_asset": "tiles/tile_x05_y01/manifest.json",
+      "origin_m": [
+        5000.0,
+        1000.0
+      ],
+      "seam_hashes": {
+        "east": "99df89037902ee168a45877bb0298969921b822be5e58061822f7ab143bfeb42",
+        "north": "a2f8ad7431712fc3f92b9d151fc372c9aa38de1f5d783397a2a0620e29df4414",
+        "south": "6bd5d41952576d6105d5262929d6183ab1ad4b0d0448ae25352904c748abfeb7",
+        "west": "67ef9c93d8bedb6ddbde72d812d9124334a3fdf4a8e2fddbb6ddcf3fe21b8169"
+      },
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x01_y00",
+      "tile_id": "tile_x05_y01"
+    },
+    {
+      "manifest_asset": "tiles/tile_x05_y02/manifest.json",
+      "origin_m": [
+        5000.0,
+        2000.0
+      ],
+      "seam_hashes": {
+        "east": "17d8c5e507037489c4d80146affdf909e90eadcd28b4bd2ab038cebf2659617f",
+        "north": "7068efe41e2b527cf7b89374256c28e9a3fd06f691a4f1ac787601453f59e2d9",
+        "south": "a2f8ad7431712fc3f92b9d151fc372c9aa38de1f5d783397a2a0620e29df4414",
+        "west": "8c53dee0b80a0c21c25d8f7a8f384456076fe2eb2aaa7ccb18b8386864f85f90"
+      },
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x01_y00",
+      "tile_id": "tile_x05_y02"
+    },
+    {
+      "manifest_asset": "tiles/tile_x05_y03/manifest.json",
+      "origin_m": [
+        5000.0,
+        3000.0
+      ],
+      "seam_hashes": {
+        "east": "2c4e3abd640ce8526d5c8afe5be52b52d665d4ae0df56c5cc7c9c10cc17a15b6",
+        "north": "c83d4e18867182de2f3fb3a456da8182f19f62ce5008386976aad7e758737ae7",
+        "south": "7068efe41e2b527cf7b89374256c28e9a3fd06f691a4f1ac787601453f59e2d9",
+        "west": "7a28a341d9cf61d7bbd424bcc96e828ddfcb127b0f01ce5a9344ef082eb627da"
+      },
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x01_y00",
+      "tile_id": "tile_x05_y03"
+    },
+    {
+      "manifest_asset": "tiles/tile_x05_y04/manifest.json",
+      "origin_m": [
+        5000.0,
+        4000.0
+      ],
+      "seam_hashes": {
+        "east": "ec005b823eadc8a25003107f95709a436f1dca463a86a3d584238101e84a4bde",
+        "north": "65d151ec92198c4b518624369aba718daa98ba3ce6e811ae36d4def24d73dc3e",
+        "south": "c83d4e18867182de2f3fb3a456da8182f19f62ce5008386976aad7e758737ae7",
+        "west": "aad6fc78ef7c7eeb64799e9381f5cf76e305514fed7d3056694dd2740456df13"
+      },
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x01_y01",
+      "tile_id": "tile_x05_y04"
+    },
+    {
+      "manifest_asset": "tiles/tile_x06_y00/manifest.json",
+      "origin_m": [
+        6000.0,
+        0.0
+      ],
+      "seam_hashes": {
+        "east": "9d39803e9c07114a3e7f5468bdaebbb9bc5b37312f65d1c0a52df160b72af5f5",
+        "north": "64869347a5259e368f493f5bbca28878aec2e9d1ac8313af581fbee20c6e79f0",
+        "south": "14008324bbbf5ec52372e34a44b2b3c5700746efd7bfd82ec8a04bbe69dd02ee",
+        "west": "f6f32546ac7284d85066112b70a618c209521ab4df2a32957ba5fed218a7e6dd"
+      },
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x01_y00",
+      "tile_id": "tile_x06_y00"
+    },
+    {
+      "manifest_asset": "tiles/tile_x06_y01/manifest.json",
+      "origin_m": [
+        6000.0,
+        1000.0
+      ],
+      "seam_hashes": {
+        "east": "ab51c2464a961b37e5df5461f45a4b0d6690420255b74746a4650d84167c6d31",
+        "north": "3cd8ef3a0b0e654809f33be261d55eced5f43571a677bbe7487c7d6ef2a995ee",
+        "south": "64869347a5259e368f493f5bbca28878aec2e9d1ac8313af581fbee20c6e79f0",
+        "west": "99df89037902ee168a45877bb0298969921b822be5e58061822f7ab143bfeb42"
+      },
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x01_y00",
+      "tile_id": "tile_x06_y01"
+    },
+    {
+      "manifest_asset": "tiles/tile_x06_y02/manifest.json",
+      "origin_m": [
+        6000.0,
+        2000.0
+      ],
+      "seam_hashes": {
+        "east": "673bbcfba1eb9b9f33dd3d5c2e1ef50d35f92aed4f6bb0e7311051e14ebc947c",
+        "north": "f327f025f578ba9803c933a13db9f6332fdf4312a44f1af05ab744663dc49e22",
+        "south": "3cd8ef3a0b0e654809f33be261d55eced5f43571a677bbe7487c7d6ef2a995ee",
+        "west": "17d8c5e507037489c4d80146affdf909e90eadcd28b4bd2ab038cebf2659617f"
+      },
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x01_y00",
+      "tile_id": "tile_x06_y02"
+    },
+    {
+      "manifest_asset": "tiles/tile_x06_y03/manifest.json",
+      "origin_m": [
+        6000.0,
+        3000.0
+      ],
+      "seam_hashes": {
+        "east": "f2547621dfa2317f6753a30d094dcc46d4c071be6088558e7df8ed881677f032",
+        "north": "295739f273b94d4156818a7a76b40bc70fd91fb599115288dbcae286ccd160ee",
+        "south": "f327f025f578ba9803c933a13db9f6332fdf4312a44f1af05ab744663dc49e22",
+        "west": "2c4e3abd640ce8526d5c8afe5be52b52d665d4ae0df56c5cc7c9c10cc17a15b6"
+      },
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x01_y00",
+      "tile_id": "tile_x06_y03"
+    },
+    {
+      "manifest_asset": "tiles/tile_x06_y04/manifest.json",
+      "origin_m": [
+        6000.0,
+        4000.0
+      ],
+      "seam_hashes": {
+        "east": "0f08249aefc4f9c34a016c525bbd8eb2c2e9788de3cdb51ca21e55d386423b13",
+        "north": "8f85a4c2483a366561df90b5fc1bdf45de36205342af40c1d85d3278cf75f0c7",
+        "south": "295739f273b94d4156818a7a76b40bc70fd91fb599115288dbcae286ccd160ee",
+        "west": "ec005b823eadc8a25003107f95709a436f1dca463a86a3d584238101e84a4bde"
+      },
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x01_y01",
+      "tile_id": "tile_x06_y04"
+    },
+    {
+      "manifest_asset": "tiles/tile_x07_y00/manifest.json",
+      "origin_m": [
+        7000.0,
+        0.0
+      ],
+      "seam_hashes": {
+        "east": "0d99ce91b749e1ba659891f8a34f0467b6e33b72b7411d8337ec2f2c61dacd62",
+        "north": "44a39961fbb2bfc8d32c82c37908501eaeb151840171898b8279d2158419004b",
+        "south": "cd4f2826ee74c5e3189c4e1815fc6085cc27f5d091b90ca7ed17a13f30b22d48",
+        "west": "9d39803e9c07114a3e7f5468bdaebbb9bc5b37312f65d1c0a52df160b72af5f5"
+      },
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x01_y00",
+      "tile_id": "tile_x07_y00"
+    },
+    {
+      "manifest_asset": "tiles/tile_x07_y01/manifest.json",
+      "origin_m": [
+        7000.0,
+        1000.0
+      ],
+      "seam_hashes": {
+        "east": "4665ada05fe66ccab02c9f9b894828b61e32f0d75b265fee1cd2f826c0359829",
+        "north": "175614b79246268f364371fd94fc59f1cfd0f74b24a57836a75e5299a6eea84e",
+        "south": "44a39961fbb2bfc8d32c82c37908501eaeb151840171898b8279d2158419004b",
+        "west": "ab51c2464a961b37e5df5461f45a4b0d6690420255b74746a4650d84167c6d31"
+      },
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x01_y00",
+      "tile_id": "tile_x07_y01"
+    },
+    {
+      "manifest_asset": "tiles/tile_x07_y02/manifest.json",
+      "origin_m": [
+        7000.0,
+        2000.0
+      ],
+      "seam_hashes": {
+        "east": "4812b11e7c4a55b27d083b4616c17c144daa94668adf0b66bcc7acf54b4f1132",
+        "north": "b2c33ec7ad753c3570de3cb9a95222059bccbb915bfc574ec3ce6f9ba8a3f5d4",
+        "south": "175614b79246268f364371fd94fc59f1cfd0f74b24a57836a75e5299a6eea84e",
+        "west": "673bbcfba1eb9b9f33dd3d5c2e1ef50d35f92aed4f6bb0e7311051e14ebc947c"
+      },
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x01_y00",
+      "tile_id": "tile_x07_y02"
+    },
+    {
+      "manifest_asset": "tiles/tile_x07_y03/manifest.json",
+      "origin_m": [
+        7000.0,
+        3000.0
+      ],
+      "seam_hashes": {
+        "east": "f58ff7697e79049f1043a82edab5744eda496df3677b2a34d1f005bec50ea6f9",
+        "north": "e0395fa2d2905535ec7e48e7916719fa36fd4ea484a01553f5660806c7067b4e",
+        "south": "b2c33ec7ad753c3570de3cb9a95222059bccbb915bfc574ec3ce6f9ba8a3f5d4",
+        "west": "f2547621dfa2317f6753a30d094dcc46d4c071be6088558e7df8ed881677f032"
+      },
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x01_y00",
+      "tile_id": "tile_x07_y03"
+    },
+    {
+      "manifest_asset": "tiles/tile_x07_y04/manifest.json",
+      "origin_m": [
+        7000.0,
+        4000.0
+      ],
+      "seam_hashes": {
+        "east": "da15e0c5fe70c2e6c85e616bc8e7c04353ac7c04b70903cca01d769dcdbab408",
+        "north": "c9d5a0f1320a438a9a3c9ab327ddf9f8b2194db2cff300ca727437b21550ad69",
+        "south": "e0395fa2d2905535ec7e48e7916719fa36fd4ea484a01553f5660806c7067b4e",
+        "west": "0f08249aefc4f9c34a016c525bbd8eb2c2e9788de3cdb51ca21e55d386423b13"
+      },
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x01_y01",
+      "tile_id": "tile_x07_y04"
+    },
+    {
+      "manifest_asset": "tiles/tile_x08_y00/manifest.json",
+      "origin_m": [
+        8000.0,
+        0.0
+      ],
+      "seam_hashes": {
+        "east": "58789335a503127bb65123a66c7232472eb5e227205a798814f00ae917f25422",
+        "north": "61763e500aec32eaa840e1530b6c4e7056cb0b4cd39c83ab0464449d79a5c713",
+        "south": "1ccb5b85539675ff1884a2950c5a02b73e9107fb6207b3d144adbed76ddb5d20",
+        "west": "0d99ce91b749e1ba659891f8a34f0467b6e33b72b7411d8337ec2f2c61dacd62"
+      },
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x02_y00",
+      "tile_id": "tile_x08_y00"
+    },
+    {
+      "manifest_asset": "tiles/tile_x08_y01/manifest.json",
+      "origin_m": [
+        8000.0,
+        1000.0
+      ],
+      "seam_hashes": {
+        "east": "e43f59265a6b039ec647e07782bc5b38d5a83bb9c97309b2ba9dddb7cae24452",
+        "north": "56952f9fa669554c44b31cc9c4032f0a384daddf4349e3c5f7536be9dcea2918",
+        "south": "61763e500aec32eaa840e1530b6c4e7056cb0b4cd39c83ab0464449d79a5c713",
+        "west": "4665ada05fe66ccab02c9f9b894828b61e32f0d75b265fee1cd2f826c0359829"
+      },
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x02_y00",
+      "tile_id": "tile_x08_y01"
+    },
+    {
+      "manifest_asset": "tiles/tile_x08_y02/manifest.json",
+      "origin_m": [
+        8000.0,
+        2000.0
+      ],
+      "seam_hashes": {
+        "east": "390903c6da139693c86e6a84c79c7252298ccef8bfe689bd31fb7c4fa2f3cbf2",
+        "north": "601cc6295ba03f1e0816f89540f913dd86cd2af3a3078e2e17bf044c8d08a33a",
+        "south": "56952f9fa669554c44b31cc9c4032f0a384daddf4349e3c5f7536be9dcea2918",
+        "west": "4812b11e7c4a55b27d083b4616c17c144daa94668adf0b66bcc7acf54b4f1132"
+      },
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x02_y00",
+      "tile_id": "tile_x08_y02"
+    },
+    {
+      "manifest_asset": "tiles/tile_x08_y03/manifest.json",
+      "origin_m": [
+        8000.0,
+        3000.0
+      ],
+      "seam_hashes": {
+        "east": "d928c1b2fb2b9faa97a6071e2add99fb8247e311b1e98f3775bf5eacd6e68c17",
+        "north": "821489ac609912d48ba5043c83135f03ccf14a03ba538f0d98378d941f86ae6e",
+        "south": "601cc6295ba03f1e0816f89540f913dd86cd2af3a3078e2e17bf044c8d08a33a",
+        "west": "f58ff7697e79049f1043a82edab5744eda496df3677b2a34d1f005bec50ea6f9"
+      },
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x02_y00",
+      "tile_id": "tile_x08_y03"
+    },
+    {
+      "manifest_asset": "tiles/tile_x08_y04/manifest.json",
+      "origin_m": [
+        8000.0,
+        4000.0
+      ],
+      "seam_hashes": {
+        "east": "279cdaa49a42b41363d0bd190d20bd71d50f866d9c5fbad5f196b826f2c8244d",
+        "north": "41c04e3edd27979eb0d01891c9e9bd97b39b8607d106298c389d77770df7a677",
+        "south": "821489ac609912d48ba5043c83135f03ccf14a03ba538f0d98378d941f86ae6e",
+        "west": "da15e0c5fe70c2e6c85e616bc8e7c04353ac7c04b70903cca01d769dcdbab408"
+      },
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x02_y01",
+      "tile_id": "tile_x08_y04"
+    },
+    {
+      "manifest_asset": "tiles/tile_x09_y00/manifest.json",
+      "origin_m": [
+        9000.0,
+        0.0
+      ],
+      "seam_hashes": {
+        "east": "d4e3863dcb0b2da5205704bf0075c9eee07de0165f5905177615a6f449f377dc",
+        "north": "0796fd70e4b832f6cbfdc9da38d599dec2d87ba017952aa25f50ae4589b16f55",
+        "south": "19df844678de8f3fd9ded5e978b8a50c68a92fcde94a2faf5e50d252890a293a",
+        "west": "58789335a503127bb65123a66c7232472eb5e227205a798814f00ae917f25422"
+      },
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x02_y00",
+      "tile_id": "tile_x09_y00"
+    },
+    {
+      "manifest_asset": "tiles/tile_x09_y01/manifest.json",
+      "origin_m": [
+        9000.0,
+        1000.0
+      ],
+      "seam_hashes": {
+        "east": "d4e3863dcb0b2da5205704bf0075c9eee07de0165f5905177615a6f449f377dc",
+        "north": "ecfe4dc0dd25ca6e3f23f52efafab600520b2f1e09535c7714e35cc01fa4b843",
+        "south": "0796fd70e4b832f6cbfdc9da38d599dec2d87ba017952aa25f50ae4589b16f55",
+        "west": "e43f59265a6b039ec647e07782bc5b38d5a83bb9c97309b2ba9dddb7cae24452"
+      },
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x02_y00",
+      "tile_id": "tile_x09_y01"
+    },
+    {
+      "manifest_asset": "tiles/tile_x09_y02/manifest.json",
+      "origin_m": [
+        9000.0,
+        2000.0
+      ],
+      "seam_hashes": {
+        "east": "ff0f184ca309e7276f3209f6065b064d14bfc3f29ed97716738813de662b5891",
+        "north": "30880260be4243b2638444f64633f2d195215aa0c09a36ac6cabf83cc220da76",
+        "south": "ecfe4dc0dd25ca6e3f23f52efafab600520b2f1e09535c7714e35cc01fa4b843",
+        "west": "390903c6da139693c86e6a84c79c7252298ccef8bfe689bd31fb7c4fa2f3cbf2"
+      },
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x02_y00",
+      "tile_id": "tile_x09_y02"
+    },
+    {
+      "manifest_asset": "tiles/tile_x09_y03/manifest.json",
+      "origin_m": [
+        9000.0,
+        3000.0
+      ],
+      "seam_hashes": {
+        "east": "2b1ac2e808fff87e808d1c155c30760df9acfe8095f7bdd2e0a74281550c9a4e",
+        "north": "cbaf94fc56ede06cd0cd98159b830e797418cd52d200f3cdab9f561ebead66c4",
+        "south": "30880260be4243b2638444f64633f2d195215aa0c09a36ac6cabf83cc220da76",
+        "west": "d928c1b2fb2b9faa97a6071e2add99fb8247e311b1e98f3775bf5eacd6e68c17"
+      },
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x02_y00",
+      "tile_id": "tile_x09_y03"
+    },
+    {
+      "manifest_asset": "tiles/tile_x09_y04/manifest.json",
+      "origin_m": [
+        9000.0,
+        4000.0
+      ],
+      "seam_hashes": {
+        "east": "37647f0408ada06e165262c6db818c4082e6ef9791ac06626dfef76140f603bb",
+        "north": "75058ffcaa193a2986177da305a6637231cf2cbc7ce480bc79b375c5dbbfa2fa",
+        "south": "cbaf94fc56ede06cd0cd98159b830e797418cd52d200f3cdab9f561ebead66c4",
+        "west": "279cdaa49a42b41363d0bd190d20bd71d50f866d9c5fbad5f196b826f2c8244d"
+      },
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x02_y01",
+      "tile_id": "tile_x09_y04"
+    },
+    {
+      "manifest_asset": "tiles/tile_x10_y00/manifest.json",
+      "origin_m": [
+        10000.0,
+        0.0
+      ],
+      "seam_hashes": {
+        "east": "d4e3863dcb0b2da5205704bf0075c9eee07de0165f5905177615a6f449f377dc",
+        "north": "d4e3863dcb0b2da5205704bf0075c9eee07de0165f5905177615a6f449f377dc",
+        "south": "d4e3863dcb0b2da5205704bf0075c9eee07de0165f5905177615a6f449f377dc",
+        "west": "d4e3863dcb0b2da5205704bf0075c9eee07de0165f5905177615a6f449f377dc"
+      },
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x02_y00",
+      "tile_id": "tile_x10_y00"
+    },
+    {
+      "manifest_asset": "tiles/tile_x10_y01/manifest.json",
+      "origin_m": [
+        10000.0,
+        1000.0
+      ],
+      "seam_hashes": {
+        "east": "d4e3863dcb0b2da5205704bf0075c9eee07de0165f5905177615a6f449f377dc",
+        "north": "d4e3863dcb0b2da5205704bf0075c9eee07de0165f5905177615a6f449f377dc",
+        "south": "d4e3863dcb0b2da5205704bf0075c9eee07de0165f5905177615a6f449f377dc",
+        "west": "d4e3863dcb0b2da5205704bf0075c9eee07de0165f5905177615a6f449f377dc"
+      },
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x02_y00",
+      "tile_id": "tile_x10_y01"
+    },
+    {
+      "manifest_asset": "tiles/tile_x10_y02/manifest.json",
+      "origin_m": [
+        10000.0,
+        2000.0
+      ],
+      "seam_hashes": {
+        "east": "0795ec0b961a1497667f881c93ff13bf6247b9d89453cf3a0ff9226c0333fcff",
+        "north": "852a2fe6c339b9bf1e4405412e6f518bd5eea81573fdb53a06b3576686d6159c",
+        "south": "d4e3863dcb0b2da5205704bf0075c9eee07de0165f5905177615a6f449f377dc",
+        "west": "ff0f184ca309e7276f3209f6065b064d14bfc3f29ed97716738813de662b5891"
+      },
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x02_y00",
+      "tile_id": "tile_x10_y02"
+    },
+    {
+      "manifest_asset": "tiles/tile_x10_y03/manifest.json",
+      "origin_m": [
+        10000.0,
+        3000.0
+      ],
+      "seam_hashes": {
+        "east": "ed9880bd1122b95f1a2cefe3bf7d7ce6673d34885ab78b1d3ada39d8f158299f",
+        "north": "a1b81ecee565f3c618c6bd10e0decc1203774c1ebdb36b40c9764c233991977a",
+        "south": "852a2fe6c339b9bf1e4405412e6f518bd5eea81573fdb53a06b3576686d6159c",
+        "west": "2b1ac2e808fff87e808d1c155c30760df9acfe8095f7bdd2e0a74281550c9a4e"
+      },
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x02_y00",
+      "tile_id": "tile_x10_y03"
+    },
+    {
+      "manifest_asset": "tiles/tile_x10_y04/manifest.json",
+      "origin_m": [
+        10000.0,
+        4000.0
+      ],
+      "seam_hashes": {
+        "east": "beb3e2f0f8f84d535abe7df8e1f7150419a7ba7f16af00f0fd71f218d481211a",
+        "north": "7c60fc342a04ef3d10523a58592985c0154a61da6d2c6af9dae441d97136d93e",
+        "south": "a1b81ecee565f3c618c6bd10e0decc1203774c1ebdb36b40c9764c233991977a",
+        "west": "37647f0408ada06e165262c6db818c4082e6ef9791ac06626dfef76140f603bb"
+      },
+      "size_m": [
+        1000.0,
+        1000.0
+      ],
+      "stream_region_id": "stream_x02_y01",
+      "tile_id": "tile_x10_y04"
+    }
+  ]
+}

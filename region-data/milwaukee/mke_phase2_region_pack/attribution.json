@@ -5,7 +5,7 @@
     "ODbL-sensitive ride graph outputs must retain attribution and provenance on redistribution.",
     "NAIP remains an optional scenery enrichment source and does not affect the canonical ride graph."
   ],
-  "region_hash": "421c23c94e5a49304136b9ba5961ec38e4b968322760cdb8c719ca3a58896783",
+  "region_hash": "478ddd0da8a7a7197546dc1f03f4c69809e43aec77d72e53ffe9d50eeeda0f16",
   "region_id": "milwaukee_phase2",
   "region_version": "milwaukee-v2.0.0",
   "sources": [
