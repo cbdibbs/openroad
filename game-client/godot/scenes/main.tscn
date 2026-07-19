@@ -14,15 +14,17 @@ ambient_light_energy = 0.5
 fog_enabled = true
 fog_light_color = Color(0.678431, 0.780392, 0.905882, 1)
 fog_light_energy = 1.0
-fog_density = 0.0018
+fog_density = 0.0026
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_main")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-position = Vector3(0, 12, -18)
+position = Vector3(0, 1.55, 0.85)
 current = true
-fov = 52.0
+near = 0.03
+far = 1400.0
+fov = 66.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_phase2_world")
@@ -31,21 +33,7 @@ environment = SubResource("Environment_phase2_world")
 rotation = Vector3(-0.8, -0.6, 0)
 light_energy = 2.2
 
-[node name="TerrainRoot" type="Node3D" parent="."]
-
-[node name="WaterRoot" type="Node3D" parent="."]
-
-[node name="BiomeRoot" type="Node3D" parent="."]
-
-[node name="StreetRoot" type="Node3D" parent="."]
-
-[node name="RoadRoot" type="Node3D" parent="."]
-
-[node name="BuildingRoot" type="Node3D" parent="."]
-
-[node name="LandmarkRoot" type="Node3D" parent="."]
-
-[node name="PropRoot" type="Node3D" parent="."]
+[node name="LoadedTilesRoot" type="Node3D" parent="."]
 
 [node name="Rider" type="MeshInstance3D" parent="."]
 mesh = SubResource("SphereMesh_rider")
