@@ -96,6 +96,17 @@ def run_suite(output_path: Path) -> dict[str, Any]:
 
     checks: list[dict[str, Any]] = []
 
+    for name, command in [
+        ("bootstrap-phase1-sources", [sys.executable, "-m", "geo_pipeline.cli", "fetch-sources", "milwaukee_phase1"]),
+        (
+            "bootstrap-phase2-sources",
+            [sys.executable, "-m", "geo_pipeline.cli", "fetch-sources", "milwaukee_phase2", "--source-mode", "fixture"],
+        ),
+    ]:
+        bootstrap = _run_command(name, command, logs_dir, env)
+        bootstrap["details"] = {"kind": "bootstrap"}
+        checks.append(bootstrap)
+
     tests = _run_command(
         "python-unittest",
         [sys.executable, "-m", "unittest", "discover", "-s", "tests"],

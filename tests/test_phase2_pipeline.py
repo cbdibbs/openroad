@@ -20,6 +20,12 @@ SAMPLE_TRACK = ROOT / "sample-tracks" / "Wauwatosa_to_Lakefront.gpx"
 VISUAL_QA_DOC = ROOT / "docs" / "phase2-visual-qa.md"
 
 
+def setUpModule() -> None:
+    # Phase 2 contract validation expects the fixture source cache paths recorded in the
+    # checked-in pack manifests to exist locally. CI bootstraps them from fixture assets.
+    fetch_sources(DEFAULT_REGION_CONFIG, "fixture")
+
+
 def _temp_phase2_config(temp_root: Path, source_urls: dict[str, str] | None = None) -> Path:
     config = json.loads(CONFIG_PATH.read_text(encoding="utf-8"))
     config["work_dirs"] = {

@@ -30,7 +30,7 @@ class Phase1CliTests(unittest.TestCase):
             env=env,
         )
         payload = json.loads(validate.stdout)
-        self.assertEqual(payload["region_id"], "milwaukee_oak_leaf_demo")
+        self.assertEqual(payload["region_id"], "milwaukee_demo")
         self.assertEqual(payload["routes"], 1)
         self.assertGreater(payload["edges"], 1)
 
